@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security5">
+
+    <head th:replace="header.html :: header"></head>
+
+    <body>
+        <div class="d-flex" id="wrapper">
+            <!-- Sidebar-->
+            <div th:replace="sidemenu.html :: sidemenu"></div>
+            <!-- Page content wrapper-->
+            <div id="page-content-wrapper">
+                <!-- Top navigation-->
+                <div th:replace="top_nav.html :: top_nav"></div>
+
+                <!-- Page content-->
+                <div class="container-fluid">
+                    <h1 class="mt-4">HOME</h1>
+                    <p>
+                       안녕하십니까. IGLOO USER Management System 입니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div th:replace="modal.html :: modal"></div>
+
+        <footer th:replace="footer.html :: footer"></footer>
+    </body>
+
+
+
+</html>

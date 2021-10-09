@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head th:replace="header.html :: header"></head>
+
+<script type="text/javascript">
+
+    let userId = "";
+    const enabledMap = new Map();
+
+    enabledMap.set('enable','enable');
+    enabledMap.set('disable','disable');
+
+    window.onload = function () {
+        userId = $('#userId').text();
+        getCustomerList();
+
+        $("#id").change(function (){$('#checkId').text('');}); //중복 확인하고 id 바꿀시 checkId 빈값
+
+        $("#idCheck").on("click", function(){     //중복 확인
+            var userId = $('#id').val();
+            if(userId == ''){
+                alert('아이디를 입력해주세요');
+                return;
+            }
+            duplicateCheck();  // 중복 확인 logic
+        });
+
+        $("#createUser").on("click", function(){ checkUser() }); // 사용자생성 빈 값, 마지막 체크
+
+        $("#modifyUser").on("click", function(){ McheckUser() }); // 사용자수정 빈 값, 마지막 체크
+
+        $("#resetInfo").on("click", function(){     //등록 modal 초기화
+            $('#id').val('');
+            $('#checkId').text('');
+            $('#firstName').val('');
+            $('#lastName').val('');
+            $('#email').val('');
+        });
+
+        $("#resetInfo2").on("click", function(){     //수정 modal 초기화
+            $('#firstName2').val('');
+            $('#lastName2').val('');
+            $('#email2').val('');
+        });
+
+        $("#okButton").on("click", function(){ location.reload(); });   //SUCCESS Modal OK Button
+    }
+
+    //등록 modal check
+    function checkUser(){
+        var chId = $('#id').val();
+        var firstName = $('#firstName').val();
+        var lastName = $('#lastName').val();
+        var email = $('#email').val();
+        var checkId = $('#checkId').text();
+
+        var engNum = RegExp(/^[a-z0-9]*$/);   //영문 + 숫자만 가능
+        var regEmail = RegExp(/^[a-zA-Z0-9]*@[a-zA-Z0-9]*.[a-zA-Z]{2,3}$/i); //email 체크
+
+        if(chId == '' || firstName == '' || lastName == '' || email == '') {
+            alert('정보를 입력해주세요.');
+            return;
+        }
+
+        if(checkId == '중복된 아이디가 존재합니다.'){
+            alert('중복된 아이디가 존재합니다.');
+            return;
+        }
+
+        if(checkId == ''){
+            alert('중복 확인을 눌러주세요.');
+            return;
+        }
+
+        if(chId.length < 5 || chId.length > 16) {
+            window.alert('아이디는 5자이상 16자 이하만 가능합니다.');
+            return;
+        }
+
+        if(engNum.test(chId) == false) {
+            window.alert('아이디는 소문자,숫자만 가능합니다.');
+            return;
+        }
+
+        if(regEmail.test(email) == false) {
+            window.alert('형식에 맞지 않는 이메일입니다.');
+            return;
+        }
+        registerUser(); //사용자 등록 logic
+    }
+
+    //수정 Modal check
+    function McheckUser(){
+        var chId = $('#id2').val();
+        var firstName = $('#firstName2').val();
+        var lastName = $('#lastName2').val();
+        var email = $('#email2').val();
+        // var checkId = $('#checkId').text();
+
+        if(chId == '' || firstName == '' || lastName == '' || email == '') {
+            alert('정보를 입력해주세요.');
+
+            return;
+        }
+        /*if(checkId == '중복된 아이디가 존재합니다.'){
+            alert('중복된 아이디가 존재합니다.');
+            return;
+        }*/
+
+        /*if(checkId == ''){
+            alert('중복 확인을 눌러주세요.');
+            return;
+        }*/
+        modifyUser(); //사용자 수정 logic
+    }
+
+    //사용자 등록 logic
+    function registerUser(){
+        var chId = $('#id').val();
+        var fName = $('#firstName').val();
+        var lName = $('#lastName').val();
+        var email = $('#email').val();
+        var enable = $('#modalSelect option:selected').val();
+
+        console.log(chId);
+        $.ajax({
+            url: "/registerUser",
+            type: "POST",
+            data: {
+                id: chId,
+                firstName: fName,
+                lastName: lName,
+                email: email,
+                useEnable: enable
+            },
+            success: function (data) {
+                if(data == "SUCCESS")
+                    $("#successModal").modal();
+                else if(data == "alreadyEmail"){
+                    alert("이메일이 중복됩니다.");
+                }
+                else {
+                    alert("에러 발생");
+                    location.reload();
+                }
+
+            }, error: function (request, status, error) {
+                console.log("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }
+
+    //사용자 수정 logic
+    function modifyUser(){
+        var chId = $('#id2').val();     //사실살 필요 없음
+        var fName = $('#firstName2').val();
+        var lName = $('#lastName2').val();
+        var email = $('#email2').val();
+        var enable = $('#modalSelect2 option:selected').val();
+        var uuid = $('#uuid2').text();
+
+        $.ajax({
+            url: "/modifyUser",
+            type: "PUT",
+            data: {
+                id: uuid,
+                firstName: fName,
+                lastName: lName,
+                email: email,
+                useEnable: enable,
+            },
+            success: function (data) {
+                if(data == "SUCCESS")
+                    $("#successModal").modal();
+                else if(data == "alreadyEmail"){
+                    alert("이메일이 중복됩니다.");
+                }
+                else {
+                    alert("에러 발생");
+                    location.reload();
+                }
+
+            }, error: function (request, status, error) {
+                console.log("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }
+
+    //id 중복 check
+    function duplicateCheck(){
+        var chId = $('#id').val();
+
+        $.ajax({
+            url: "/duplicateCheck",
+            type: "GET",
+            data: {
+                id: chId
+            },
+            success: function (data) {
+                if(data == "Duplicate") {
+                    $('#checkId').text('중복된 아이디가 존재합니다.');
+                    $("#checkId").css("color","red");
+                }
+                else if(data == "SUCCESS"){
+                    $('#checkId').text('사용 가능한 아이디 입니다.');
+                    $("#checkId").css("color","blue");
+                }
+                else {
+                    alert("Server Error");
+                }
+
+            }, error: function (request, status, error) {
+                console.log("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+
+    }
+
+    //User LIST
+    function getCustomerList() {
+        $.ajax({
+            url: "/getUserList",
+            type: "GET",
+            data: {
+                id : userId
+            },
+            success: function (data) {
+                var selectEn = 0;
+
+                var table = $('#userTable').dataTable({
+                    aaData: data,
+                    dom : 'Bfrtip',
+                    bPaginate: true,
+                    bLengthChange: false,
+                    bInfo: true,
+                    bAutoWidth: true,
+                    processing: false,
+                    ordering: true,
+                    searching: true,
+
+                    columns: [
+                        {data: "choice",
+                            "render": function (data, type, row){
+
+                                data = '<input type="checkbox" name="userCheckBox">';
+                                // onclick="event.cancelBubble=true"
+
+                                return data;
+                            }
+                        },
+                        {data: "username"},
+                        {data: "lastName"},
+                        {data: "firstName"},
+                        {data: "email"},
+                        // {data: "enabled"},
+                        {data: "enabled",
+                            "render": function (data, type, row){
+                            if(data == true) return "enable";
+                            else return "disable";
+                            }
+                        },
+                        {data: "createdTimestamp",
+                            "render": function (data, type, row){
+                                var date = new Date(data);
+                                var regDate = date.getFullYear()+"-"+ (date.getMonth() + 1)+"-"+date.getDate()
+                                    + " " + date.getHours() + ":" + date.getMinutes();
+
+                                return regDate;
+                            }
+                        },
+                        {data: "id"}
+                    ],
+                    columnDefs:[{
+                        targets: [7],
+                        searchable: false,
+                        visible: false
+                    }]
+                });
+
+                var table = $('#userTable').DataTable();
+
+                 $('#userTable tbody').on('click', 'tr td:not(:first-child)', function () {
+                    var tr = $(this).closest('tr');
+                    var dt = table.row(tr).data();
+                    var userEnable = '';
+                    $('#id2').val(dt.username);
+                    $('#firstName2').val(dt.firstName);
+                    $('#lastName2').val(dt.lastName);
+                    $('#email2').val(dt.email);
+                    $('#uuid2').text(dt.id);
+
+                    if(dt.enabled == true) userEnable = "enable";
+                    else userEnable = "disable";
+
+                    $('#modalSelect2').val(userEnable).prop("selected",true);
+                    $("#userModifyModal").modal();
+                });
+
+                $("#userDeleteBtn").on("click", function(){     //삭제 버튼 click
+                    var rowData = new Array();
+                    var tdArr = new Array();
+
+                    var checkbox = $('input[name=userCheckBox]:checked');
+
+                    if($('input[name=userCheckBox]').is(":checked") == false){
+                        alert('값을 선택해주세요.');
+                        return;
+                    }
+                    else{
+                        checkbox.each(function (i){
+                            var tr = checkbox.parent().parent().eq(i);
+                            var td = tr.children();
+
+                            var trx = $(this).closest('tr');
+                            var dtx = table.row(tr).data();
+                            rowData.push(tr.text());
+                            // table.row($(this).closet())
+                            // var id = td.eq(7).text();
+                            var id = dtx['id'];
+                            tdArr.push(id);
+                        });
+
+                        $("#deleteModal").modal();      //delete modal
+
+                        $("#deleteUserBtn").on("click", function(){deleteUser(tdArr);}); // User 삭제 logic
+                    }
+
+                });
+
+                $('#userTable tbody').on('mouseenter', 'tr', function () {
+                    $(this).closest('tr').css('color','blue');
+                    $(this).closest('tr').css('cursor','pointer');
+                });
+
+                $('#userTable tbody').on('mouseleave', 'tr', function () {
+                    $(this).closest('tr').css('color','black');
+                });
+
+            }, error: function (request, status, error) {
+                console.log("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }
+
+    //삭제 logic
+    function deleteUser(tdArr){
+
+        var List = {
+            "id" : tdArr
+        };
+
+        console.log(tdArr);
+        $.ajax({
+            url: "/deleteUser",
+            type: "DELETE",
+            data: List,
+            success: function (data) {
+                if(data == "SUCCESS")
+                    $("#successModal").modal();
+                else
+                    alert("오류가 발생했습니다.");
+
+            }, error: function (request, status, error) {
+                console.log("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }
+
+</script>
+
+
+<body>
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar-->
+    <div th:replace="sidemenu.html :: sidemenu"></div>
+    <!-- Page content wrapper-->
+    <div id="page-content-wrapper">
+        <!-- Top navigation-->
+        <div th:replace="top_nav.html :: top_nav"></div>
+
+        <!-- Page content-->
+        <div class="container-fluid">
+                <!-- Area Chart -->
+                <div class="col-xl-12 col-lg-10" style="margin-top: 30px">
+                    <div class="card shadow mb-4">
+                        <!-- Card Header - Dropdown -->
+
+                        <div
+                                class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+                                style="color:white;">
+                            <h3 class="m-0 font-weight-bold text-primary">사용자 관리</h3>
+
+                            <div style="float: right">
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#userCreateModal">생성</button>
+                                <button class="btn btn-primary" id="userDeleteBtn">삭제</button>
+                            </div>
+
+                        </div>
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <div class="card shadow h-100 py-2">
+                                <div class="table-responsive" style="overflow:auto; height: 100%; margin: 10px" >
+                                    <table class="table table-bordered" id="userTable">
+                                        <thead style="text-align: center; position: sticky; top: 0px; ">
+                                        <tr>
+                                            <th>선택</th>
+                                            <th>아이디</th>
+                                            <th>성</th>
+                                            <th>이름</th>
+                                            <th>이메일</th>
+                                            <th>사용여부</th>
+                                            <th>생성일</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody style="text-align: center">
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="userCreateModal" tabindex="-1" role="dialog" aria-labelledby="userCreateModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="userCreateModalLabel">사용자 생성</h3>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row mt-1 mb-1">
+                    <div class="col-xl-12 col-lg-6">
+                        <span class="text-dark"> 아이디 : </span>
+                        <input type="text" style="width: 300px;" id="id" placeholder="ex) igloo">
+                        <button id="idCheck">중복확인</button>
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="col-xl-12 col-lg-6" style="margin-left: 55px;">
+                        <span id="checkId">&nbsp</span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-xl-12 col-lg-6">
+                        <span class="text-dark"> 이름 : </span>
+                        <input type="text" style="width: 300px;margin-left: 16px;" id="firstName" placeholder="ex) 길동">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-xl-12 col-lg-6">
+                        <span class="text-dark"> 성 : </span>
+                        <input type="text" style="width: 300px;margin-left: 32px;" id="lastName"  placeholder="ex) 홍">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-xl-12 col-lg-6">
+                        <span class="text-dark"> 초기 비밀번호 : </span>
+                        <input type="password" size="20" style="width:65%;" id="newPassword">
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="col-xl-12 col-lg-6">
+                        <span class="text-dark"> 비밀번호 확인 : </span>
+                        <input type="password" size="20" style="width:65%;" id="confirmPassword" >
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="col-xl-7 col-lg-6" style="margin-left: 100px;">
+                        <span id="checkPassword">&nbsp</span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-xl-12 col-lg-6">
+                        <span class="text-dark"> 이메일 : </span>
+                        <input type="text"style="width: 300px;" id="email" placeholder="ex) igloo@igloosec.com">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-xl-12 col-lg-6">
+                        <span class="text-dark"> 사용여부 : </span>
+                        <select id="modalSelect">
+                            <option value="enable">enable</option>
+                            <option value="disable">disable</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="submit" id="createUser">등록</button>
+                <button class="btn btn-secondary" type="button" id="resetInfo">초기화</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="userModifyModal" tabindex="-1" role="dialog" aria-labelledby="userModifyModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="userModifyModalLabel">사용자 수정</h3>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row mt-1 mb-3">
+                    <div class="col-xl-12 col-lg-6">
+                        <span class="text-dark"> 아이디 : </span>
+                        <input type="text" style="width: 300px;" id="id2" placeholder="ex) igloo" disabled>
+                        <button id="idCheck2" hidden="true" >중복확인</button>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-xl-12 col-lg-6">
+                        <span class="text-dark"> 이름 : </span>
+                        <input type="text" style="width: 300px;margin-left: 16px;" id="firstName2" placeholder="ex) 길동">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-xl-12 col-lg-6">
+                        <span class="text-dark"> 성 : </span>
+                        <input type="text" style="width: 300px;margin-left: 32px;" id="lastName2"  placeholder="ex) 홍">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-xl-12 col-lg-6">
+                        <span class="text-dark"> 이메일 : </span>
+                        <input type="text"style="width: 300px;" id="email2" placeholder="ex) igloo@igloosec.com">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-xl-12 col-lg-6">
+                        <span class="text-dark"> 사용여부 : </span>
+                        <select id="modalSelect2">
+                            <option value="enable">enable</option>
+                            <option value="disable">disable</option>
+                        </select>
+                    </div>
+                </div>
+                <span id="uuid2" hidden="true"></span>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="submit" id="modifyUser">저장</button>
+                <button class="btn btn-secondary" type="button" id="resetInfo2">초기화</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div th:replace="modal.html :: modal"></div>
+
+<footer th:replace="footer.html :: footer"></footer>
+</body>
+
+
+
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head th:replace="header.html :: header"></head>
+
+<script type="text/javascript">
+
+    let userId = "";
+    let userFirst = "";
+    let userLast = "";
+    let userEmail =  "";
+
+    window.onload = function () {
+
+        userId = $('#idInput').val();
+        userFirst = $('#firstName').val();
+        userLast = $('#lastName').val();
+        userEmail = $('#emailInput').val();
+
+        getUserInfo();      //내 정보
+
+        $("#userInfoSaveBtn").on("click", function(){ checkInfo(); });  //저장 버튼 -> 빈 값 체크
+
+        $("#userInfoCancelBtn").on("click", function(){     //초기화 버튼 -> 값 초기화
+            $('#firstName').val('');
+            $('#lastName').val('');
+            $('#emailInput').val('');
+        });
+
+        $("#okButton").on("click", function(){ location.reload(); });   //SAVE modal OK버튼
+
+    }
+
+    //UserInfo
+    function getUserInfo() {
+
+        $.ajax({
+            url: "/getUserInfo",
+            type: "GET",
+            data: {
+            },
+            success: function (data) {
+                if(data == "ERROR") {
+                    return;
+                }
+                else{
+                    $('#idInput').val(data.username);
+                    $('#firstName').val(data.firstName);
+                    $('#lastName').val(data.lastName);
+                    $('#emailInput').val(data.email);
+                }
+
+            }, error: function (request, status, error) {
+                console.log("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+
+    }
+
+    //checkInfo
+    function checkInfo() {
+
+        var userFirst = $('#firstName').val();
+        var userLast = $('#lastName').val();
+        var userEmail = $('#emailInput').val();
+        var regEmail = RegExp(/^[a-zA-Z0-9]*@[a-zA-Z0-9]*.[a-zA-Z]{2,3}$/i); //email 체크
+
+        if (userFirst == '' || userLast == '' || userEmail == '') {
+            alert("정보를 입력해주세요.");
+            return;
+        }
+
+        if(regEmail.test(userEmail) == false) {
+            window.alert('형식에 맞지 않는 이메일입니다.');
+            return;
+        }
+        $("#saveModal").modal();        // modal 이동
+    }
+
+    //수정버튼 logic
+    function modifyInfo() {
+
+        var userId = $('#idInput').val();
+        var userFirst = $('#firstName').val();
+        var userLast = $('#lastName').val();
+        var userEmail = $('#emailInput').val();
+
+        $.ajax({
+            url: "/modifyInfo",
+            type: "PUT",
+            data: {
+                id : userId,
+                firstName : userFirst,
+                lastName : userLast,
+                email : userEmail
+            },
+            success: function (data) {
+                if(data == "SUCCESS")
+                    $("#successModal").modal();
+                else if(data == "alreadyEmail"){
+                    alert("이메일이 중복됩니다.");
+                }
+                else {
+                    alert("에러 발생");
+                    location.reload();
+                }
+
+            }, error: function (request, status, error) {
+                console.log("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+
+    }
+
+
+
+
+</script>
+
+
+<body>
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar-->
+    <div th:replace="sidemenu.html :: sidemenu"></div>
+    <!-- Page content wrapper-->
+    <div id="page-content-wrapper">
+        <!-- Top navigation-->
+        <div th:replace="top_nav.html :: top_nav"></div>
+        <!-- Page content-->
+        <div class="container-fluid">
+            <h3 class="mt-4 m-0 font-weight-bold text-primary">내정보 수정</h3>
+            <div class="row mb-2 ml-2" style="margin-top: 30px">
+                <!-- Area Chart -->
+                <div class="col-xl-7 col-lg-5">
+                    <div class="card shadow">
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <div class="card shadow h-100">
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <table class="table col-xl-12 col-lg-10" id="userInfoTable">
+                                            <thead style="text-align: center; position: sticky; top: 0px; background-color: white;">
+                                            <tr>
+                                                <th style="width:30%">아이디 : </th>
+                                                <td>
+                                                    <input type="text" size="20" style="width:100%; " id="idInput" disabled>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th style="width:30%">이름 : </th>
+                                                <td>
+                                                    <input type="text" size="20" style="width:100%; " id="firstName">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th style="width:30%">성 : </th>
+                                                <td>
+                                                    <input type="text" size="20" style="width:100%;" id="lastName">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th style="width:30%">이메일 : </th>
+                                                <td>
+                                                    <input type="text" size="20" style="width:100%;" id="emailInput">
+                                                </td>
+                                            </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin-top: 10px; float: right">
+                                <button class="btn btn-primary" id="userInfoSaveBtn">저장</button>
+                                <button class="btn btn-secondary" id ="userInfoCancelBtn">초기화</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<div th:replace="modal.html :: modal"></div>
+
+<footer th:replace="footer.html :: footer"></footer>
+</body>
+
+
+</html>

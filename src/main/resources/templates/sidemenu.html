@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<div th:fragment="sidemenu" xmlns:sec="http://www.thymeleaf.org/extras/spring-security5"
+     xmlns:th="http://www.w3.org/1999/xhtml">
+
+
+    <div class="border-end bg-white" id="sidebar-wrapper">
+        <div class="sidebar-heading border-bottom bg-light" style="font-size: 20px; cursor: pointer" onclick="location.href='/main'">
+            IGLOO User <br>Management System
+        </div>
+        <div class="list-group list-group-flush">
+            <a sec:authorize="hasRole('ADMIN')" class="list-group-item list-group-item-action list-group-item-light p-3" href="/user_manage">사용자 관리</a>
+<!--            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/system_manage">연계시스템 관리</a>-->
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/my_info">내정보 수정</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/pw_manage">내 비밀번호 변경</a>
+        </div>
+    </div>
+
+
+</div>
+
+
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head th:replace="header.html :: header"></head>
+
+<script type="text/javascript">
+
+    let userId = "";
+    let userPassword = "";
+    let userCnPassword= "";
+
+    window.onload = function () {
+
+        userId = $('#idInput').text();
+        userPassword = $('#newPassword').text();
+        userCnPassword = $('#confirmPassword').text();
+
+        getUserInfo(); //내 정보
+
+        $("#passwordSaveBtn").on("click", function(){ changePwd() }); //저장 버튼 -> 값 체크
+
+        $("#passwordCancelBtn").on("click", function(){     //초기화 버튼 -> 값 초기화
+            $('#newPassword').val('');
+            $('#confirmPassword').val('');
+            $('#checkPw').text('');
+        });
+
+        $("#okButton").on("click", function(){ location.reload(); });       //SAVE modal OK버튼
+
+    }
+
+    //userInfo
+    function getUserInfo() {
+        $.ajax({
+            url: "/getUserInfo",
+            type: "GET",
+            data: {
+            },
+            success: function (data) {
+                if(data == "ERROR") {
+                    return;
+                }
+                $('#idInput').val(data.username);
+            }, error: function (request, status, error) {
+                console.log("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }
+
+    //password check
+    function changePwd() {
+        var newPwd = $('#newPassword').val();
+        var confirmPwd = $('#confirmPassword').val();
+
+        if(newPwd == '' || confirmPwd == '') {
+            alert('비밀번호를 입력해 주세요.');
+
+            $('#newPassword').val();
+            $('#confirmPassword').val();
+            return;
+        }
+        if(newPwd != confirmPwd){
+            alert('비밀번호가 일치하지 않습니다.');
+            return;
+        }
+        $("#saveModal").modal();         //여기서 modal 이동
+    }
+
+    //password 수정 logic
+    function modifyPassword() {
+        userId = $('#idInput').val();
+        userPassword = $('#newPassword').val();
+
+        $.ajax({
+            url: "/modifyPassword",
+            type: "PUT",
+            data: {
+                id : userId,
+                password: userPassword
+            },
+            success: function (data) {
+                if(data == '') {
+                    return;
+                }
+                else{
+                    $('#newPassword').val('');
+                    $('#confirmPassword').val('');
+                    $('#checkPw').text('');
+
+                    $("#successModal").modal();
+                }
+            }, error: function (request, status, error) {
+                console.log("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            }
+        });
+    }
+
+    //password check
+    function check_pw(){
+        var newPwd = $('#newPassword').val();
+        var confirmPwd = $('#confirmPassword').val();
+        var SC = ["!", "#","$", "^", "-"];
+        var check_SC = 0;
+
+        if(newPwd.length < 8 || newPwd.length>16){
+            window.alert('비밀번호는 8글자 이상, 16글자 이하만 이용 가능합니다.');
+            $('#newPassword').val('');
+            return;
+        }
+        for(var i=0; i<SC.length; i++){
+            if(newPwd.indexOf(SC[i]) != -1){
+                check_SC = 1;
+            }
+        }
+        if(check_SC == 0){
+            window.alert('특수문자를 한 개 이상 포함해야합니다.( ! , # , $ , ^ , - )');
+            $('#newPassword').val('');
+            return;
+        }
+
+        if(newPwd != '' && confirmPwd != ''){
+            if(newPwd == confirmPwd){
+                $('#checkPw').text('비밀번호가 일치합니다.');
+                $("#checkPw").css("color","blue");
+            }
+            else{
+                $('#checkPw').text('비밀번호가 일치하지 않습니다.');
+                $("#checkPw").css("color","red");
+            }
+        }
+    }
+
+</script>
+
+<body>
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar-->
+    <div th:replace="sidemenu.html :: sidemenu"></div>
+    <!-- Page content wrapper-->
+    <div id="page-content-wrapper">
+        <!-- Top navigation-->
+        <div th:replace="top_nav.html :: top_nav"></div>
+        <!-- Page content-->
+        <div class="container-fluid">
+            <h3 class="mt-4 m-0 font-weight-bold text-primary">내 비밀번호 변경</h3>
+
+            <div class="row mb-2 ml-2" style="margin-top: 30px">
+                <!-- Area Chart -->
+                <div class="col-xl-7 col-lg-5">
+                    <div class="card shadow">
+
+                        <!-- Card Body -->
+                        <div class="card-body">
+                            <div class="card shadow h-100">
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <table class="table table-bordered col-xl-12 col-lg-10"  id="userInfoTable">
+                                            <thead style="text-align: center; position: sticky; top: 0px; background-color: white;">
+                                            <tr>
+                                                <th style="width:30%">아이디 : </th>
+                                                <td>
+                                                    <input type="text" size="20" style="width:100%;" id="idInput" disabled>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th style="width:30%">새 비밀번호 : </th>
+                                                <td>
+                                                    <input type="password" size="20" style="width:100%;" id="newPassword" onchange="check_pw()">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th style="width:30%">비밀번호 확인 : </th>
+                                                <td>
+                                                    <input type="password" size="20" style="width:100%;" id="confirmPassword" onchange="check_pw()">
+                                                </td>
+                                            </tr>
+
+                                            </thead>
+                                        </table>
+                                        <div style="text-align: center">
+                                            <span id="checkPw">&nbsp</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin-top: 10px; float: right">
+                                <button class="btn btn-primary"  id ="passwordSaveBtn">저장</button>
+                                <button class="btn btn-secondary"  id ="passwordCancelBtn">초기화</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="saveModal" tabindex="-1" role="dialog" aria-labelledby="saveModalLabel" aria-hidden="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="saveModalLabel">SAVE</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="false">X</span>
+                </button>
+            </div>
+            <div class="modal-body" style="text-align: center">
+
+                <p style="font-size: 23px">저장하시겠습니까?</p>
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" onclick="modifyPassword();">OK</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="modal.html :: modal"></div>
+
+<footer th:replace="footer.html :: footer"></footer>
+</body>
+
+
+</html>

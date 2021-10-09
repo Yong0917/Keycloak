@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<div th:fragment="modal">
+
+
+    <!--Logout modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="logoutModalLabel">로그아웃 하시겠습니까?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="false">X</span>
+                    </button>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">취소</button>
+                    <a class="btn btn-primary" href="/logout">로그아웃</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--SAVE MODAL-->
+    <div class="modal fade" id="saveModal" tabindex="-1" role="dialog" aria-labelledby="saveModalLabel" aria-hidden="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="saveModalLabel">SAVE</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="false">X</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="text-align: center">
+
+                    <p style="font-size: 23px">저장하시겠습니까?</p>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" onclick="modifyInfo();">OK</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--SUCCESS MODAL-->
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <i class="fas fa-fw fa-exclamation-circle"></i>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">SUCCESS</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="false">X</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="text-align: center">
+                    <p style="font-size: 23px">정상적으로 처리되었습니다.</p>
+                    <button class="btn btn-secondary" type="button" id="okButton">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--FAIL MODAL-->
+    <div class="modal fade" id="failModal" tabindex="-1" role="dialog" aria-labelledby="failModalLabel" aria-hidden="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="failModalLabel">FAIL</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="false">X</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="text-align: center">
+
+                    <p style="font-size: 23px">처리 중 오류가 발생하였습니다.</p>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Deny MODAL-->
+    <div class="modal fade" id="denyModal" tabindex="-1" role="dialog" aria-labelledby="denyModalLabel" aria-hidden="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="denyModalLabel">Deny</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="false">X</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="text-align: center">
+
+                    <p style="font-size: 23px">접속 권한이 없습니다.</p>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Delete MODAL-->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">정말 삭제하시겠습니까?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="false">X</span>
+                    </button>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">취소</button>
+                    <a class="btn btn-primary" id="deleteUserBtn" data-dismiss="modal">삭제</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+</html>
