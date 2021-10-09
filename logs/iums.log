@@ -1,0 +1,854 @@
+[2021-10-09 16:51:12.142] [INFO ] Starting KeycloakApplication using Java 11.0.9 on DESKTOP-CUHLABE with PID 21196 (D:\바탕화면\keycloak\target\classes started by ssyon in D:\바탕화면\keycloak)
+[2021-10-09 16:51:12.144] [INFO ] No active profile set, falling back to default profiles: default
+[2021-10-09 16:51:12.998] [INFO ] Tomcat initialized with port(s): 7443 (http)
+[2021-10-09 16:51:13.005] [INFO ] Initializing ProtocolHandler ["http-nio-7443"]
+[2021-10-09 16:51:13.005] [INFO ] Starting service [Tomcat]
+[2021-10-09 16:51:13.005] [INFO ] Starting Servlet engine: [Apache Tomcat/9.0.52]
+[2021-10-09 16:51:13.167] [INFO ] Initializing Spring embedded WebApplicationContext
+[2021-10-09 16:51:13.167] [INFO ] Root WebApplicationContext: initialization completed in 979 ms
+[2021-10-09 16:51:13.403] [INFO ] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@606a1bc4, org.springframework.security.web.context.SecurityContextPersistenceFilter@3635099, org.springframework.security.web.header.HeaderWriterFilter@4bc59b27, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@550e9be6, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@152c4495, org.springframework.security.web.authentication.logout.LogoutFilter@5482bcac, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1095d23a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6393bf8b, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@26ca61bf, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@73a0f2b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6a15b73, org.springframework.security.web.session.SessionManagementFilter@76ff68c5, org.springframework.security.web.access.ExceptionTranslationFilter@8a6631b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6babffb5]
+[2021-10-09 16:51:13.656] [INFO ] Starting ProtocolHandler ["http-nio-7443"]
+[2021-10-09 16:51:13.670] [INFO ] Tomcat started on port(s): 7443 (http) with context path ''
+[2021-10-09 16:51:13.680] [INFO ] Started KeycloakApplication in 2.096 seconds (JVM running for 3.688)
+[2021-10-09 16:51:41.920] [INFO ] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2021-10-09 16:51:41.922] [INFO ] Initializing Servlet 'dispatcherServlet'
+[2021-10-09 16:51:41.923] [INFO ] Completed initialization in 1 ms
+[2021-10-09 16:51:42.854] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [672] milliseconds.
+[2021-10-09 16:51:42.854] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [672] milliseconds.
+[2021-10-09 16:51:42.854] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [672] milliseconds.
+[2021-10-09 16:51:42.854] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [671] milliseconds.
+[2021-10-09 16:51:42.854] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [671] milliseconds.
+[2021-10-09 16:51:42.854] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [672] milliseconds.
+[2021-10-09 16:51:43.061] [INFO ] Loaded URLs from http://localhost:8080/auth/realms/keycloaktest/.well-known/openid-configuration
+[2021-10-09 16:51:43.418] [WARN ] state parameter invalid
+[2021-10-09 16:51:43.419] [WARN ] cookie: 4e73f5f6-bcd9-4cca-b6a9-8478ce9e805e
+[2021-10-09 16:51:43.419] [WARN ] queryParam: 647af4ae-eda9-4e43-aafe-a633339b2d3c
+[2021-10-09 16:51:43.420] [WARN ] state parameter invalid
+[2021-10-09 16:51:43.420] [WARN ] cookie: 4e73f5f6-bcd9-4cca-b6a9-8478ce9e805e
+[2021-10-09 16:51:43.420] [WARN ] queryParam: 249feb8f-cf54-468c-a819-d4446a44ade7
+[2021-10-09 16:51:43.419] [WARN ] state parameter invalid
+[2021-10-09 16:51:43.420] [WARN ] cookie: 4e73f5f6-bcd9-4cca-b6a9-8478ce9e805e
+[2021-10-09 16:51:43.420] [WARN ] queryParam: 27ef217f-3e0b-4231-b874-e8707bd600b9
+[2021-10-09 16:51:43.421] [WARN ] state parameter invalid
+[2021-10-09 16:51:43.422] [WARN ] cookie: 4e73f5f6-bcd9-4cca-b6a9-8478ce9e805e
+[2021-10-09 16:51:43.422] [WARN ] queryParam: 8c8e7caf-a507-4644-9b0d-e327bb614aa2
+[2021-10-09 16:51:43.423] [WARN ] state parameter invalid
+[2021-10-09 16:51:43.423] [WARN ] cookie: 4e73f5f6-bcd9-4cca-b6a9-8478ce9e805e
+[2021-10-09 16:51:43.424] [WARN ] queryParam: a84a7a5e-b918-43a6-b38e-68464797ca1f
+[2021-10-09 16:51:43.423] [WARN ] state parameter invalid
+[2021-10-09 16:51:43.424] [WARN ] cookie: 4e73f5f6-bcd9-4cca-b6a9-8478ce9e805e
+[2021-10-09 16:51:43.425] [WARN ] queryParam: 692dc462-4817-422b-a3ab-6f2bacdcad86
+[2021-10-09 16:51:43.435] [WARN ] state parameter invalid
+[2021-10-09 16:51:43.436] [WARN ] cookie: 4e73f5f6-bcd9-4cca-b6a9-8478ce9e805e
+[2021-10-09 16:51:43.436] [WARN ] queryParam: 42e5e853-e946-42d7-9414-ce540bebb89d
+[2021-10-09 16:51:43.437] [WARN ] state parameter invalid
+[2021-10-09 16:51:43.437] [WARN ] cookie: 4e73f5f6-bcd9-4cca-b6a9-8478ce9e805e
+[2021-10-09 16:51:43.437] [WARN ] queryParam: b7a8b3c3-d4af-4aeb-a5de-256fb5dc9afe
+[2021-10-09 16:51:43.472] [WARN ] state parameter invalid
+[2021-10-09 16:51:43.473] [WARN ] cookie: bd5fbd63-2be9-40f9-89c8-870aaddfe572
+[2021-10-09 16:51:43.473] [WARN ] queryParam: e8234ca4-ce50-47a0-8719-f5bd639b2640
+[2021-10-09 16:51:43.477] [WARN ] state parameter invalid
+[2021-10-09 16:51:43.477] [WARN ] cookie: 8216fb4a-482b-4993-8f35-f1db3b5d67db
+[2021-10-09 16:51:43.477] [WARN ] queryParam: 706361aa-eff1-49b6-a6f0-2512610d0911
+[2021-10-09 16:51:43.485] [WARN ] state parameter invalid
+[2021-10-09 16:51:43.486] [WARN ] cookie: 579b8d26-d164-4471-a598-953713a3c1f7
+[2021-10-09 16:51:43.486] [WARN ] queryParam: ed8de322-7a3f-4208-a690-9166118a7ff4
+[2021-10-09 16:51:43.490] [WARN ] state parameter invalid
+[2021-10-09 16:51:43.491] [WARN ] cookie: 579b8d26-d164-4471-a598-953713a3c1f7
+[2021-10-09 16:51:43.491] [WARN ] queryParam: 38aef601-17f8-4fc4-87ab-4b3545847e0a
+[2021-10-09 16:51:43.507] [WARN ] state parameter invalid
+[2021-10-09 16:51:43.508] [WARN ] cookie: f1d10f69-e636-442a-bf86-edb17e5a9a05
+[2021-10-09 16:51:43.508] [WARN ] queryParam: bd5fbd63-2be9-40f9-89c8-870aaddfe572
+[2021-10-09 16:51:43.509] [WARN ] state parameter invalid
+[2021-10-09 16:51:43.510] [WARN ] cookie: f1d10f69-e636-442a-bf86-edb17e5a9a05
+[2021-10-09 16:51:43.510] [WARN ] queryParam: 8216fb4a-482b-4993-8f35-f1db3b5d67db
+[2021-10-09 16:51:43.517] [WARN ] state parameter invalid
+[2021-10-09 16:51:43.518] [WARN ] cookie: b1da96be-b33d-49ff-91c8-11512ea51681
+[2021-10-09 16:51:43.519] [WARN ] queryParam: 579b8d26-d164-4471-a598-953713a3c1f7
+[2021-10-09 16:51:43.532] [WARN ] state parameter invalid
+[2021-10-09 16:51:43.532] [WARN ] cookie: 638c7963-4cc9-48a8-9e56-57330148b455
+[2021-10-09 16:51:43.532] [WARN ] queryParam: f9b9ec6c-6d3d-4707-ad99-21ef4bc2df17
+[2021-10-09 16:51:43.544] [WARN ] state parameter invalid
+[2021-10-09 16:51:43.545] [WARN ] cookie: da74ded4-5644-4ebb-aed2-8d55fa7db44e
+[2021-10-09 16:51:43.545] [WARN ] queryParam: b1da96be-b33d-49ff-91c8-11512ea51681
+[2021-10-09 16:51:43.564] [WARN ] state parameter invalid
+[2021-10-09 16:51:43.564] [WARN ] cookie: c38b5fab-7e94-4e6f-b0ee-c41838ef4e77
+[2021-10-09 16:51:43.564] [WARN ] queryParam: 638c7963-4cc9-48a8-9e56-57330148b455
+[2021-10-09 16:51:43.565] [WARN ] state parameter invalid
+[2021-10-09 16:51:43.565] [WARN ] cookie: c38b5fab-7e94-4e6f-b0ee-c41838ef4e77
+[2021-10-09 16:51:43.565] [WARN ] queryParam: b7fe416e-6f97-43e5-a5da-d75a67d43047
+[2021-10-09 16:51:43.573] [WARN ] state parameter invalid
+[2021-10-09 16:51:43.574] [WARN ] cookie: 8507ce46-17a5-4439-9c16-25b421843db3
+[2021-10-09 16:51:43.575] [WARN ] queryParam: f1d10f69-e636-442a-bf86-edb17e5a9a05
+[2021-10-09 16:51:43.583] [WARN ] state parameter invalid
+[2021-10-09 16:51:43.583] [WARN ] cookie: 8507ce46-17a5-4439-9c16-25b421843db3
+[2021-10-09 16:51:43.583] [WARN ] queryParam: b517ce22-e808-4c37-a969-5571f388fad0
+[2021-10-09 16:51:43.585] [WARN ] state parameter invalid
+[2021-10-09 16:51:43.586] [WARN ] cookie: 8507ce46-17a5-4439-9c16-25b421843db3
+[2021-10-09 16:51:43.586] [WARN ] queryParam: da74ded4-5644-4ebb-aed2-8d55fa7db44e
+[2021-10-09 16:51:43.593] [WARN ] state parameter invalid
+[2021-10-09 16:51:43.593] [WARN ] cookie: 8507ce46-17a5-4439-9c16-25b421843db3
+[2021-10-09 16:51:43.593] [WARN ] queryParam: c38b5fab-7e94-4e6f-b0ee-c41838ef4e77
+[2021-10-09 16:51:43.595] [WARN ] state parameter invalid
+[2021-10-09 16:51:43.595] [WARN ] cookie: 8507ce46-17a5-4439-9c16-25b421843db3
+[2021-10-09 16:51:43.596] [WARN ] queryParam: 2c6fc976-c71f-47c4-88d1-484728bb169f
+[2021-10-09 16:51:43.624] [WARN ] state parameter invalid
+[2021-10-09 16:51:43.625] [WARN ] cookie: 2e06ea43-d238-4998-8451-dc2e39da40ab
+[2021-10-09 16:51:43.625] [WARN ] queryParam: 8507ce46-17a5-4439-9c16-25b421843db3
+[2021-10-09 16:51:43.632] [WARN ] state parameter invalid
+[2021-10-09 16:51:43.632] [WARN ] cookie: fec17cae-37d3-4baa-8b71-6ead06e259be
+[2021-10-09 16:51:43.632] [WARN ] queryParam: 2572b52e-8cac-462f-9111-d2555ed4c8e9
+[2021-10-09 16:51:43.636] [WARN ] state parameter invalid
+[2021-10-09 16:51:43.636] [WARN ] cookie: a2094bc8-aeab-4881-95da-3db46d18954a
+[2021-10-09 16:51:43.636] [WARN ] queryParam: 41a65da7-4a46-4963-b9e9-d98be578049b
+[2021-10-09 16:52:31.767] [ERROR] 404 Not Found: [{"error":"Realm not found."}]
+[2021-10-09 16:52:39.586] [ERROR] 404 Not Found: [{"error":"Realm not found."}]
+[2021-10-09 16:52:41.308] [ERROR] 404 Not Found: [{"error":"Realm not found."}]
+[2021-10-09 16:52:42.169] [ERROR] 404 Not Found: [{"error":"Realm not found."}]
+[2021-10-09 16:52:42.535] [ERROR] 404 Not Found: [{"error":"Realm not found."}]
+[2021-10-09 16:52:42.869] [ERROR] 404 Not Found: [{"error":"Realm not found."}]
+[2021-10-09 16:53:35.701] [INFO ] Starting KeycloakApplication using Java 11.0.9 on DESKTOP-CUHLABE with PID 11760 (D:\바탕화면\keycloak\target\classes started by ssyon in D:\바탕화면\keycloak)
+[2021-10-09 16:53:35.706] [INFO ] No active profile set, falling back to default profiles: default
+[2021-10-09 16:53:36.726] [INFO ] Tomcat initialized with port(s): 7443 (http)
+[2021-10-09 16:53:36.733] [INFO ] Initializing ProtocolHandler ["http-nio-7443"]
+[2021-10-09 16:53:36.733] [INFO ] Starting service [Tomcat]
+[2021-10-09 16:53:36.733] [INFO ] Starting Servlet engine: [Apache Tomcat/9.0.52]
+[2021-10-09 16:53:36.889] [INFO ] Initializing Spring embedded WebApplicationContext
+[2021-10-09 16:53:36.890] [INFO ] Root WebApplicationContext: initialization completed in 1132 ms
+[2021-10-09 16:53:37.119] [INFO ] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@72543547, org.springframework.security.web.context.SecurityContextPersistenceFilter@5eb5da12, org.springframework.security.web.header.HeaderWriterFilter@67770b37, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@4fa4f485, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@69d3cf7e, org.springframework.security.web.authentication.logout.LogoutFilter@4d09cade, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5099c59b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@76ff68c5, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@60e3c26e, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@80b122b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3d88e6b9, org.springframework.security.web.session.SessionManagementFilter@5529ff44, org.springframework.security.web.access.ExceptionTranslationFilter@574059d5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@e700eba]
+[2021-10-09 16:53:37.400] [INFO ] Starting ProtocolHandler ["http-nio-7443"]
+[2021-10-09 16:53:37.415] [INFO ] Tomcat started on port(s): 7443 (http) with context path ''
+[2021-10-09 16:53:37.427] [INFO ] Started KeycloakApplication in 2.241 seconds (JVM running for 3.939)
+[2021-10-09 16:53:40.703] [INFO ] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2021-10-09 16:53:40.704] [INFO ] Initializing Servlet 'dispatcherServlet'
+[2021-10-09 16:53:40.705] [INFO ] Completed initialization in 1 ms
+[2021-10-09 16:53:41.945] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [979] milliseconds.
+[2021-10-09 16:53:41.946] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [979] milliseconds.
+[2021-10-09 16:53:41.945] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [979] milliseconds.
+[2021-10-09 16:53:41.945] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [979] milliseconds.
+[2021-10-09 16:53:41.945] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [978] milliseconds.
+[2021-10-09 16:53:41.945] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [977] milliseconds.
+[2021-10-09 16:53:42.355] [INFO ] Loaded URLs from http://localhost:8080/auth/realms/keycloaktest/.well-known/openid-configuration
+[2021-10-09 16:53:42.715] [WARN ] state parameter invalid
+[2021-10-09 16:53:42.716] [WARN ] cookie: 15430083-7e44-43a8-9df0-4c7dd03103aa
+[2021-10-09 16:53:42.717] [WARN ] queryParam: ea55d530-5e1a-4ada-9bbf-f69db0662135
+[2021-10-09 16:53:42.721] [WARN ] state parameter invalid
+[2021-10-09 16:53:42.721] [WARN ] cookie: 15430083-7e44-43a8-9df0-4c7dd03103aa
+[2021-10-09 16:53:42.721] [WARN ] queryParam: f7533933-3bdb-4e8c-be57-878159a3e566
+[2021-10-09 16:53:42.731] [WARN ] state parameter invalid
+[2021-10-09 16:53:42.732] [WARN ] cookie: 15430083-7e44-43a8-9df0-4c7dd03103aa
+[2021-10-09 16:53:42.732] [WARN ] queryParam: 1f2aab1d-3b87-44f8-87a0-ea80a4456c07
+[2021-10-09 16:53:42.731] [WARN ] state parameter invalid
+[2021-10-09 16:53:42.732] [WARN ] cookie: 15430083-7e44-43a8-9df0-4c7dd03103aa
+[2021-10-09 16:53:42.732] [WARN ] queryParam: f580a5e7-d49a-4d88-b5dd-8449bca1fa3d
+[2021-10-09 16:53:42.735] [WARN ] state parameter invalid
+[2021-10-09 16:53:42.735] [WARN ] cookie: 15430083-7e44-43a8-9df0-4c7dd03103aa
+[2021-10-09 16:53:42.735] [WARN ] queryParam: 6bd649a0-3134-45bf-b46e-49906c38f4ee
+[2021-10-09 16:53:42.736] [WARN ] state parameter invalid
+[2021-10-09 16:53:42.736] [WARN ] cookie: 15430083-7e44-43a8-9df0-4c7dd03103aa
+[2021-10-09 16:53:42.736] [WARN ] queryParam: c0fc4008-3cbf-49ed-9e35-252789e69e5d
+[2021-10-09 16:53:42.746] [WARN ] state parameter invalid
+[2021-10-09 16:53:42.746] [WARN ] state parameter invalid
+[2021-10-09 16:53:42.746] [WARN ] cookie: 15430083-7e44-43a8-9df0-4c7dd03103aa
+[2021-10-09 16:53:42.746] [WARN ] cookie: 15430083-7e44-43a8-9df0-4c7dd03103aa
+[2021-10-09 16:53:42.746] [WARN ] queryParam: fb534b4b-66c4-4fa2-8048-c9bdc1f32320
+[2021-10-09 16:53:42.747] [WARN ] queryParam: 0bbfeee0-a572-43d7-bbb4-be1fe18301fc
+[2021-10-09 16:53:42.782] [WARN ] state parameter invalid
+[2021-10-09 16:53:42.782] [WARN ] cookie: 29134ac8-8a54-4528-a4b9-d28713180bf0
+[2021-10-09 16:53:42.783] [WARN ] queryParam: a328991c-394d-4530-81d7-dc2aaf40f5ae
+[2021-10-09 16:53:42.786] [WARN ] state parameter invalid
+[2021-10-09 16:53:42.786] [WARN ] cookie: 29134ac8-8a54-4528-a4b9-d28713180bf0
+[2021-10-09 16:53:42.786] [WARN ] queryParam: 2dfaa1df-2845-4a35-aee6-b6e5427e57f8
+[2021-10-09 16:53:42.792] [WARN ] state parameter invalid
+[2021-10-09 16:53:42.793] [WARN ] cookie: 0de1fe0f-3302-4d0e-9048-5a3ddaa43729
+[2021-10-09 16:53:42.793] [WARN ] queryParam: 96c02d7c-6ac8-460c-9e32-164fdd8baf18
+[2021-10-09 16:53:42.800] [WARN ] state parameter invalid
+[2021-10-09 16:53:42.800] [WARN ] cookie: 6561dbce-c816-473c-8a50-ad5a5f841915
+[2021-10-09 16:53:42.800] [WARN ] queryParam: 29134ac8-8a54-4528-a4b9-d28713180bf0
+[2021-10-09 16:53:42.832] [WARN ] state parameter invalid
+[2021-10-09 16:53:42.832] [WARN ] cookie: b190a9a4-af59-4802-9672-4e9cad9dd4ed
+[2021-10-09 16:53:42.832] [WARN ] queryParam: 0de1fe0f-3302-4d0e-9048-5a3ddaa43729
+[2021-10-09 16:53:42.847] [WARN ] state parameter invalid
+[2021-10-09 16:53:42.847] [WARN ] cookie: b190a9a4-af59-4802-9672-4e9cad9dd4ed
+[2021-10-09 16:53:42.848] [WARN ] queryParam: 6561dbce-c816-473c-8a50-ad5a5f841915
+[2021-10-09 16:53:42.869] [WARN ] state parameter invalid
+[2021-10-09 16:53:42.869] [WARN ] cookie: e64f9485-5e5b-4371-9e19-717cebdecabe
+[2021-10-09 16:53:42.869] [WARN ] queryParam: ae513e1f-1ecf-4756-9cc3-063e8bbc855f
+[2021-10-09 16:53:42.871] [WARN ] state parameter invalid
+[2021-10-09 16:53:42.872] [WARN ] cookie: e64f9485-5e5b-4371-9e19-717cebdecabe
+[2021-10-09 16:53:42.873] [WARN ] queryParam: b190a9a4-af59-4802-9672-4e9cad9dd4ed
+[2021-10-09 16:53:42.867] [WARN ] state parameter invalid
+[2021-10-09 16:53:42.877] [WARN ] cookie: e64f9485-5e5b-4371-9e19-717cebdecabe
+[2021-10-09 16:53:42.877] [WARN ] queryParam: 9f9a0d23-35a6-4dcf-9bc0-f39ae72bf6ed
+[2021-10-09 16:53:42.885] [WARN ] state parameter invalid
+[2021-10-09 16:53:42.886] [WARN ] cookie: 12196635-3d4e-4639-a1da-26c0977f80d1
+[2021-10-09 16:53:42.886] [WARN ] queryParam: e64f9485-5e5b-4371-9e19-717cebdecabe
+[2021-10-09 16:53:42.887] [WARN ] state parameter invalid
+[2021-10-09 16:53:42.887] [WARN ] cookie: 12196635-3d4e-4639-a1da-26c0977f80d1
+[2021-10-09 16:53:42.887] [WARN ] queryParam: 61d27746-03c8-4da6-bce3-1af9a47c0d60
+[2021-10-09 16:53:42.906] [WARN ] state parameter invalid
+[2021-10-09 16:53:42.906] [WARN ] cookie: e996a417-70d1-4187-8539-7918cfc2fb8c
+[2021-10-09 16:53:42.906] [WARN ] queryParam: 12196635-3d4e-4639-a1da-26c0977f80d1
+[2021-10-09 16:53:42.916] [WARN ] state parameter invalid
+[2021-10-09 16:53:42.917] [WARN ] cookie: 1f1646f7-129f-4fff-ae6b-c0b0f55f2f50
+[2021-10-09 16:53:42.917] [WARN ] queryParam: 61f68495-8836-440f-9776-c7babe7a0a0c
+[2021-10-09 16:53:42.926] [WARN ] state parameter invalid
+[2021-10-09 16:53:42.926] [WARN ] cookie: 3e71ef01-3bbf-4168-9358-59c4df3922e5
+[2021-10-09 16:53:42.926] [WARN ] queryParam: e996a417-70d1-4187-8539-7918cfc2fb8c
+[2021-10-09 16:53:42.943] [WARN ] state parameter invalid
+[2021-10-09 16:53:42.944] [WARN ] cookie: 2110bda2-00c1-413f-9487-ccec221e7e2c
+[2021-10-09 16:53:42.944] [WARN ] queryParam: 1f1646f7-129f-4fff-ae6b-c0b0f55f2f50
+[2021-10-09 16:53:42.962] [WARN ] state parameter invalid
+[2021-10-09 16:53:42.962] [WARN ] cookie: 2110bda2-00c1-413f-9487-ccec221e7e2c
+[2021-10-09 16:53:42.962] [WARN ] queryParam: a8e8e5e7-e285-423b-bc45-15fcdba48ebb
+[2021-10-09 16:53:45.525] [INFO ] http://localhost:8080/auth/admin/realms/igloo/users
+[2021-10-09 16:53:45.526] [INFO ] master
+[2021-10-09 16:53:45.553] [ERROR] 404 Not Found: [{"error":"Realm not found."}]
+[2021-10-09 16:53:56.195] [INFO ] http://localhost:8080/auth/admin/realms/igloo/users
+[2021-10-09 16:53:56.196] [INFO ] master
+[2021-10-09 16:53:56.200] [ERROR] 404 Not Found: [{"error":"Realm not found."}]
+[2021-10-09 16:53:57.422] [INFO ] http://localhost:8080/auth/admin/realms/igloo/users
+[2021-10-09 16:53:57.422] [INFO ] master
+[2021-10-09 16:53:57.426] [ERROR] 404 Not Found: [{"error":"Realm not found."}]
+[2021-10-09 16:55:06.707] [INFO ] Starting KeycloakApplication using Java 11.0.9 on DESKTOP-CUHLABE with PID 17548 (D:\바탕화면\keycloak\target\classes started by ssyon in D:\바탕화면\keycloak)
+[2021-10-09 16:55:06.710] [INFO ] No active profile set, falling back to default profiles: default
+[2021-10-09 16:55:07.593] [INFO ] Tomcat initialized with port(s): 7443 (http)
+[2021-10-09 16:55:07.600] [INFO ] Initializing ProtocolHandler ["http-nio-7443"]
+[2021-10-09 16:55:07.600] [INFO ] Starting service [Tomcat]
+[2021-10-09 16:55:07.601] [INFO ] Starting Servlet engine: [Apache Tomcat/9.0.52]
+[2021-10-09 16:55:07.739] [INFO ] Initializing Spring embedded WebApplicationContext
+[2021-10-09 16:55:07.739] [INFO ] Root WebApplicationContext: initialization completed in 984 ms
+[2021-10-09 16:55:07.981] [INFO ] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a32191e, org.springframework.security.web.context.SecurityContextPersistenceFilter@66c9b52f, org.springframework.security.web.header.HeaderWriterFilter@494c8f29, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@39f5b723, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@2c63762b, org.springframework.security.web.authentication.logout.LogoutFilter@1da1380b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@36776c32, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@67770b37, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@3af58f76, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@2ead6ba4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@66fbc5e7, org.springframework.security.web.session.SessionManagementFilter@1c57f6b2, org.springframework.security.web.access.ExceptionTranslationFilter@306c7bf6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@627ff1b8]
+[2021-10-09 16:55:08.265] [INFO ] Starting ProtocolHandler ["http-nio-7443"]
+[2021-10-09 16:55:08.279] [INFO ] Tomcat started on port(s): 7443 (http) with context path ''
+[2021-10-09 16:55:08.289] [INFO ] Started KeycloakApplication in 2.086 seconds (JVM running for 3.746)
+[2021-10-09 16:55:14.449] [INFO ] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2021-10-09 16:55:14.450] [INFO ] Initializing Servlet 'dispatcherServlet'
+[2021-10-09 16:55:14.451] [INFO ] Completed initialization in 1 ms
+[2021-10-09 16:55:15.140] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [662] milliseconds.
+[2021-10-09 16:55:15.358] [INFO ] Loaded URLs from http://localhost:8080/auth/realms/keycloaktest/.well-known/openid-configuration
+[2021-10-09 16:55:16.366] [INFO ] eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI0R2E5U1htZEVEaVZrLTRCNTlwTFVQM2NnUURnYTlKMjk0cFk2czVtMU5RIn0.eyJleHAiOjE2MzM3NjYxNzYsImlhdCI6MTYzMzc2NjExNiwianRpIjoiNzVlYmFiYmUtNzY5Zi00ZDA2LTgxY2EtNTgxNDdkM2YwMGU4IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL21hc3RlciIsInN1YiI6ImY4MmVmYjViLTBkYzctNGU0OC1iZjI3LWY4OGRkMThkZDU0MyIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiIwOTAxMjNmZS1hOWVhLTRlNzMtOTU5Ny05MjcwYmM1Y2Y4NDUiLCJhY3IiOiIxIiwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiMDkwMTIzZmUtYTllYS00ZTczLTk1OTctOTI3MGJjNWNmODQ1IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzc3lvbmc5MTcifQ.ikrtGGdOQD_mdY6hrJFkNEXaDlt8G6hXVaUez2n7TQb6b_dIcNOYZZTrzA-_9_0bnUOb8M40nv9FrFwfqnNILmZsjPAI78Pjnkr12Xc3O7IDAGdcKiLiI5TgEyunJ0KwGCXWA5SgsjopKgvwaz8khz6KE-ijbndZ06VpPoiSLjeYpaWtklGjxVl5zWjtPi2Ts2Vl6OEWVw45ARjHcsHLf5nB3TzZInC_pwZTHignp2dOXbuuj0L9zni3rzdpsfWWvy7_nhk6nse8NNvDWHlA7xRx1b2jvsAF2bV1z-9Ova1cES1zvEDo0ulE4dDeLBRwQR04OdqZ6eqPjdAcK2M-xA
+[2021-10-09 16:55:16.367] [INFO ] ssyong917
+[2021-10-09 16:55:16.400] [ERROR] 404 Not Found: [{"error":"Realm not found."}]
+[2021-10-09 16:56:55.129] [INFO ] eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI0R2E5U1htZEVEaVZrLTRCNTlwTFVQM2NnUURnYTlKMjk0cFk2czVtMU5RIn0.eyJleHAiOjE2MzM3NjYyNzUsImlhdCI6MTYzMzc2NjIxNSwianRpIjoiZjg5YjhjMTgtYmU2Ni00ZmI0LTg5Y2ItOTk5YjNmYjFlZWVmIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL21hc3RlciIsInN1YiI6ImY4MmVmYjViLTBkYzctNGU0OC1iZjI3LWY4OGRkMThkZDU0MyIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiI3MGJmY2ViNi04ZTdkLTRhZDYtYmJlYy01Yjg1MjIyNTI0ZWUiLCJhY3IiOiIxIiwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiNzBiZmNlYjYtOGU3ZC00YWQ2LWJiZWMtNWI4NTIyMjUyNGVlIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzc3lvbmc5MTcifQ.W9Kxzj3SrJXSjf93Av1nes1qeKEOZgO8L4aJl2GJxTanvUbw6IYDuS95oItcDmM-ojDY897ryGM0xz-PkYT2DoJqsUtoZW2K143_uRqz36MihCDV7u0KZsYVPrcdgk0OWzUMi-mVeHcwtbf7R_f-CzDb4CBJ9Bk3psDUlPMbAB0pVEUw0RNPv9TjShfp8QIf8dtyLswQudxuDxeur5VS5Cqih3E86g4x1TKxv1oIejrlku9yeFWKmfr3FwiQIWAmavtg3cTEGLAUjcKqRnDcV41LwhFoXxJNt3tJT55EkNu3xr7ghHO1fmfa1kRNdSIpoOwQlXtJh3K8BCZwwNACGw
+[2021-10-09 16:56:55.129] [INFO ] ssyong917
+[2021-10-09 16:56:55.137] [ERROR] 404 Not Found: [{"error":"Realm not found."}]
+[2021-10-09 16:57:01.240] [INFO ] eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI0R2E5U1htZEVEaVZrLTRCNTlwTFVQM2NnUURnYTlKMjk0cFk2czVtMU5RIn0.eyJleHAiOjE2MzM3NjYyODEsImlhdCI6MTYzMzc2NjIyMSwianRpIjoiNTkzMzIxNmQtMWFhZS00NTM5LWI1ZGEtNGFkNTMwYzk2MzE1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL21hc3RlciIsInN1YiI6ImY4MmVmYjViLTBkYzctNGU0OC1iZjI3LWY4OGRkMThkZDU0MyIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiJmN2FmMzkwMi00YzIwLTQ5YWMtYjhmNy01MDBlNjEyZjRjOTciLCJhY3IiOiIxIiwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiZjdhZjM5MDItNGMyMC00OWFjLWI4ZjctNTAwZTYxMmY0Yzk3IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzc3lvbmc5MTcifQ.GqYFGl8NYPhpyqFCtS35RRpN06xT4LKv0YJy8MDUYwRRdpVhXgcxjMO1HIz9i5qVWpJq8Vhiu5CGdN05EWc0EF4oKhpiNpo3lcE_33HeWPJpz7fDgWdGhwkbGKQU8Z4-3iBKl0wdc6YGOF31OOFFcoDkN8024E8NKWGJz1mjRX9RATzLvyspvFZjN-rV7NLdkiuqZ60lVybUoFlvO1eva6vfUMe0UbNzw-GcYYEkvmWmUn2dERzhUrfFDY9l3o7YuaQDn7WKoRkm_TzDQosInePXw9GzQJYoa1tmq8JsuLEYjYWAhaYgRtQUe0b-7NKEa1axvuxLOrgQ-8AlvY8zhQ
+[2021-10-09 16:57:01.240] [INFO ] ssyong917
+[2021-10-09 16:57:01.246] [ERROR] 404 Not Found: [{"error":"Realm not found."}]
+[2021-10-09 16:57:16.868] [INFO ] eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI0R2E5U1htZEVEaVZrLTRCNTlwTFVQM2NnUURnYTlKMjk0cFk2czVtMU5RIn0.eyJleHAiOjE2MzM3NjYyOTYsImlhdCI6MTYzMzc2NjIzNiwianRpIjoiNTZiMzk5ZWEtNDVhMC00MTk5LTk3YzMtMmM2NjIyZDI2OWQxIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL21hc3RlciIsInN1YiI6ImY4MmVmYjViLTBkYzctNGU0OC1iZjI3LWY4OGRkMThkZDU0MyIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiJkMzAwM2RlNC00ODZhLTRjMDktYjc2MS1lZjVjMjViZGY4Y2QiLCJhY3IiOiIxIiwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiZDMwMDNkZTQtNDg2YS00YzA5LWI3NjEtZWY1YzI1YmRmOGNkIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzc3lvbmc5MTcifQ.NURJWSvJP16FrCTLgtCPagvINMFPbGYrOysKfN22w5NKnIrHlA6E-eWpw9YiJUqgahjXpxWHbdffudz_yYTo2-kEKaXj8zkqedkno0foDF8UTZFfoitUhyi6eiF1ucTz6C3K5wQr5ns92Hum6ig-5fxrDN5NrB9pes5tRBInui_97vL1fMQkCKxlvzT_W5tActSIysRm8fJYSIt9XtdcZYSB6boQrWaTT3ELXh54cINqh19WpvIag8wJsNB2UewQARhh1HJseSH69rY3pBh-NOmATOsuq-IsS4wBLgT1z05YLilIR6RMNrjGveLAbb1YpRIN188YouL5dI6rMCw95g
+[2021-10-09 16:57:16.868] [INFO ] ssyong917
+[2021-10-09 16:57:16.875] [ERROR] 404 Not Found: [{"error":"Realm not found."}]
+[2021-10-09 16:57:21.384] [INFO ] eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI0R2E5U1htZEVEaVZrLTRCNTlwTFVQM2NnUURnYTlKMjk0cFk2czVtMU5RIn0.eyJleHAiOjE2MzM3NjYzMDEsImlhdCI6MTYzMzc2NjI0MSwianRpIjoiZjE4YTUzZTktZjcxNC00MzUwLTk5OGQtOWZhOWI5MjViZTg0IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL21hc3RlciIsInN1YiI6ImY4MmVmYjViLTBkYzctNGU0OC1iZjI3LWY4OGRkMThkZDU0MyIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiJiZGQzZmI2MC0xZjM2LTQyZmYtYjE2YS0wNmM0MTc0YzA3ZGIiLCJhY3IiOiIxIiwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiYmRkM2ZiNjAtMWYzNi00MmZmLWIxNmEtMDZjNDE3NGMwN2RiIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzc3lvbmc5MTcifQ.aFP6FJIhGLrKbJLvAXalmIQq0nuskMV3rWqwsrLoG9Y__xVdhLEcTJSE-IV7kDCoizxrCI3eFcnBMK3SNXiXarMGB-KPz4QpViG0VVv7KzjcWP95-ZODB0FEc1-hOKOj6Yl6z7XYUCd6yA5uJcE0hwiJvKghloqw1BBxSb72ElOxpV1WrUypSG-glI4r68nJDlfgpvgeYFXYYzhUFgRGE8Qt9MVs28sPiQlWFuiQrn2ATGvuazpVtIPvF5HwXhV50TMoL6s9JV3LBkIPaibA0QtyV_WiX8dDRDX1p9tmycwUWTqoTeQxE_Je1OIwnDqLwGSpaao3TAz1ME6wx_i1OQ
+[2021-10-09 16:57:21.384] [INFO ] ssyong917
+[2021-10-09 16:57:21.393] [ERROR] 404 Not Found: [{"error":"Realm not found."}]
+[2021-10-09 16:58:30.612] [INFO ] Starting KeycloakApplication using Java 11.0.9 on DESKTOP-CUHLABE with PID 21472 (D:\바탕화면\keycloak\target\classes started by ssyon in D:\바탕화면\keycloak)
+[2021-10-09 16:58:30.616] [INFO ] No active profile set, falling back to default profiles: default
+[2021-10-09 16:58:31.574] [INFO ] Tomcat initialized with port(s): 7443 (http)
+[2021-10-09 16:58:31.582] [INFO ] Initializing ProtocolHandler ["http-nio-7443"]
+[2021-10-09 16:58:31.582] [INFO ] Starting service [Tomcat]
+[2021-10-09 16:58:31.582] [INFO ] Starting Servlet engine: [Apache Tomcat/9.0.52]
+[2021-10-09 16:58:31.729] [INFO ] Initializing Spring embedded WebApplicationContext
+[2021-10-09 16:58:31.729] [INFO ] Root WebApplicationContext: initialization completed in 1064 ms
+[2021-10-09 16:58:31.951] [INFO ] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a32191e, org.springframework.security.web.context.SecurityContextPersistenceFilter@66c9b52f, org.springframework.security.web.header.HeaderWriterFilter@494c8f29, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@39f5b723, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@2c63762b, org.springframework.security.web.authentication.logout.LogoutFilter@1da1380b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@36776c32, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@67770b37, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@3af58f76, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@2ead6ba4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@66fbc5e7, org.springframework.security.web.session.SessionManagementFilter@1c57f6b2, org.springframework.security.web.access.ExceptionTranslationFilter@306c7bf6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@627ff1b8]
+[2021-10-09 16:58:32.213] [INFO ] Starting ProtocolHandler ["http-nio-7443"]
+[2021-10-09 16:58:32.228] [INFO ] Tomcat started on port(s): 7443 (http) with context path ''
+[2021-10-09 16:58:32.238] [INFO ] Started KeycloakApplication in 2.113 seconds (JVM running for 3.813)
+[2021-10-09 16:58:36.846] [INFO ] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2021-10-09 16:58:36.848] [INFO ] Initializing Servlet 'dispatcherServlet'
+[2021-10-09 16:58:36.849] [INFO ] Completed initialization in 0 ms
+[2021-10-09 16:58:37.505] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [631] milliseconds.
+[2021-10-09 16:58:37.725] [INFO ] Loaded URLs from http://localhost:8080/auth/realms/keycloaktest/.well-known/openid-configuration
+[2021-10-09 16:58:38.779] [ERROR] 404 Not Found: [{"error":"Realm not found."}]
+[2021-10-09 16:58:40.452] [ERROR] 404 Not Found: [{"error":"Realm not found."}]
+[2021-10-09 16:58:41.113] [ERROR] 404 Not Found: [{"error":"Realm not found."}]
+[2021-10-09 16:58:41.638] [ERROR] 404 Not Found: [{"error":"Realm not found."}]
+[2021-10-09 16:58:42.006] [ERROR] 404 Not Found: [{"error":"Realm not found."}]
+[2021-10-09 16:58:42.373] [ERROR] 404 Not Found: [{"error":"Realm not found."}]
+[2021-10-09 16:58:42.720] [ERROR] 404 Not Found: [{"error":"Realm not found."}]
+[2021-10-09 16:58:43.018] [ERROR] 404 Not Found: [{"error":"Realm not found."}]
+[2021-10-09 16:59:25.982] [INFO ] Starting KeycloakApplication using Java 11.0.9 on DESKTOP-CUHLABE with PID 17928 (D:\바탕화면\keycloak\target\classes started by ssyon in D:\바탕화면\keycloak)
+[2021-10-09 16:59:25.985] [INFO ] No active profile set, falling back to default profiles: default
+[2021-10-09 16:59:26.962] [INFO ] Tomcat initialized with port(s): 7443 (http)
+[2021-10-09 16:59:26.968] [INFO ] Initializing ProtocolHandler ["http-nio-7443"]
+[2021-10-09 16:59:26.968] [INFO ] Starting service [Tomcat]
+[2021-10-09 16:59:26.969] [INFO ] Starting Servlet engine: [Apache Tomcat/9.0.52]
+[2021-10-09 16:59:27.122] [INFO ] Initializing Spring embedded WebApplicationContext
+[2021-10-09 16:59:27.122] [INFO ] Root WebApplicationContext: initialization completed in 1088 ms
+[2021-10-09 16:59:27.361] [INFO ] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6436e181, org.springframework.security.web.context.SecurityContextPersistenceFilter@6d672bd4, org.springframework.security.web.header.HeaderWriterFilter@1235151c, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@152c4495, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@3069a360, org.springframework.security.web.authentication.logout.LogoutFilter@6393bf8b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@72906e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3a479fda, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@6af90849, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@1d06f16f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7186b202, org.springframework.security.web.session.SessionManagementFilter@4cc65c2, org.springframework.security.web.access.ExceptionTranslationFilter@7e1ffe70, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1039bfc4]
+[2021-10-09 16:59:27.641] [INFO ] Starting ProtocolHandler ["http-nio-7443"]
+[2021-10-09 16:59:27.656] [INFO ] Tomcat started on port(s): 7443 (http) with context path ''
+[2021-10-09 16:59:27.667] [INFO ] Started KeycloakApplication in 2.173 seconds (JVM running for 3.828)
+[2021-10-09 16:59:30.982] [INFO ] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2021-10-09 16:59:30.983] [INFO ] Initializing Servlet 'dispatcherServlet'
+[2021-10-09 16:59:30.985] [INFO ] Completed initialization in 2 ms
+[2021-10-09 16:59:31.692] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [681] milliseconds.
+[2021-10-09 16:59:31.922] [INFO ] Loaded URLs from http://localhost:8080/auth/realms/keycloaktest/.well-known/openid-configuration
+[2021-10-09 16:59:32.589] [INFO ] <{"search":"usertest"},[Content-Type:"application/json", Authorization:"Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI0R2E5U1htZEVEaVZrLTRCNTlwTFVQM2NnUURnYTlKMjk0cFk2czVtMU5RIn0.eyJleHAiOjE2MzM3NjY0MzIsImlhdCI6MTYzMzc2NjM3MiwianRpIjoiNmI4ODY5MWQtMGVjYy00NGI3LTgwNGUtM2U5Nzc2OTY4YjZmIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL21hc3RlciIsInN1YiI6ImY4MmVmYjViLTBkYzctNGU0OC1iZjI3LWY4OGRkMThkZDU0MyIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiI5NTA2ZjgxYi01MzYxLTQyYmItOThiZi05ZmVkYzU2MDFlYjIiLCJhY3IiOiIxIiwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiOTUwNmY4MWItNTM2MS00MmJiLTk4YmYtOWZlZGM1NjAxZWIyIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzc3lvbmc5MTcifQ.DCStwrOwI4iMunhyVeYPJx61LYn59weyBImONvy6TAeTCas0IG4JoGHLGD8ToAc0NEmjVbBFO-2rApqnaj3-CoHLYPrxnoox2vWyGZTsl-13c6_GFXhnpy9JLFfGv3Y5er36jzrPF4l3fKLxWfAh-ehlOTg-KfvS7D-ESo96qkp43lAQvzbVbXou_1332RVo67z37HbRrUqtzOTBxoboJxYUtTtNmOtHWSCk4E8XH493lmvD6vB9P8Tl5PthmuR68t4TVEejHvTKQgvZhe7XueJ3td2f2tKo0fCj1El2L0GjbJ0qeEMpG2PQU9sMIEct4cOciEy77MPbSN_yVE6V6g"]>
+[2021-10-09 16:59:32.607] [ERROR] 404 Not Found: [{"error":"Realm not found."}]
+[2021-10-09 17:01:23.319] [INFO ] Starting KeycloakApplication using Java 11.0.9 on DESKTOP-CUHLABE with PID 4960 (D:\바탕화면\keycloak\target\classes started by ssyon in D:\바탕화면\keycloak)
+[2021-10-09 17:01:23.325] [INFO ] No active profile set, falling back to default profiles: default
+[2021-10-09 17:01:24.620] [INFO ] Tomcat initialized with port(s): 7443 (http)
+[2021-10-09 17:01:24.631] [INFO ] Initializing ProtocolHandler ["http-nio-7443"]
+[2021-10-09 17:01:24.632] [INFO ] Starting service [Tomcat]
+[2021-10-09 17:01:24.632] [INFO ] Starting Servlet engine: [Apache Tomcat/9.0.52]
+[2021-10-09 17:01:24.839] [INFO ] Initializing Spring embedded WebApplicationContext
+[2021-10-09 17:01:24.839] [INFO ] Root WebApplicationContext: initialization completed in 1458 ms
+[2021-10-09 17:01:25.135] [INFO ] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@79e7188e, org.springframework.security.web.context.SecurityContextPersistenceFilter@4b862408, org.springframework.security.web.header.HeaderWriterFilter@7945b206, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@e95595b, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@550e9be6, org.springframework.security.web.authentication.logout.LogoutFilter@3a00b15d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6e829e50, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5482bcac, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@796f632b, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@5d94a2dc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@773014d3, org.springframework.security.web.session.SessionManagementFilter@4d09cade, org.springframework.security.web.access.ExceptionTranslationFilter@76d7881e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3cdc7b09]
+[2021-10-09 17:01:25.443] [INFO ] Starting ProtocolHandler ["http-nio-7443"]
+[2021-10-09 17:01:25.456] [INFO ] Tomcat started on port(s): 7443 (http) with context path ''
+[2021-10-09 17:01:25.468] [INFO ] Started KeycloakApplication in 2.849 seconds (JVM running for 4.533)
+[2021-10-09 17:01:39.679] [INFO ] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2021-10-09 17:01:39.680] [INFO ] Initializing Servlet 'dispatcherServlet'
+[2021-10-09 17:01:39.682] [INFO ] Completed initialization in 2 ms
+[2021-10-09 17:01:40.477] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [762] milliseconds.
+[2021-10-09 17:01:40.697] [INFO ] Loaded URLs from http://localhost:8080/auth/realms/keycloaktest/.well-known/openid-configuration
+[2021-10-09 17:01:41.322] [ERROR] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is javax.ws.rs.NotFoundException: HTTP 404 Not Found] with root cause
+javax.ws.rs.NotFoundException: HTTP 404 Not Found
+	at org.jboss.resteasy.client.jaxrs.internal.ClientInvocation.handleErrorStatus(ClientInvocation.java:225)
+	at org.jboss.resteasy.client.jaxrs.internal.ClientInvocation.extractResult(ClientInvocation.java:195)
+	at org.jboss.resteasy.client.jaxrs.internal.proxy.extractors.BodyEntityExtractor.extractEntity(BodyEntityExtractor.java:62)
+	at org.jboss.resteasy.client.jaxrs.internal.proxy.ClientInvoker.invokeSync(ClientInvoker.java:151)
+	at org.jboss.resteasy.client.jaxrs.internal.proxy.ClientInvoker.invoke(ClientInvoker.java:112)
+	at org.jboss.resteasy.client.jaxrs.internal.proxy.ClientProxy.invoke(ClientProxy.java:76)
+	at com.sun.proxy.$Proxy94.grantToken(Unknown Source)
+	at org.keycloak.admin.client.token.TokenManager.grantToken(TokenManager.java:90)
+	at org.keycloak.admin.client.token.TokenManager.getAccessToken(TokenManager.java:70)
+	at org.keycloak.admin.client.token.TokenManager.getAccessTokenString(TokenManager.java:65)
+	at com.test.keycloak.api.KeycloakApi.getAccessToken(KeycloakApi.java:367)
+	at com.test.keycloak.api.KeycloakApi.userInfoList(KeycloakApi.java:257)
+	at com.test.keycloak.controller.userManageController.getUserInfo(userManageController.java:114)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1064)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter.doFilter(KeycloakAuthenticatedActionsFilter.java:57)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter.doFilter(KeycloakSecurityContextRequestFilter.java:61)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter.doFilter(KeycloakPreAuthActionsFilter.java:96)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:218)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:121)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:115)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter.doFilter(KeycloakAuthenticatedActionsFilter.java:74)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter.doFilter(KeycloakSecurityContextRequestFilter.java:92)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:218)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter.doFilter(KeycloakPreAuthActionsFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve.invoke(AbstractAuthenticatedActionsValve.java:67)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.keycloak.adapters.tomcat.AbstractKeycloakAuthenticatorValve.invoke(AbstractKeycloakAuthenticatorValve.java:181)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+[2021-10-09 17:01:52.092] [INFO ] Starting KeycloakApplication using Java 11.0.9 on DESKTOP-CUHLABE with PID 1124 (D:\바탕화면\keycloak\target\classes started by ssyon in D:\바탕화면\keycloak)
+[2021-10-09 17:01:52.095] [INFO ] No active profile set, falling back to default profiles: default
+[2021-10-09 17:01:52.963] [INFO ] Tomcat initialized with port(s): 7443 (http)
+[2021-10-09 17:01:52.969] [INFO ] Initializing ProtocolHandler ["http-nio-7443"]
+[2021-10-09 17:01:52.970] [INFO ] Starting service [Tomcat]
+[2021-10-09 17:01:52.970] [INFO ] Starting Servlet engine: [Apache Tomcat/9.0.52]
+[2021-10-09 17:01:53.108] [INFO ] Initializing Spring embedded WebApplicationContext
+[2021-10-09 17:01:53.108] [INFO ] Root WebApplicationContext: initialization completed in 968 ms
+[2021-10-09 17:01:53.348] [INFO ] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7f85217c, org.springframework.security.web.context.SecurityContextPersistenceFilter@73041b7d, org.springframework.security.web.header.HeaderWriterFilter@36776c32, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@31b82e0f, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@d48e998, org.springframework.security.web.authentication.logout.LogoutFilter@25a94b55, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5a1f778, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5099c59b, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@46dcbeab, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@36e43829, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1fd7a37, org.springframework.security.web.session.SessionManagementFilter@5cd96b41, org.springframework.security.web.access.ExceptionTranslationFilter@66c9b52f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6a32191e]
+[2021-10-09 17:01:53.602] [INFO ] Starting ProtocolHandler ["http-nio-7443"]
+[2021-10-09 17:01:53.615] [INFO ] Tomcat started on port(s): 7443 (http) with context path ''
+[2021-10-09 17:01:53.625] [INFO ] Started KeycloakApplication in 2.015 seconds (JVM running for 3.632)
+[2021-10-09 17:01:56.314] [INFO ] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2021-10-09 17:01:56.315] [INFO ] Initializing Servlet 'dispatcherServlet'
+[2021-10-09 17:01:56.316] [INFO ] Completed initialization in 1 ms
+[2021-10-09 17:01:57.080] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [738] milliseconds.
+[2021-10-09 17:01:57.298] [INFO ] Loaded URLs from http://localhost:8080/auth/realms/keycloaktest/.well-known/openid-configuration
+[2021-10-09 17:01:57.899] [ERROR] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is javax.ws.rs.NotAuthorizedException: HTTP 401 Unauthorized] with root cause
+javax.ws.rs.NotAuthorizedException: HTTP 401 Unauthorized
+	at org.jboss.resteasy.client.jaxrs.internal.ClientInvocation.handleErrorStatus(ClientInvocation.java:221)
+	at org.jboss.resteasy.client.jaxrs.internal.ClientInvocation.extractResult(ClientInvocation.java:195)
+	at org.jboss.resteasy.client.jaxrs.internal.proxy.extractors.BodyEntityExtractor.extractEntity(BodyEntityExtractor.java:62)
+	at org.jboss.resteasy.client.jaxrs.internal.proxy.ClientInvoker.invokeSync(ClientInvoker.java:151)
+	at org.jboss.resteasy.client.jaxrs.internal.proxy.ClientInvoker.invoke(ClientInvoker.java:112)
+	at org.jboss.resteasy.client.jaxrs.internal.proxy.ClientProxy.invoke(ClientProxy.java:76)
+	at com.sun.proxy.$Proxy94.grantToken(Unknown Source)
+	at org.keycloak.admin.client.token.TokenManager.grantToken(TokenManager.java:90)
+	at org.keycloak.admin.client.token.TokenManager.getAccessToken(TokenManager.java:70)
+	at org.keycloak.admin.client.token.TokenManager.getAccessTokenString(TokenManager.java:65)
+	at com.test.keycloak.api.KeycloakApi.getAccessToken(KeycloakApi.java:367)
+	at com.test.keycloak.api.KeycloakApi.userInfoList(KeycloakApi.java:257)
+	at com.test.keycloak.controller.userManageController.getUserInfo(userManageController.java:114)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:197)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:141)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1064)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter.doFilter(KeycloakAuthenticatedActionsFilter.java:57)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter.doFilter(KeycloakSecurityContextRequestFilter.java:61)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter.doFilter(KeycloakPreAuthActionsFilter.java:96)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:218)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:121)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:115)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter.doFilter(KeycloakAuthenticatedActionsFilter.java:74)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter.doFilter(KeycloakSecurityContextRequestFilter.java:92)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:218)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter.doFilter(KeycloakPreAuthActionsFilter.java:96)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.keycloak.adapters.tomcat.AbstractAuthenticatedActionsValve.invoke(AbstractAuthenticatedActionsValve.java:67)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.keycloak.adapters.tomcat.AbstractKeycloakAuthenticatorValve.invoke(AbstractKeycloakAuthenticatorValve.java:181)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+[2021-10-09 17:02:31.955] [INFO ] Starting KeycloakApplication using Java 11.0.9 on DESKTOP-CUHLABE with PID 19720 (D:\바탕화면\keycloak\target\classes started by ssyon in D:\바탕화면\keycloak)
+[2021-10-09 17:02:31.958] [INFO ] No active profile set, falling back to default profiles: default
+[2021-10-09 17:02:32.951] [INFO ] Tomcat initialized with port(s): 7443 (http)
+[2021-10-09 17:02:32.959] [INFO ] Initializing ProtocolHandler ["http-nio-7443"]
+[2021-10-09 17:02:32.959] [INFO ] Starting service [Tomcat]
+[2021-10-09 17:02:32.960] [INFO ] Starting Servlet engine: [Apache Tomcat/9.0.52]
+[2021-10-09 17:02:33.104] [INFO ] Initializing Spring embedded WebApplicationContext
+[2021-10-09 17:02:33.105] [INFO ] Root WebApplicationContext: initialization completed in 1098 ms
+[2021-10-09 17:02:33.369] [INFO ] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@e700eba, org.springframework.security.web.context.SecurityContextPersistenceFilter@574059d5, org.springframework.security.web.header.HeaderWriterFilter@73041b7d, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@36e43829, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@1a256d80, org.springframework.security.web.authentication.logout.LogoutFilter@6b1b19cf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@67770b37, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@51e3d37e, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@7dcb42a9, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@6af90849, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6436e181, org.springframework.security.web.session.SessionManagementFilter@5a1f778, org.springframework.security.web.access.ExceptionTranslationFilter@5cd96b41, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@285583d4]
+[2021-10-09 17:02:33.699] [INFO ] Starting ProtocolHandler ["http-nio-7443"]
+[2021-10-09 17:02:33.717] [INFO ] Tomcat started on port(s): 7443 (http) with context path ''
+[2021-10-09 17:02:33.731] [INFO ] Started KeycloakApplication in 2.337 seconds (JVM running for 4.196)
+[2021-10-09 17:02:38.022] [INFO ] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2021-10-09 17:02:38.023] [INFO ] Initializing Servlet 'dispatcherServlet'
+[2021-10-09 17:02:38.024] [INFO ] Completed initialization in 1 ms
+[2021-10-09 17:02:39.006] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [731] milliseconds.
+[2021-10-09 17:02:39.006] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [731] milliseconds.
+[2021-10-09 17:02:39.006] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [731] milliseconds.
+[2021-10-09 17:02:39.006] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [730] milliseconds.
+[2021-10-09 17:02:39.006] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [731] milliseconds.
+[2021-10-09 17:02:39.005] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [731] milliseconds.
+[2021-10-09 17:02:39.253] [INFO ] Loaded URLs from http://localhost:8080/auth/realms/keycloaktest/.well-known/openid-configuration
+[2021-10-09 17:02:39.276] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.276] [WARN ] cookie: 256842ad-59a6-4bd7-99cd-4e0d68bb5e75
+[2021-10-09 17:02:39.276] [WARN ] queryParam: 5bea8ecc-deca-4f0e-a257-6fd387b1f400
+[2021-10-09 17:02:39.283] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.283] [WARN ] cookie: 2e0d3af0-dae3-4e46-9fbe-8da37c677ef8
+[2021-10-09 17:02:39.283] [WARN ] queryParam: 97a04e73-bdec-4e79-8f37-e0bf8b31986e
+[2021-10-09 17:02:39.298] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.299] [WARN ] cookie: bcc246d7-343a-45f1-b6e8-c49537b3dbaa
+[2021-10-09 17:02:39.299] [WARN ] queryParam: 4c64adfc-1195-4af2-a2dc-27a797f72da5
+[2021-10-09 17:02:39.310] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.310] [WARN ] cookie: 1cbfc84b-bbdf-46ad-b33d-adf9c18c0167
+[2021-10-09 17:02:39.310] [WARN ] queryParam: 2e0d3af0-dae3-4e46-9fbe-8da37c677ef8
+[2021-10-09 17:02:39.319] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.320] [WARN ] cookie: 1f65f0b3-c726-4960-8093-4cd8ca039eec
+[2021-10-09 17:02:39.320] [WARN ] queryParam: 256842ad-59a6-4bd7-99cd-4e0d68bb5e75
+[2021-10-09 17:02:39.327] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.328] [WARN ] cookie: 68e3b1f7-2ccb-4e9d-b380-0c10d07f5e57
+[2021-10-09 17:02:39.328] [WARN ] queryParam: 7cd73ac1-1c73-461e-b62d-69968174f664
+[2021-10-09 17:02:39.334] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.335] [WARN ] cookie: 63c05def-f7f0-4d5c-9333-adac09222e57
+[2021-10-09 17:02:39.335] [WARN ] queryParam: 68e3b1f7-2ccb-4e9d-b380-0c10d07f5e57
+[2021-10-09 17:02:39.343] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.343] [WARN ] cookie: e53c45fe-eb05-4fe7-b154-302031654f05
+[2021-10-09 17:02:39.343] [WARN ] queryParam: 23122b2d-21ce-42c1-b605-6e55ecb123c6
+[2021-10-09 17:02:39.350] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.350] [WARN ] cookie: 8079b86e-db4a-4016-82f6-240dd153fdf3
+[2021-10-09 17:02:39.350] [WARN ] queryParam: bcc246d7-343a-45f1-b6e8-c49537b3dbaa
+[2021-10-09 17:02:39.357] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.358] [WARN ] cookie: 9ced7d6b-4646-44aa-a3ba-a336dd85878e
+[2021-10-09 17:02:39.358] [WARN ] queryParam: 8079b86e-db4a-4016-82f6-240dd153fdf3
+[2021-10-09 17:02:39.365] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.365] [WARN ] cookie: 3d5761c8-850f-4b00-aa23-8fbcde58aa16
+[2021-10-09 17:02:39.365] [WARN ] queryParam: 32a8622e-6500-4c9b-9646-2a28ef2ddf54
+[2021-10-09 17:02:39.373] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.374] [WARN ] cookie: ab74db83-991d-45a2-bd85-3cd7efbfa39c
+[2021-10-09 17:02:39.374] [WARN ] queryParam: af05537b-fdfd-4bc4-a717-45962bcec2b8
+[2021-10-09 17:02:39.383] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.384] [WARN ] cookie: 0f0ac5fe-c4d2-4bb2-aebc-d371be8a89c4
+[2021-10-09 17:02:39.384] [WARN ] queryParam: ab74db83-991d-45a2-bd85-3cd7efbfa39c
+[2021-10-09 17:02:39.392] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.392] [WARN ] cookie: ffaac186-3ca0-45e5-9cd3-94be44503faa
+[2021-10-09 17:02:39.392] [WARN ] queryParam: 1cbfc84b-bbdf-46ad-b33d-adf9c18c0167
+[2021-10-09 17:02:39.402] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.403] [WARN ] cookie: cb523817-9ffd-4f0e-a036-b3727cfdd2fc
+[2021-10-09 17:02:39.404] [WARN ] queryParam: 1f65f0b3-c726-4960-8093-4cd8ca039eec
+[2021-10-09 17:02:39.418] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.418] [WARN ] cookie: 21362129-8411-4dde-907b-cae9b5804de4
+[2021-10-09 17:02:39.418] [WARN ] queryParam: cb523817-9ffd-4f0e-a036-b3727cfdd2fc
+[2021-10-09 17:02:39.429] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.429] [WARN ] cookie: 21362129-8411-4dde-907b-cae9b5804de4
+[2021-10-09 17:02:39.429] [WARN ] queryParam: 63c05def-f7f0-4d5c-9333-adac09222e57
+[2021-10-09 17:02:39.439] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.439] [WARN ] cookie: c06c5a51-33b3-4f41-9c9b-55e59e0911cc
+[2021-10-09 17:02:39.439] [WARN ] queryParam: e53c45fe-eb05-4fe7-b154-302031654f05
+[2021-10-09 17:02:39.452] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.452] [WARN ] cookie: 16c5d149-f6aa-4409-b969-a33b84874589
+[2021-10-09 17:02:39.453] [WARN ] queryParam: c06c5a51-33b3-4f41-9c9b-55e59e0911cc
+[2021-10-09 17:02:39.465] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.466] [WARN ] cookie: aacceb51-eb96-46dc-8a58-1e69f39124d2
+[2021-10-09 17:02:39.466] [WARN ] queryParam: 9ced7d6b-4646-44aa-a3ba-a336dd85878e
+[2021-10-09 17:02:39.478] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.479] [WARN ] cookie: 09a97930-2a56-4668-8859-98072bca6de0
+[2021-10-09 17:02:39.479] [WARN ] queryParam: 3d5761c8-850f-4b00-aa23-8fbcde58aa16
+[2021-10-09 17:02:39.514] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.515] [WARN ] cookie: 4102f0f7-fab3-4f15-aae2-edb83731fa8d
+[2021-10-09 17:02:39.515] [WARN ] queryParam: 0f0ac5fe-c4d2-4bb2-aebc-d371be8a89c4
+[2021-10-09 17:02:39.527] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.528] [WARN ] cookie: 4102f0f7-fab3-4f15-aae2-edb83731fa8d
+[2021-10-09 17:02:39.528] [WARN ] queryParam: ffaac186-3ca0-45e5-9cd3-94be44503faa
+[2021-10-09 17:02:39.547] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.548] [WARN ] cookie: 3807ca0f-b620-4c10-8a98-ef4af8451d99
+[2021-10-09 17:02:39.548] [WARN ] queryParam: 9e88b427-9f5a-451c-9ccd-024217e8fefc
+[2021-10-09 17:02:39.577] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.580] [WARN ] cookie: 28e8f8d1-f0f3-4c89-a5ed-f46494165fbd
+[2021-10-09 17:02:39.581] [WARN ] queryParam: 21362129-8411-4dde-907b-cae9b5804de4
+[2021-10-09 17:02:39.612] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.612] [WARN ] cookie: 2bddd0e5-c689-4d50-a338-7a6246baa291
+[2021-10-09 17:02:39.612] [WARN ] queryParam: 16c5d149-f6aa-4409-b969-a33b84874589
+[2021-10-09 17:02:39.621] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.622] [WARN ] cookie: cab36f00-c572-419d-8be9-1358ddcfdcda
+[2021-10-09 17:02:39.622] [WARN ] queryParam: aacceb51-eb96-46dc-8a58-1e69f39124d2
+[2021-10-09 17:02:39.627] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.627] [WARN ] cookie: cab36f00-c572-419d-8be9-1358ddcfdcda
+[2021-10-09 17:02:39.627] [WARN ] queryParam: 28e8f8d1-f0f3-4c89-a5ed-f46494165fbd
+[2021-10-09 17:02:39.650] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.652] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.654] [WARN ] cookie: cab36f00-c572-419d-8be9-1358ddcfdcda
+[2021-10-09 17:02:39.655] [WARN ] queryParam: 4102f0f7-fab3-4f15-aae2-edb83731fa8d
+[2021-10-09 17:02:39.651] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.653] [WARN ] cookie: cab36f00-c572-419d-8be9-1358ddcfdcda
+[2021-10-09 17:02:39.661] [WARN ] cookie: cab36f00-c572-419d-8be9-1358ddcfdcda
+[2021-10-09 17:02:39.661] [WARN ] queryParam: 2bddd0e5-c689-4d50-a338-7a6246baa291
+[2021-10-09 17:02:39.661] [WARN ] queryParam: 3807ca0f-b620-4c10-8a98-ef4af8451d99
+[2021-10-09 17:02:39.665] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.666] [WARN ] cookie: cab36f00-c572-419d-8be9-1358ddcfdcda
+[2021-10-09 17:02:39.666] [WARN ] queryParam: 47caaa6c-cca3-4249-a377-8460e6f2a018
+[2021-10-09 17:02:39.689] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.690] [WARN ] cookie: 473f3505-079d-46cb-a8eb-4f4a97cba041
+[2021-10-09 17:02:39.690] [WARN ] queryParam: 7b10303c-772a-4bf8-bd1f-1f52c3e7fec4
+[2021-10-09 17:02:39.701] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.702] [WARN ] cookie: 69563309-febb-4295-a2f8-cf2c0f646c7d
+[2021-10-09 17:02:39.704] [WARN ] queryParam: 26be645a-9003-48cb-96ef-172dfda0097c
+[2021-10-09 17:02:39.718] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.719] [WARN ] cookie: 367e04b0-fedc-49e3-9a28-530565f19ac1
+[2021-10-09 17:02:39.719] [WARN ] queryParam: f29595f3-d32c-4a46-8219-0ae9c93d10b6
+[2021-10-09 17:02:39.734] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.735] [WARN ] cookie: 5ecbb986-ddef-4f4e-a7f9-565df88fd8bc
+[2021-10-09 17:02:39.736] [WARN ] queryParam: 048ec4a8-60d1-474a-b804-236b47231fcb
+[2021-10-09 17:02:39.734] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.744] [WARN ] cookie: 5ecbb986-ddef-4f4e-a7f9-565df88fd8bc
+[2021-10-09 17:02:39.744] [WARN ] queryParam: 473f3505-079d-46cb-a8eb-4f4a97cba041
+[2021-10-09 17:02:39.760] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.760] [WARN ] cookie: 34eee3d0-619d-46c5-81af-4c0509b93a30
+[2021-10-09 17:02:39.760] [WARN ] queryParam: 69563309-febb-4295-a2f8-cf2c0f646c7d
+[2021-10-09 17:02:39.760] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.760] [WARN ] cookie: 34eee3d0-619d-46c5-81af-4c0509b93a30
+[2021-10-09 17:02:39.760] [WARN ] queryParam: 367e04b0-fedc-49e3-9a28-530565f19ac1
+[2021-10-09 17:02:39.768] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.768] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.774] [WARN ] cookie: 34eee3d0-619d-46c5-81af-4c0509b93a30
+[2021-10-09 17:02:39.774] [WARN ] queryParam: 8b493e8c-f612-49e4-9ffc-246be25cbdd9
+[2021-10-09 17:02:39.774] [WARN ] cookie: 34eee3d0-619d-46c5-81af-4c0509b93a30
+[2021-10-09 17:02:39.774] [WARN ] queryParam: 5ecbb986-ddef-4f4e-a7f9-565df88fd8bc
+[2021-10-09 17:02:39.786] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.786] [WARN ] cookie: e8cc0d87-5119-43db-8fa0-7b5ee16857a4
+[2021-10-09 17:02:39.786] [WARN ] queryParam: 34eee3d0-619d-46c5-81af-4c0509b93a30
+[2021-10-09 17:02:39.802] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.802] [WARN ] cookie: 5598b38c-6bdd-475d-b8ea-792266b32ddd
+[2021-10-09 17:02:39.802] [WARN ] queryParam: eba7e383-5e19-4895-8396-ce66bd19317a
+[2021-10-09 17:02:39.809] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.810] [WARN ] cookie: fa35006e-0571-481a-8734-7c7e90e3de1e
+[2021-10-09 17:02:39.811] [WARN ] queryParam: e8cc0d87-5119-43db-8fa0-7b5ee16857a4
+[2021-10-09 17:02:39.824] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.825] [WARN ] cookie: 0a18fbe9-663b-4e1e-9392-bd7397e88b60
+[2021-10-09 17:02:39.825] [WARN ] queryParam: 5598b38c-6bdd-475d-b8ea-792266b32ddd
+[2021-10-09 17:02:39.843] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.843] [WARN ] cookie: 9964e25e-1547-4ff1-a68f-fb79af16b4b4
+[2021-10-09 17:02:39.843] [WARN ] queryParam: fa35006e-0571-481a-8734-7c7e90e3de1e
+[2021-10-09 17:02:39.848] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.848] [WARN ] cookie: 9964e25e-1547-4ff1-a68f-fb79af16b4b4
+[2021-10-09 17:02:39.848] [WARN ] queryParam: 992c2b3a-322d-4884-873d-d10ed5b4dd85
+[2021-10-09 17:02:39.850] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.850] [WARN ] cookie: c8bffebc-c6df-492f-ab01-6142bf34004e
+[2021-10-09 17:02:39.850] [WARN ] queryParam: 0a18fbe9-663b-4e1e-9392-bd7397e88b60
+[2021-10-09 17:02:39.875] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.875] [WARN ] cookie: 4e3d5e16-7f03-436c-85a0-f5a040638204
+[2021-10-09 17:02:39.876] [WARN ] queryParam: a43c0b50-5508-4427-9522-adec750073b7
+[2021-10-09 17:02:39.876] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.876] [WARN ] cookie: 4e3d5e16-7f03-436c-85a0-f5a040638204
+[2021-10-09 17:02:39.876] [WARN ] queryParam: 9207f116-54b8-478f-a1bb-106db3644aea
+[2021-10-09 17:02:39.884] [WARN ] state parameter invalid
+[2021-10-09 17:02:39.884] [WARN ] cookie: 4e3d5e16-7f03-436c-85a0-f5a040638204
+[2021-10-09 17:02:39.884] [WARN ] queryParam: 94788cfb-8843-452f-b6e9-6275d87494f1
+[2021-10-09 17:02:42.155] [INFO ] <{"search":"usertest"},[Content-Type:"application/json", Authorization:"Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI0R2E5U1htZEVEaVZrLTRCNTlwTFVQM2NnUURnYTlKMjk0cFk2czVtMU5RIn0.eyJleHAiOjE2MzM3NjY2MjIsImlhdCI6MTYzMzc2NjU2MiwianRpIjoiYTJkZDliZmMtNzBmYS00NTUzLWJmYTctNzQ5MjUyNzIxZTVkIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL21hc3RlciIsInN1YiI6ImY4MmVmYjViLTBkYzctNGU0OC1iZjI3LWY4OGRkMThkZDU0MyIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiI0NGYyZGM5OS01YTlkLTQ2ZTYtYmZmZi04MTI0MWJhMDNjNGQiLCJhY3IiOiIxIiwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiNDRmMmRjOTktNWE5ZC00NmU2LWJmZmYtODEyNDFiYTAzYzRkIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzc3lvbmc5MTcifQ.k3S9tvdMLGiDE9R-e8Jyuj-eHxeGprcg8EFbDAZsqttw_QcCEdBa9cRUSu8FQ-O0wWKnu80wwbsINxoGHuX7TfwibkhNSOt_SGOg7FIGAiVetEFhxd2j00hQ6zIuj4GEGy6sJ89u5cn09ybReXzLphLG0pz7yvbBP7wrfIqeJvPTUYzJZeXR3cnVH_11DuuikFhJS2bJ_OWaStYeiZLk6nvpp28Egxl-iPpq2XmzZsajZfhWIIIto0QmRFehF281Wn2Symebr7MoNV1Iec8FWTVPsSZNp6FL66igog4fxazwksKCKTbsnITI7DhQwnvIqfUPKAV032VKQ4f9-rA1Cg"]>
+[2021-10-09 17:02:42.175] [ERROR] 404 Not Found: [{"error":"Realm not found."}]
+[2021-10-09 17:02:43.404] [INFO ] <{"search":"usertest"},[Content-Type:"application/json", Authorization:"Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI0R2E5U1htZEVEaVZrLTRCNTlwTFVQM2NnUURnYTlKMjk0cFk2czVtMU5RIn0.eyJleHAiOjE2MzM3NjY2MjMsImlhdCI6MTYzMzc2NjU2MywianRpIjoiNzI4ZDAyOTQtODE3ZC00NTRhLWEwNzYtMTc2YTVmMmY3Y2U2IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL21hc3RlciIsInN1YiI6ImY4MmVmYjViLTBkYzctNGU0OC1iZjI3LWY4OGRkMThkZDU0MyIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiJlYzAzYmY2ZS0wNjQ1LTRiY2EtYWYxNi1kNGMzZDI4YmRiNjAiLCJhY3IiOiIxIiwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiZWMwM2JmNmUtMDY0NS00YmNhLWFmMTYtZDRjM2QyOGJkYjYwIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzc3lvbmc5MTcifQ.b-9ptjjP6qC576ToYOQzTy68udtN7r0dy3f9wd0VYtmtF96oC3O1Iv8Shq6n8PRh19mO34thoCYuHirx1c669mDAOGOBiPJx-Is2Cz4TqywNcPkue4KP5LD_kEwH8_XJBqTedcIKpimJpb6cdmsvvg1Nski22JFpZ-AnNkKhWLYXKSjWcMznjcYg_JDr7LPBlvDTXAxm3w7eUqrl60JSgkv-v_XVv8yQ6fuECXLUxvfR4Afo4lO0WyctCo6uoDPU7y76abnlmZx8TwAjFaKNqgONjt8YWgo7zKxXbXEZF-5EqVHuw2EF-vELkrmLs6Jn7c6zXpsBO_RYPeLmMAnKMA"]>
+[2021-10-09 17:02:43.410] [ERROR] 404 Not Found: [{"error":"Realm not found."}]
+[2021-10-09 17:07:03.832] [INFO ] Starting KeycloakApplication using Java 11.0.9 on DESKTOP-CUHLABE with PID 5844 (D:\바탕화면\keycloak\target\classes started by ssyon in D:\바탕화면\keycloak)
+[2021-10-09 17:07:03.834] [INFO ] No active profile set, falling back to default profiles: default
+[2021-10-09 17:07:04.727] [INFO ] Tomcat initialized with port(s): 7443 (http)
+[2021-10-09 17:07:04.734] [INFO ] Initializing ProtocolHandler ["http-nio-7443"]
+[2021-10-09 17:07:04.734] [INFO ] Starting service [Tomcat]
+[2021-10-09 17:07:04.734] [INFO ] Starting Servlet engine: [Apache Tomcat/9.0.52]
+[2021-10-09 17:07:04.867] [INFO ] Initializing Spring embedded WebApplicationContext
+[2021-10-09 17:07:04.868] [INFO ] Root WebApplicationContext: initialization completed in 994 ms
+[2021-10-09 17:07:05.097] [INFO ] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@58a84a12, org.springframework.security.web.context.SecurityContextPersistenceFilter@4cc65c2, org.springframework.security.web.header.HeaderWriterFilter@7e1ffe70, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@46dcbeab, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@50eb4a2c, org.springframework.security.web.authentication.logout.LogoutFilter@40709f9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6d672bd4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4f486211, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@5ec1963c, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@7dcb42a9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@e700eba, org.springframework.security.web.session.SessionManagementFilter@1235151c, org.springframework.security.web.access.ExceptionTranslationFilter@7792d851, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@52559a69]
+[2021-10-09 17:07:05.352] [INFO ] Starting ProtocolHandler ["http-nio-7443"]
+[2021-10-09 17:07:05.365] [INFO ] Tomcat started on port(s): 7443 (http) with context path ''
+[2021-10-09 17:07:05.375] [INFO ] Started KeycloakApplication in 2.027 seconds (JVM running for 3.54)
+[2021-10-09 17:07:09.004] [INFO ] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2021-10-09 17:07:09.005] [INFO ] Initializing Servlet 'dispatcherServlet'
+[2021-10-09 17:07:09.007] [INFO ] Completed initialization in 1 ms
+[2021-10-09 17:07:09.740] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [701] milliseconds.
+[2021-10-09 17:07:09.955] [INFO ] Loaded URLs from http://localhost:8080/auth/realms/keycloaktest/.well-known/openid-configuration
+[2021-10-09 17:07:10.989] [INFO ] <{"search":"usertest"},[Content-Type:"application/json", Authorization:"Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI0R2E5U1htZEVEaVZrLTRCNTlwTFVQM2NnUURnYTlKMjk0cFk2czVtMU5RIn0.eyJleHAiOjE2MzM3NjY4OTAsImlhdCI6MTYzMzc2NjgzMCwianRpIjoiOTdhMWE1OWMtYzYzZi00M2U2LTk4MzUtODZjNWI3N2EzNWY2IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL21hc3RlciIsInN1YiI6ImY4MmVmYjViLTBkYzctNGU0OC1iZjI3LWY4OGRkMThkZDU0MyIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiI1ZWFiZjY0My1jZjZhLTQyMmMtOGFmMC04YmU3OGU2YzU0YTciLCJhY3IiOiIxIiwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiNWVhYmY2NDMtY2Y2YS00MjJjLThhZjAtOGJlNzhlNmM1NGE3IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzc3lvbmc5MTcifQ.FzDnyzazpHY_KWKlfevLxmz_ciqMQcMV-VSnif5GnQXA6ZqyEFyXYZUsf64C9PJJI2VyLHReEkD0M-8ufTMM9AGoZ5pCuYPpuhVe8b-lLF3MAMkl2S4Z5KFVsRoU431Gl7Fatj3xhvpKsE6eNLCAvoxSNBlj3QIkouCaXjJKFsMuPOUbaDDMUeqTdV9n_Owd1IyJ3D5RO2CdXKUacHbN1z2mBoVU_gT165N1ehqM72KeVNgCxJVg-k7NE_j5aq36Zftk6FLygaelVq-lzOeVpUF0UQC0HmTCDwd_ytvx9xE_YGokwqDY6mQ8dzFT23EabJTMB9oAkwDgzCRn50iO0Q"]>
+[2021-10-09 17:07:11.027] [ERROR] 404 Not Found: [{"error":"Realm not found."}]
+[2021-10-09 17:07:46.040] [INFO ] Starting KeycloakApplication using Java 11.0.9 on DESKTOP-CUHLABE with PID 19692 (D:\바탕화면\keycloak\target\classes started by ssyon in D:\바탕화면\keycloak)
+[2021-10-09 17:07:46.043] [INFO ] No active profile set, falling back to default profiles: default
+[2021-10-09 17:07:46.984] [INFO ] Tomcat initialized with port(s): 7443 (http)
+[2021-10-09 17:07:46.991] [INFO ] Initializing ProtocolHandler ["http-nio-7443"]
+[2021-10-09 17:07:46.991] [INFO ] Starting service [Tomcat]
+[2021-10-09 17:07:46.991] [INFO ] Starting Servlet engine: [Apache Tomcat/9.0.52]
+[2021-10-09 17:07:47.133] [INFO ] Initializing Spring embedded WebApplicationContext
+[2021-10-09 17:07:47.134] [INFO ] Root WebApplicationContext: initialization completed in 1048 ms
+[2021-10-09 17:07:47.370] [INFO ] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5b202ff, org.springframework.security.web.context.SecurityContextPersistenceFilter@5a1f778, org.springframework.security.web.header.HeaderWriterFilter@5cd96b41, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@6215366a, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@158ae284, org.springframework.security.web.authentication.logout.LogoutFilter@19c1820d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@574059d5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3d620a1, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@152c4495, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@5ec1963c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@58a84a12, org.springframework.security.web.session.SessionManagementFilter@73041b7d, org.springframework.security.web.access.ExceptionTranslationFilter@36776c32, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@9accff0]
+[2021-10-09 17:07:47.627] [INFO ] Starting ProtocolHandler ["http-nio-7443"]
+[2021-10-09 17:07:47.641] [INFO ] Tomcat started on port(s): 7443 (http) with context path ''
+[2021-10-09 17:07:47.651] [INFO ] Started KeycloakApplication in 2.14 seconds (JVM running for 3.757)
+[2021-10-09 17:07:50.169] [INFO ] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2021-10-09 17:07:50.169] [INFO ] Initializing Servlet 'dispatcherServlet'
+[2021-10-09 17:07:50.170] [INFO ] Completed initialization in 1 ms
+[2021-10-09 17:07:51.000] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [793] milliseconds.
+[2021-10-09 17:07:51.234] [INFO ] Loaded URLs from http://localhost:8080/auth/realms/keycloaktest/.well-known/openid-configuration
+[2021-10-09 17:07:52.002] [INFO ] http://localhost:8080/auth/admin/realms/igloo/users/361586b5-725f-4c98-9b65-963ee0e5b514
+[2021-10-09 17:07:52.016] [INFO ] <{"search":"usertest"},[Content-Type:"application/json", Authorization:"Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI0R2E5U1htZEVEaVZrLTRCNTlwTFVQM2NnUURnYTlKMjk0cFk2czVtMU5RIn0.eyJleHAiOjE2MzM3NjY5MzEsImlhdCI6MTYzMzc2Njg3MSwianRpIjoiNzkzZDFmODgtMmNiMC00OTc2LTk0N2MtYzQ3ZjMwYWUwZWUyIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL21hc3RlciIsInN1YiI6ImY4MmVmYjViLTBkYzctNGU0OC1iZjI3LWY4OGRkMThkZDU0MyIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiJkNzRhMmEwMS1jNDkyLTRiYmItOTZiNy03ZjlkZmMxYjg5YTIiLCJhY3IiOiIxIiwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiZDc0YTJhMDEtYzQ5Mi00YmJiLTk2YjctN2Y5ZGZjMWI4OWEyIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzc3lvbmc5MTcifQ.lNppei3n7Ts60xYzmAo9DBhUwQas08XHM7ZAjxIjVO8G5QH_vKRS9k7GpNNF12ObnxV2lH95bTHJJbQHCEBfUW09U798DFFqB0t55EpGYPy5c4JQLR7HZSP9rukSXIhNERrAZXE3cRDBk3qiBl5Xz4QnH0IbMKpgsWoGqsrMkaBEKyPmpesxmCo9ZBEXEoQz-7b5JzR4OFQya04BkKRIa9s3lyJQjOr0nQnTZdqvKmyERSS9Dvk_hGzZtOYQrPN3apLZEgpX4nI6kNfPC9CphB5NHfJOG8MApnviYUMZcliykAnos_27tdMs2jcrDlRxQDOJda__UeulzsessXivtQ"]>
+[2021-10-09 17:07:52.036] [ERROR] 404 Not Found: [{"error":"Realm not found."}]
+[2021-10-09 17:08:36.812] [INFO ] Starting KeycloakApplication using Java 11.0.9 on DESKTOP-CUHLABE with PID 20240 (D:\바탕화면\keycloak\target\classes started by ssyon in D:\바탕화면\keycloak)
+[2021-10-09 17:08:36.815] [INFO ] No active profile set, falling back to default profiles: default
+[2021-10-09 17:08:37.900] [INFO ] Tomcat initialized with port(s): 7443 (http)
+[2021-10-09 17:08:37.951] [INFO ] Initializing ProtocolHandler ["http-nio-7443"]
+[2021-10-09 17:08:37.954] [INFO ] Starting service [Tomcat]
+[2021-10-09 17:08:37.955] [INFO ] Starting Servlet engine: [Apache Tomcat/9.0.52]
+[2021-10-09 17:08:38.349] [INFO ] Initializing Spring embedded WebApplicationContext
+[2021-10-09 17:08:38.350] [INFO ] Root WebApplicationContext: initialization completed in 1479 ms
+[2021-10-09 17:08:38.735] [INFO ] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@58a84a12, org.springframework.security.web.context.SecurityContextPersistenceFilter@4cc65c2, org.springframework.security.web.header.HeaderWriterFilter@7e1ffe70, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@46dcbeab, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@50eb4a2c, org.springframework.security.web.authentication.logout.LogoutFilter@40709f9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6d672bd4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4f486211, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@5ec1963c, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@7dcb42a9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@e700eba, org.springframework.security.web.session.SessionManagementFilter@1235151c, org.springframework.security.web.access.ExceptionTranslationFilter@7792d851, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@52559a69]
+[2021-10-09 17:08:39.129] [INFO ] Starting ProtocolHandler ["http-nio-7443"]
+[2021-10-09 17:08:39.147] [INFO ] Tomcat started on port(s): 7443 (http) with context path ''
+[2021-10-09 17:08:39.161] [INFO ] Started KeycloakApplication in 3.467 seconds (JVM running for 5.618)
+[2021-10-09 17:08:45.068] [INFO ] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2021-10-09 17:08:45.069] [INFO ] Initializing Servlet 'dispatcherServlet'
+[2021-10-09 17:08:45.070] [INFO ] Completed initialization in 1 ms
+[2021-10-09 17:08:46.024] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [931] milliseconds.
+[2021-10-09 17:08:46.284] [INFO ] Loaded URLs from http://localhost:8080/auth/realms/keycloaktest/.well-known/openid-configuration
+[2021-10-09 17:08:46.987] [INFO ] http://localhost:8080/auth/admin/realms/keycloaktest/users/361586b5-725f-4c98-9b65-963ee0e5b514
+[2021-10-09 17:08:46.999] [INFO ] <{"search":"usertest"},[Content-Type:"application/json", Authorization:"Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI0R2E5U1htZEVEaVZrLTRCNTlwTFVQM2NnUURnYTlKMjk0cFk2czVtMU5RIn0.eyJleHAiOjE2MzM3NjY5ODYsImlhdCI6MTYzMzc2NjkyNiwianRpIjoiOTJhNmRlMmQtNTNiOS00NGU2LWE4ZWQtZWM3MzZhMjkxYTkzIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL21hc3RlciIsInN1YiI6ImY4MmVmYjViLTBkYzctNGU0OC1iZjI3LWY4OGRkMThkZDU0MyIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiI1ZDViMWY5My0zMWM4LTRhZjgtYTU3My05ZDE0MWJmMWRiNDQiLCJhY3IiOiIxIiwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiNWQ1YjFmOTMtMzFjOC00YWY4LWE1NzMtOWQxNDFiZjFkYjQ0IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzc3lvbmc5MTcifQ.iZ6KlWGk2R0QLuDL1rbTFg5h2ePloF9TQs4SlFw06F1w9Ox79q4rLgeqdojmidjYkLW-nkqruKukJPVuydZQenozJ5i5H2BKhH3b2K6kql096aF5VF1hpskooGbAl8oclJdGjkG79B-x8rpsMegqnrjwgl9pFf6fMXFG17wl1Jz4QwpxtWrqPMWHDnmAfN899ma5w_CU0UY2SrulBCgMW-Lb2vyWd4Kaa6SqeynExaGnBQ8TzChMTnsUMAWXrajKDrw0IWUaiqBbvlEuwgSFBjOHVy8WkHHL-xDsdHr_P62eWDQpzlroXXeltrBXKNTg5iYWf6jWD9MUnJLFZG5MJA"]>
+[2021-10-09 17:08:47.110] [INFO ] <200,{"id":"361586b5-725f-4c98-9b65-963ee0e5b514","createdTimestamp":1633757163723,"username":"usertest","enabled":true,"totp":false,"emailVerified":false,"firstName":"SEUNGYONG","lastName":"SHIN","email":"test@test.com","disableableCredentialTypes":[],"requiredActions":[],"notBefore":0,"access":{"manageGroupMembership":true,"view":true,"mapRoles":true,"impersonate":true,"manage":true}},[Cache-Control:"no-cache", X-XSS-Protection:"1; mode=block", X-Frame-Options:"SAMEORIGIN", Referrer-Policy:"no-referrer", Date:"Sat, 09 Oct 2021 08:08:47 GMT", Connection:"keep-alive", Strict-Transport-Security:"max-age=31536000; includeSubDomains", X-Content-Type-Options:"nosniff", Content-Type:"application/json", Content-Length:"384"]>
+[2021-10-09 17:08:50.230] [INFO ] http://localhost:8080/auth/admin/realms/keycloaktest/users/361586b5-725f-4c98-9b65-963ee0e5b514
+[2021-10-09 17:08:50.233] [INFO ] <{"search":"usertest"},[Content-Type:"application/json", Authorization:"Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI0R2E5U1htZEVEaVZrLTRCNTlwTFVQM2NnUURnYTlKMjk0cFk2czVtMU5RIn0.eyJleHAiOjE2MzM3NjY5OTAsImlhdCI6MTYzMzc2NjkzMCwianRpIjoiODIzMjcyOTAtZTBkZC00ZmM2LThhYTYtOWI3NzI5YzdjYmNhIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL21hc3RlciIsInN1YiI6ImY4MmVmYjViLTBkYzctNGU0OC1iZjI3LWY4OGRkMThkZDU0MyIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiJjY2RjNTY0ZC00YWQzLTQ4NDgtYTNlNy04YTU3NGRkYjVmMDciLCJhY3IiOiIxIiwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiY2NkYzU2NGQtNGFkMy00ODQ4LWEzZTctOGE1NzRkZGI1ZjA3IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzc3lvbmc5MTcifQ.iXeNqk9CH6qHzP1yphst5UzSCYVv2eS_45s3_Ceqs8hJ5S3JZaGh1kdXrl8fLUUb74feR2utKvLH0l4s7OPkfqUM8QwDUjpZ3HG772ZzEZX9kikz53jKagf6_bedlYe9I4_B1yoZThcWGte9VBflgVrSY42xWwSKUL2G353LBh2-qyksHYgq9GbTU1Aq-ITcBpAEjrL78QL73e175xcWs12zNhcnE_UYvy_OYRejKj-rFV3jCY1fCdjTLsWaAP9itQbmeeoXtLCG2o_fgo511nGn3DGNbkeYDFycy9-HGhx8e1f4954GiFl63LR4y4Y6ONFR2T45fPb4uJ2djsAXLA"]>
+[2021-10-09 17:08:50.239] [INFO ] <200,{"id":"361586b5-725f-4c98-9b65-963ee0e5b514","createdTimestamp":1633757163723,"username":"usertest","enabled":true,"totp":false,"emailVerified":false,"firstName":"SEUNGYONG","lastName":"SHIN","email":"test@test.com","disableableCredentialTypes":[],"requiredActions":[],"notBefore":0,"access":{"manageGroupMembership":true,"view":true,"mapRoles":true,"impersonate":true,"manage":true}},[Cache-Control:"no-cache", X-XSS-Protection:"1; mode=block", X-Frame-Options:"SAMEORIGIN", Referrer-Policy:"no-referrer", Date:"Sat, 09 Oct 2021 08:08:50 GMT", Connection:"keep-alive", Strict-Transport-Security:"max-age=31536000; includeSubDomains", X-Content-Type-Options:"nosniff", Content-Type:"application/json", Content-Length:"384"]>
+[2021-10-09 17:08:51.033] [INFO ] http://localhost:8080/auth/admin/realms/keycloaktest/users/361586b5-725f-4c98-9b65-963ee0e5b514
+[2021-10-09 17:08:51.035] [INFO ] <{"search":"usertest"},[Content-Type:"application/json", Authorization:"Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI0R2E5U1htZEVEaVZrLTRCNTlwTFVQM2NnUURnYTlKMjk0cFk2czVtMU5RIn0.eyJleHAiOjE2MzM3NjY5OTEsImlhdCI6MTYzMzc2NjkzMSwianRpIjoiNWUzNzNkNzAtMmFkYi00YTI0LThhNmUtMmVkMTZkMzQ4NzExIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL21hc3RlciIsInN1YiI6ImY4MmVmYjViLTBkYzctNGU0OC1iZjI3LWY4OGRkMThkZDU0MyIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiJlYmYxMzg1NC00YzAyLTRkNjItODYyYS0yNjczZjQ0ZWJkZGEiLCJhY3IiOiIxIiwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiZWJmMTM4NTQtNGMwMi00ZDYyLTg2MmEtMjY3M2Y0NGViZGRhIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzc3lvbmc5MTcifQ.iArozldPJby8VaoFo8clvauZtUIRhkpmwGjRHAmBmUlSGEbbgCGfOtqszX78IbqKdfOaS1wuE14mrkXumtvVacGiYIiMsielVSu1SuVkOjTKjuGGRFX8kCxW9_o2KVZU0DLT9ab7x-hgk-pTfSr_v8z01wqrGSFi7qU7BDT15IFSCi6bqnPR8yUdo_8aBtBSxj5Nxov_zz_2OIZDkZf_8VVlElpxskrT--YReRVQ37qsIC02WgZPTdVkjcGWeoLidBffUTKr6e26Qod_r9VqfPI9WlPow4eYqTGMpxOguXi7tf-w-SJfdF7cgFlNbjJ9-9yE6uCBih4IqiP2paxMvQ"]>
+[2021-10-09 17:08:51.041] [INFO ] <200,{"id":"361586b5-725f-4c98-9b65-963ee0e5b514","createdTimestamp":1633757163723,"username":"usertest","enabled":true,"totp":false,"emailVerified":false,"firstName":"SEUNGYONG","lastName":"SHIN","email":"test@test.com","disableableCredentialTypes":[],"requiredActions":[],"notBefore":0,"access":{"manageGroupMembership":true,"view":true,"mapRoles":true,"impersonate":true,"manage":true}},[Cache-Control:"no-cache", X-XSS-Protection:"1; mode=block", X-Frame-Options:"SAMEORIGIN", Referrer-Policy:"no-referrer", Date:"Sat, 09 Oct 2021 08:08:51 GMT", Connection:"keep-alive", Strict-Transport-Security:"max-age=31536000; includeSubDomains", X-Content-Type-Options:"nosniff", Content-Type:"application/json", Content-Length:"384"]>
+[2021-10-09 17:08:57.315] [INFO ] http://localhost:8080/auth/admin/realms/keycloaktest/users/361586b5-725f-4c98-9b65-963ee0e5b514
+[2021-10-09 17:08:57.318] [INFO ] <{"search":"usertest"},[Content-Type:"application/json", Authorization:"Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI0R2E5U1htZEVEaVZrLTRCNTlwTFVQM2NnUURnYTlKMjk0cFk2czVtMU5RIn0.eyJleHAiOjE2MzM3NjY5OTcsImlhdCI6MTYzMzc2NjkzNywianRpIjoiODdmNDM3MzItMWI1My00YWE1LWE1MGUtZWVjYzFmMGM3NzQ5IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL21hc3RlciIsInN1YiI6ImY4MmVmYjViLTBkYzctNGU0OC1iZjI3LWY4OGRkMThkZDU0MyIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiI3ZjQ0MTFkMi04ZTAzLTQxOTUtYjAxMC03NTM1NTUzOTliOTQiLCJhY3IiOiIxIiwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiN2Y0NDExZDItOGUwMy00MTk1LWIwMTAtNzUzNTU1Mzk5Yjk0IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzc3lvbmc5MTcifQ.X9VOWJZ9ReOcTQUjBgNQByXGiQIIQBBmJfv8R9MecUhME-VC81XLqSHgn3PdrvaXDwS7jfGCnosK9qch5HfqubBwc4IN2ae82ejHYAh8uya4sY8r2-kzccR0EO-hNSR_zh_ijDaDpFXfI4xiFrEVpSGLS2QtCDXVhCFkOavIzStUj3JRiuakOs25U4VEA6y8vx7fmxNIR3fSCD4Fdf_U_rS1Hx-EjxtXmCUZF5DI4g5xUTp0m_jzzlmTqxbaJE6Gvux7TJnO8xPebBss6aWsvktsgXFjKg-O9kJK0CHveZLHKOBdBrmQR_VotGwAvAUIJ8WZp1s2_slnCzSu9-7r7g"]>
+[2021-10-09 17:08:57.323] [INFO ] <200,{"id":"361586b5-725f-4c98-9b65-963ee0e5b514","createdTimestamp":1633757163723,"username":"usertest","enabled":true,"totp":false,"emailVerified":false,"firstName":"SEUNGYONG","lastName":"SHIN","email":"test@test.com","disableableCredentialTypes":[],"requiredActions":[],"notBefore":0,"access":{"manageGroupMembership":true,"view":true,"mapRoles":true,"impersonate":true,"manage":true}},[Cache-Control:"no-cache", X-XSS-Protection:"1; mode=block", X-Frame-Options:"SAMEORIGIN", Referrer-Policy:"no-referrer", Date:"Sat, 09 Oct 2021 08:08:57 GMT", Connection:"keep-alive", Strict-Transport-Security:"max-age=31536000; includeSubDomains", X-Content-Type-Options:"nosniff", Content-Type:"application/json", Content-Length:"384"]>
+[2021-10-09 17:08:58.724] [INFO ] http://localhost:8080/auth/admin/realms/keycloaktest/users/361586b5-725f-4c98-9b65-963ee0e5b514
+[2021-10-09 17:08:58.727] [INFO ] <{"search":"usertest"},[Content-Type:"application/json", Authorization:"Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI0R2E5U1htZEVEaVZrLTRCNTlwTFVQM2NnUURnYTlKMjk0cFk2czVtMU5RIn0.eyJleHAiOjE2MzM3NjY5OTgsImlhdCI6MTYzMzc2NjkzOCwianRpIjoiMmJiYTBhZTQtMGRiMS00MWQyLWIwOWUtYjBkMTNhNzdkMDY4IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL21hc3RlciIsInN1YiI6ImY4MmVmYjViLTBkYzctNGU0OC1iZjI3LWY4OGRkMThkZDU0MyIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiI1YmMwOTBkZi0wMjZiLTQ5MWYtYjYxNy01YTMxM2ViZjE4N2EiLCJhY3IiOiIxIiwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiNWJjMDkwZGYtMDI2Yi00OTFmLWI2MTctNWEzMTNlYmYxODdhIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzc3lvbmc5MTcifQ.WJzmmlKyxYWfM-INfZpnno4uv5vo9jZ13GeLunuqE-cY_3dAncXnglM_kUWHavEd-tA_RFbSAcjAn0vVCiWDzkHGQtZ2wy3VOhYml6UNXylMYwAEUsU4KSqWTlK5sbORXRTAYsPi6wXe76CIcrsT2vu4OkLDfdGLaHPa4djpMTdlmlkY7etcGyCoz3WstapE_wMTSeWB8DIMpkuGsFGEywYT1uTeCUi6ts5n6nS7RjwrFapoJmdgtEGph-r6tutZCdIVT1KD9gkQ0xoc1Vi4oLMVRqDjKJ5TT0eCyn9V74xQI-0rocwNuvV3j_Sml3DD8gve94nQRjWEcU1TMAmUQQ"]>
+[2021-10-09 17:08:58.733] [INFO ] <200,{"id":"361586b5-725f-4c98-9b65-963ee0e5b514","createdTimestamp":1633757163723,"username":"usertest","enabled":true,"totp":false,"emailVerified":false,"firstName":"SEUNGYONG","lastName":"SHIN","email":"test@test.com","disableableCredentialTypes":[],"requiredActions":[],"notBefore":0,"access":{"manageGroupMembership":true,"view":true,"mapRoles":true,"impersonate":true,"manage":true}},[Cache-Control:"no-cache", X-XSS-Protection:"1; mode=block", X-Frame-Options:"SAMEORIGIN", Referrer-Policy:"no-referrer", Date:"Sat, 09 Oct 2021 08:08:58 GMT", Connection:"keep-alive", Strict-Transport-Security:"max-age=31536000; includeSubDomains", X-Content-Type-Options:"nosniff", Content-Type:"application/json", Content-Length:"384"]>
+[2021-10-09 17:08:59.476] [INFO ] http://localhost:8080/auth/admin/realms/keycloaktest/users/361586b5-725f-4c98-9b65-963ee0e5b514
+[2021-10-09 17:08:59.479] [INFO ] <{"search":"usertest"},[Content-Type:"application/json", Authorization:"Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI0R2E5U1htZEVEaVZrLTRCNTlwTFVQM2NnUURnYTlKMjk0cFk2czVtMU5RIn0.eyJleHAiOjE2MzM3NjY5OTksImlhdCI6MTYzMzc2NjkzOSwianRpIjoiNTk4OGVkZGYtYTg5YS00MGRmLTgyM2UtMDMwYjBmMDk5N2JiIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL21hc3RlciIsInN1YiI6ImY4MmVmYjViLTBkYzctNGU0OC1iZjI3LWY4OGRkMThkZDU0MyIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiI2NWFjMjk1ZC0yNjE1LTQxNmItYWFkNy1hYjNlYWJhNmI1MTIiLCJhY3IiOiIxIiwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiNjVhYzI5NWQtMjYxNS00MTZiLWFhZDctYWIzZWFiYTZiNTEyIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzc3lvbmc5MTcifQ.i4hfjgQaoav2_qtIDOwT5SsxaxZi4j_z67wYK2Foass5tj2G72_a3VvuFqapi71UVbPxw6YN9JEf8HBNV2btYMqvlbUqUe-Xj-W6G36_NKrWJYHFD-gIpbBXaHXfz0GJ6BfhzYeU7MsEHGR6feuc2NHcy8ZpEHJ0Rnk_FDK-rpOd6psdkWu-XW5ZHh9fwGi21w8bPW9XB2ek6AzLER4O8OJCslnCD7hrNe7P1IIdYy3ebP8ioywJZ3QzVrxOXJZaGgp0u3c78G7bslt75AeydPtwpzMvhtbI8ZDk-R-uch1V90ZKhodtxKQ_mHaSTZYCBsKCcM4cwMwTnVIwzWYCYA"]>
+[2021-10-09 17:08:59.483] [INFO ] <200,{"id":"361586b5-725f-4c98-9b65-963ee0e5b514","createdTimestamp":1633757163723,"username":"usertest","enabled":true,"totp":false,"emailVerified":false,"firstName":"SEUNGYONG","lastName":"SHIN","email":"test@test.com","disableableCredentialTypes":[],"requiredActions":[],"notBefore":0,"access":{"manageGroupMembership":true,"view":true,"mapRoles":true,"impersonate":true,"manage":true}},[Cache-Control:"no-cache", X-XSS-Protection:"1; mode=block", X-Frame-Options:"SAMEORIGIN", Referrer-Policy:"no-referrer", Date:"Sat, 09 Oct 2021 08:08:59 GMT", Connection:"keep-alive", Strict-Transport-Security:"max-age=31536000; includeSubDomains", X-Content-Type-Options:"nosniff", Content-Type:"application/json", Content-Length:"384"]>
+[2021-10-09 17:09:02.484] [INFO ] http://localhost:8080/auth/admin/realms/keycloaktest/users/361586b5-725f-4c98-9b65-963ee0e5b514
+[2021-10-09 17:09:02.487] [INFO ] <{"search":"usertest"},[Content-Type:"application/json", Authorization:"Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI0R2E5U1htZEVEaVZrLTRCNTlwTFVQM2NnUURnYTlKMjk0cFk2czVtMU5RIn0.eyJleHAiOjE2MzM3NjcwMDIsImlhdCI6MTYzMzc2Njk0MiwianRpIjoiZDM1YTczZWUtNTkwOS00YzU5LWI5ZjEtZTg0YzU5YmZlNTEwIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL21hc3RlciIsInN1YiI6ImY4MmVmYjViLTBkYzctNGU0OC1iZjI3LWY4OGRkMThkZDU0MyIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiJmYzkxYzBiZC05NDBmLTRlODEtODNhMy0xMmQ1MzExMzg2YzMiLCJhY3IiOiIxIiwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiZmM5MWMwYmQtOTQwZi00ZTgxLTgzYTMtMTJkNTMxMTM4NmMzIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzc3lvbmc5MTcifQ.CZUFmGjzrjQJeHGcSaptVrBe_Dr3XMfeHYTA7N6Eg5ovjjbNFeqw-2xsIuG1NLGb2safc-qEf2Bk0uZ78jA6iEKLuyPb3uZvsF0LzL6smAlhfppB1O0NUnYZ5-Hk7MffcVl4b06Wgjw33eTxq39xu6r1xduWdEtrmFnYePVl8U7NeRrI4lA4TOo0Hq576jubfbBX9p0zBO8g6Xz5m_77-dISrrUrYvddiIxCS5jJJ_UONAewwGHwdTapWhyTX74lONa4zOl5I0vZc_l_Zpl4qEZFu1bWcgGdBGMxk3TAOYDmofWOgxoCIcRxGXb-lDPYI1d6-Z_jB-zRXfsC5yn0VA"]>
+[2021-10-09 17:09:02.493] [INFO ] <200,{"id":"361586b5-725f-4c98-9b65-963ee0e5b514","createdTimestamp":1633757163723,"username":"usertest","enabled":true,"totp":false,"emailVerified":false,"firstName":"SEUNGYONG","lastName":"SHINs","email":"test@test.com","disableableCredentialTypes":[],"requiredActions":[],"notBefore":0,"access":{"manageGroupMembership":true,"view":true,"mapRoles":true,"impersonate":true,"manage":true}},[Cache-Control:"no-cache", X-XSS-Protection:"1; mode=block", X-Frame-Options:"SAMEORIGIN", Referrer-Policy:"no-referrer", Date:"Sat, 09 Oct 2021 08:09:02 GMT", Connection:"keep-alive", Strict-Transport-Security:"max-age=31536000; includeSubDomains", X-Content-Type-Options:"nosniff", Content-Type:"application/json", Content-Length:"385"]>
+[2021-10-09 17:09:03.503] [INFO ] http://localhost:8080/auth/admin/realms/keycloaktest/users/361586b5-725f-4c98-9b65-963ee0e5b514
+[2021-10-09 17:09:03.506] [INFO ] <{"search":"usertest"},[Content-Type:"application/json", Authorization:"Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI0R2E5U1htZEVEaVZrLTRCNTlwTFVQM2NnUURnYTlKMjk0cFk2czVtMU5RIn0.eyJleHAiOjE2MzM3NjcwMDMsImlhdCI6MTYzMzc2Njk0MywianRpIjoiYjM0OGVjNmEtYjY5Yi00NGRhLTg0MDctNTk5NWY5MGM5ZjM0IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL21hc3RlciIsInN1YiI6ImY4MmVmYjViLTBkYzctNGU0OC1iZjI3LWY4OGRkMThkZDU0MyIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiI5YzFmNjlmZC0wMjA2LTRmMjQtYjQyMy1kMTgyYTAxMmJkMDkiLCJhY3IiOiIxIiwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiOWMxZjY5ZmQtMDIwNi00ZjI0LWI0MjMtZDE4MmEwMTJiZDA5IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzc3lvbmc5MTcifQ.YIupMOGnWP42ycgXHQz7e9cjDutvJk0ZY14AaKkvzFlzV2cttE_hizmpB-4zOGQyOJSwgfP8KOlzuUzaaO7kqFGjxxgiqBlreLvWM6d7pESCs-hbPlTRZBdyScy2iVAyOMeqWbRTQ-8OoSUB5UJTV9C4_BwPinZbUSH0x4IagLQR8mi5D06fNTP8iYSTx5olR9Dqq96O2TYVUHnJPpGI8I-zsmtT4QVm26DFahxKLLIIRv_V2wbzr9YXxLQrY257aydf36Q9kKp2_-nNZ25bDIqiR2h7FQKMzIc0ZI6J6l3blvyl9Q5vRyBNdSpbW4dQZwvMgsPh-Lr20b2RBLz4FQ"]>
+[2021-10-09 17:09:03.511] [INFO ] <200,{"id":"361586b5-725f-4c98-9b65-963ee0e5b514","createdTimestamp":1633757163723,"username":"usertest","enabled":true,"totp":false,"emailVerified":false,"firstName":"SEUNGYONG","lastName":"SHINs","email":"test@test.com","disableableCredentialTypes":[],"requiredActions":[],"notBefore":0,"access":{"manageGroupMembership":true,"view":true,"mapRoles":true,"impersonate":true,"manage":true}},[Cache-Control:"no-cache", X-XSS-Protection:"1; mode=block", X-Frame-Options:"SAMEORIGIN", Referrer-Policy:"no-referrer", Date:"Sat, 09 Oct 2021 08:09:03 GMT", Connection:"keep-alive", Strict-Transport-Security:"max-age=31536000; includeSubDomains", X-Content-Type-Options:"nosniff", Content-Type:"application/json", Content-Length:"385"]>
+[2021-10-09 17:09:04.077] [INFO ] http://localhost:8080/auth/admin/realms/keycloaktest/users/361586b5-725f-4c98-9b65-963ee0e5b514
+[2021-10-09 17:09:04.079] [INFO ] <{"search":"usertest"},[Content-Type:"application/json", Authorization:"Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI0R2E5U1htZEVEaVZrLTRCNTlwTFVQM2NnUURnYTlKMjk0cFk2czVtMU5RIn0.eyJleHAiOjE2MzM3NjcwMDQsImlhdCI6MTYzMzc2Njk0NCwianRpIjoiMWVlOTJkMTAtMjhjZi00NTY1LTlhNzAtNWUyMmE0YTJiZTlmIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2F1dGgvcmVhbG1zL21hc3RlciIsInN1YiI6ImY4MmVmYjViLTBkYzctNGU0OC1iZjI3LWY4OGRkMThkZDU0MyIsInR5cCI6IkJlYXJlciIsImF6cCI6ImFkbWluLWNsaSIsInNlc3Npb25fc3RhdGUiOiIyYzU3NTY2Zi00NGUwLTQxZDAtYjI2YS1jNjE3Nzg1ZDU2ZDciLCJhY3IiOiIxIiwic2NvcGUiOiJlbWFpbCBwcm9maWxlIiwic2lkIjoiMmM1NzU2NmYtNDRlMC00MWQwLWIyNmEtYzYxNzc4NWQ1NmQ3IiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzc3lvbmc5MTcifQ.cA7im6zuFYvdSJ9X_08S7wx_nGP_c-_4WFmxcz6OWfdJfAHNPGZiU0m8Eyn__KmhwwX_OuF1gZE2xrtjIfgUUpcyuSN004cL3tRd6EW7ynmV2IaFv5GkA3HVCo5OIyfgcPJqhTtWTylP3zY1WJItyn1sx6riS8K6UP5rNo9HojBIijBm36Ripi6dvVyqw66jBNxBnIyODDF6D06CEiitW2hpNkXDg9BzAFOE94ixgkGt-Z6KkBDJvxmzjXg4uStSxayvpKxSkZ5Yj77EAUHeo2jqqo5-wDvLuaYjJCyOEw6W5lqGRm5iPDwjXyq1EHpHqy687-VDxFm2lL39-rRyWw"]>
+[2021-10-09 17:09:04.084] [INFO ] <200,{"id":"361586b5-725f-4c98-9b65-963ee0e5b514","createdTimestamp":1633757163723,"username":"usertest","enabled":true,"totp":false,"emailVerified":false,"firstName":"SEUNGYONG","lastName":"SHINs","email":"test@test.com","disableableCredentialTypes":[],"requiredActions":[],"notBefore":0,"access":{"manageGroupMembership":true,"view":true,"mapRoles":true,"impersonate":true,"manage":true}},[Cache-Control:"no-cache", X-XSS-Protection:"1; mode=block", X-Frame-Options:"SAMEORIGIN", Referrer-Policy:"no-referrer", Date:"Sat, 09 Oct 2021 08:09:04 GMT", Connection:"keep-alive", Strict-Transport-Security:"max-age=31536000; includeSubDomains", X-Content-Type-Options:"nosniff", Content-Type:"application/json", Content-Length:"385"]>
+[2021-10-09 17:10:31.214] [INFO ] Starting KeycloakApplication using Java 11.0.9 on DESKTOP-CUHLABE with PID 12856 (D:\바탕화면\keycloak\target\classes started by ssyon in D:\바탕화면\keycloak)
+[2021-10-09 17:10:31.217] [INFO ] No active profile set, falling back to default profiles: default
+[2021-10-09 17:10:32.120] [INFO ] Tomcat initialized with port(s): 7443 (http)
+[2021-10-09 17:10:32.128] [INFO ] Initializing ProtocolHandler ["http-nio-7443"]
+[2021-10-09 17:10:32.129] [INFO ] Starting service [Tomcat]
+[2021-10-09 17:10:32.129] [INFO ] Starting Servlet engine: [Apache Tomcat/9.0.52]
+[2021-10-09 17:10:32.316] [INFO ] Initializing Spring embedded WebApplicationContext
+[2021-10-09 17:10:32.316] [INFO ] Root WebApplicationContext: initialization completed in 1058 ms
+[2021-10-09 17:10:32.622] [INFO ] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6b649efa, org.springframework.security.web.context.SecurityContextPersistenceFilter@72906e, org.springframework.security.web.header.HeaderWriterFilter@4cc65c2, org.keycloak.adapters.springsecurity.filter.KeycloakPreAuthActionsFilter@7dcb42a9, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticationProcessingFilter@7885776b, org.springframework.security.web.authentication.logout.LogoutFilter@4aa31ffc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@14447be, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@472d0f4, org.keycloak.adapters.springsecurity.filter.KeycloakSecurityContextRequestFilter@4fa4f485, org.keycloak.adapters.springsecurity.filter.KeycloakAuthenticatedActionsFilter@68dd39d2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@65ef48f2, org.springframework.security.web.session.SessionManagementFilter@6d672bd4, org.springframework.security.web.access.ExceptionTranslationFilter@1235151c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1fd7a37]
+[2021-10-09 17:10:32.892] [INFO ] Starting ProtocolHandler ["http-nio-7443"]
+[2021-10-09 17:10:32.906] [INFO ] Tomcat started on port(s): 7443 (http) with context path ''
+[2021-10-09 17:10:32.917] [INFO ] Started KeycloakApplication in 2.238 seconds (JVM running for 3.772)
+[2021-10-09 17:10:35.120] [INFO ] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2021-10-09 17:10:35.122] [INFO ] Initializing Servlet 'dispatcherServlet'
+[2021-10-09 17:10:35.122] [INFO ] Completed initialization in 0 ms
+[2021-10-09 17:10:36.047] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [695] milliseconds.
+[2021-10-09 17:10:36.047] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [695] milliseconds.
+[2021-10-09 17:10:36.047] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [695] milliseconds.
+[2021-10-09 17:10:36.047] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [695] milliseconds.
+[2021-10-09 17:10:36.047] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [695] milliseconds.
+[2021-10-09 17:10:36.047] [WARN ] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [695] milliseconds.
+[2021-10-09 17:10:36.256] [INFO ] Loaded URLs from http://localhost:8080/auth/realms/keycloaktest/.well-known/openid-configuration
