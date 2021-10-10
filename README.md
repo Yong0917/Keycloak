@@ -18,6 +18,7 @@
 * KeyCloak admin API 기능 사용(CRUD)
 * 권한 별 기능 구현
 * 로그인, 로그아웃 세션 처리 기능 구현
+* SpringSecurity(Keycloak연동)
 
 
 -----------
@@ -55,74 +56,58 @@ https://www.keycloak.org/downloads.html
 
  ----------- 
 **3. 사용자 관리 메뉴(ADMIN)** 
+  * 유저 정보 가져오는 API 호출
 
 ![keycloak 사용자관리(admin)](https://user-images.githubusercontent.com/65889807/136679810-8611b0ec-a223-4e93-81bd-4cc68712274c.png)
 
 ----------- 
-**4. 자유 게시판**
-  * 로그인 성공 시 Session 저장
-  * profile -> logout시 Session 삭제
-  * 게시판 리스트 출력
+**4. 사용자 생성**
+  * 아이디 중복확인 (아이디가 존재할 시 중복체크)
+  * 아이디, 이름, 성, 비밀번호 ,이메일 빈 값으로 저장할 시 빈 값 체크 Alert
+  * 비밀번호는 8글자 이상 16글자 이하, 특수문자 한개 이상포함. 안될 시 체크 Alert
+  * 이메일형식 맞게 입력안하면 체크 Alert
+  * 이메일은 중복가능 (Keycloak에서 duplicate email 체크해야 가능)
+  * 등록 버튼 클릭시 Keycloak API 호출
+ 
   
-![Main_freeboard](https://user-images.githubusercontent.com/65889807/132849714-5bb2a688-5a2a-41ef-84fd-52461a8c8291.png)
+![사용자 생성](https://user-images.githubusercontent.com/65889807/136688201-d7424ca5-6b36-4b3d-9f0b-66c13e1998ab.png)
 
 ----------- 
-**5. 게시글 작성**
-   * 제목, 내용(3000Bytes 제한), 파일업로드(100MB이하) 구현
+**5. 사용자 삭제**
+   * 체크 박스 선택후 삭제가능.
+   * 여러 개의 체크 박스 선택가능.
+   * 삭제 버튼 클릭시 Keycloak API 호출
    
-![Board_Insert](https://user-images.githubusercontent.com/65889807/132849034-65d25cd6-f177-49f8-b761-4577c493c5af.png)
+   ![사용자 삭제](https://user-images.githubusercontent.com/65889807/136688216-bbbb31fd-152d-4640-83a5-404290a634da.png)
 
 ----------- 
-**6. 게시글 상세**
-   * 게시글 수정 기능 구현(자기가 쓴 게시글만 수정버튼 보임)
-   * 게시글 삭제 기능 구현(자기가 쓴 게시글만 삭제버튼 보임)
-   * 댓글 기능 구현(자신이 쓴 댓글만 삭제 가능)
-   * 추천기능(1번만 가능, 한번 더 누를 시 추천 취소) 구현
-   * 조회수, 추천 수, 댓글 수 출력
+**6. 사용자 수정**
+   * 아이디값 수정 못하게 readable 처리
+   * 수정 버튼 클릭시 Keycloak API 호출
   
- ![Board_detail](https://user-images.githubusercontent.com/65889807/132850962-e8704895-9ce1-4609-b6a8-811dd665746e.png)
+![사용자 수정](https://user-images.githubusercontent.com/65889807/136688226-13b1d9f5-15c5-4351-99dd-4cfa0f669822.png)
+
 
 ----------- 
-**7. 영화 검색**
-   * 네이버 영화 검섹 API 기능 사용
-   * 영화 제목, 개봉(년), 감독, 주요 배우, 관객 수 제공
+**7. 내 정보 수정**
+   * 내정보 가져오는 API 호출
+   * 아이디값 수정 못하게 readable 처리
+   * 이름, 성, 이메일 빈 값으로 저장할 시 빈 값 체크 Alert
+   * 이메일형식 맞게 입력안하면 체크 Alert
+   * 초기화 버튼 클릭 시 이름.성.이메일 초기화.
+   * 수정 버튼 클릭시 Keycloak API 호출
    
-![Movie_research](https://user-images.githubusercontent.com/65889807/132849866-928a7ff1-7c87-44f5-a927-5a415afaeefb.png)
+![내 정보 수정](https://user-images.githubusercontent.com/65889807/136688234-ec1f2b9d-45cb-4b81-9c50-49248bdc31e9.png)
 
  ----------- 
-**8. 지역 검색**
-  * 네이버 지역 검색 API 기능 사용
-  * Category, 이름, 링크, 도로명 주소 제공(최대 5개)
-  * Excel 버튼을 이용해 다운로드 가능 
-  * 링크 클릭시 홈페이지로 이동
+**8. 내 비밀번호 변경**
+  * 내정보 가져오는 API 호출
+  * 비밀번호, 비밀번호 확인 값 다를시 text표출
+  * 비밀번호는 8글자 이상 16글자 이하, 특수문자 한개 이상포함. 안될 시 체크 Alert
+  * 초기화 버튼 클릭 시 비밀번호 초기화.
+  * 수정 버튼 클릭시 Keycloak API 호출
 
-![Location_research](https://user-images.githubusercontent.com/65889807/132850327-d46efa4c-6e99-427e-bf50-c7287d2c4a9e.png)
-
------------ 
-**9. 기록**
-  * 자유 게시판에서 추천 누른 게시글 리스트 출력
-  * 추천누른 시간 제공
-  
-![Recommend](https://user-images.githubusercontent.com/65889807/132850435-84a78bd0-1306-431b-ab82-6437993fdbd4.png)
-
------------ 
-**10. 회원 정보(권한: User)**
-   * 사용자 정보(아이디, 이름, 나이, 권한, 등록일, 비밀번호)
-   * 비밀번호 변경 기능(현재 비밀번호, 새 비밀번호, 새 비밀번호 확인)
-   * 회원 탈퇴 기능
-   * 댓글 작성했던 게시글 리스트 출력(댓글 등록 날짜 제공)
-
-![User_info](https://user-images.githubusercontent.com/65889807/132850630-68bdc55e-fc5a-48e3-83b0-17e264f68329.png)
-
------------
-**11. 회원 정보(권한: Admin)**
-   * 사용자 정보(아이디, 이름, 나이, 권한, 등록일, 비밀번호)
-   * 비밀번호 변경 기능(현재 비밀번호, 새 비밀번호, 새 비밀번호 확인)
-   * 회원 탈퇴 기능
-   * 사용자 리스트 출력(사용자 등록일 제공) 
-
-![User_Info_Admin](https://user-images.githubusercontent.com/65889807/132851443-d4ba0849-afa9-48ec-88b5-1e11adf52cc2.png)
-  
+![내 비밀번호 변경](https://user-images.githubusercontent.com/65889807/136688240-ff4ff36a-3423-418c-ba12-1a8eca26497f.png)
 
 -----------
 **기술 스택**
@@ -132,7 +117,16 @@ https://www.keycloak.org/downloads.html
 * AJax
 * Bootstrap
 * Maven
+* KeyCloak
+* SSO
 * KeyCloak Admin API
+
+-----------
+**배운점 및 목표**
+  * 기본적인 SSO 구현 구조와 오픈소스인 KeyCloak을 이용해 구현 및 테스트
+  * KeyCloak Api를 이용해 기능 구현을 통해 기능 테스트
+  * 1개의 Client로 진행하였지만 여러개의 Client을 등록해서 연계할 수 있게 구현 할 예정
+  
 
 -----------
 **프로젝트 정보**
