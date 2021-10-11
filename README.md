@@ -126,8 +126,8 @@ https://www.keycloak.org/downloads.html
   * 기본적인 SSO 구현 구조와 오픈소스인 KeyCloak을 이용해 구현 및 테스트
   * KeyCloak Api를 이용해 기능 구현을 통해 기능 테스트
   * 1개의 Client로 진행하였지만 여러개의 Client을 등록해서 연계할 수 있게 구현 할 예정
+  * Goggle, Naver, kakao 등 통합게시판에 로그인기능을 구현 할 예정
   
-
 -----------
 **프로젝트 정보**
 * 신승용 - (ssyong917@naver.com)
