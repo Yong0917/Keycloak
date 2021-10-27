@@ -1,4 +1,4 @@
-# [KeyCloak] Keycloak SSO Test
+# [KeyCloak] Keycloak SSO Project
 -----------
 
 **개요**
