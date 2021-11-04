@@ -5,17 +5,8 @@
 
 <script type="text/javascript">
 
-    let userId = "";
-    let userPassword = "";
-    let userCnPassword= "";
 
     window.onload = function () {
-
-        userId = $('#idInput').text();
-        userPassword = $('#newPassword').text();
-        userCnPassword = $('#confirmPassword').text();
-
-        getUserInfo(); //내 정보
 
         $("#passwordSaveBtn").on("click", function(){ changePwd() }); //저장 버튼 -> 값 체크
 
@@ -27,24 +18,6 @@
 
         $("#okButton").on("click", function(){ location.reload(); });       //SAVE modal OK버튼
 
-    }
-
-    //userInfo
-    function getUserInfo() {
-        $.ajax({
-            url: "/getUserInfo",
-            type: "GET",
-            data: {
-            },
-            success: function (data) {
-                if(data == "ERROR") {
-                    return;
-                }
-                $('#idInput').val(data.username);
-            }, error: function (request, status, error) {
-                console.log("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
-            }
-        });
     }
 
     //password check
@@ -159,7 +132,7 @@
                                             <tr>
                                                 <th style="width:30%">아이디 : </th>
                                                 <td>
-                                                    <input type="text" size="20" style="width:100%;" id="idInput" disabled>
+                                                    <input type="text" size="20" style="width:100%;" id="idInput" th:value="${userInfo.id}" disabled>
                                                 </td>
                                             </tr>
                                             <tr>

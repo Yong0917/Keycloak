@@ -5,19 +5,7 @@
 
 <script type="text/javascript">
 
-    let userId = "";
-    let userFirst = "";
-    let userLast = "";
-    let userEmail =  "";
-
     window.onload = function () {
-
-        userId = $('#idInput').val();
-        userFirst = $('#firstName').val();
-        userLast = $('#lastName').val();
-        userEmail = $('#emailInput').val();
-
-        getUserInfo();      //내 정보
 
         $("#userInfoSaveBtn").on("click", function(){ checkInfo(); });  //저장 버튼 -> 빈 값 체크
 
@@ -28,32 +16,6 @@
         });
 
         $("#okButton").on("click", function(){ location.reload(); });   //SAVE modal OK버튼
-
-    }
-
-    //UserInfo
-    function getUserInfo() {
-
-        $.ajax({
-            url: "/getUserInfo",
-            type: "GET",
-            data: {
-            },
-            success: function (data) {
-                if(data == "ERROR") {
-                    return;
-                }
-                else{
-                    $('#idInput').val(data.username);
-                    $('#firstName').val(data.firstName);
-                    $('#lastName').val(data.lastName);
-                    $('#emailInput').val(data.email);
-                }
-
-            }, error: function (request, status, error) {
-                console.log("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
-            }
-        });
 
     }
 
@@ -143,25 +105,25 @@
                                             <tr>
                                                 <th style="width:30%">아이디 : </th>
                                                 <td>
-                                                    <input type="text" size="20" style="width:100%; " id="idInput" disabled>
+                                                    <input type="text" size="20" style="width:100%; " id="idInput" th:value="${userInfo.id}" disabled>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <th style="width:30%">이름 : </th>
                                                 <td>
-                                                    <input type="text" size="20" style="width:100%; " id="firstName">
+                                                    <input type="text" size="20" style="width:100%; " id="firstName" th:value="${userInfo.firstName}">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <th style="width:30%">성 : </th>
                                                 <td>
-                                                    <input type="text" size="20" style="width:100%;" id="lastName">
+                                                    <input type="text" size="20" style="width:100%;" id="lastName" th:value="${userInfo.lastName}">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <th style="width:30%">이메일 : </th>
                                                 <td>
-                                                    <input type="text" size="20" style="width:100%;" id="emailInput">
+                                                    <input type="text" size="20" style="width:100%;" id="emailInput" th:value="${userInfo.email}">
                                                 </td>
                                             </tr>
                                             </thead>
