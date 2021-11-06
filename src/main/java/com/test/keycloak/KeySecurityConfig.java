@@ -77,7 +77,7 @@ public class KeySecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
                 // "/" 주소를 permitAll(false) ==>  authenticated() 로 변경해야함.
                 .logout()
                 .logoutUrl("/logout")
-                .logoutSuccessUrl("/main")
+                .logoutSuccessUrl("/")
                 .and()
                 .csrf().disable()
         ;

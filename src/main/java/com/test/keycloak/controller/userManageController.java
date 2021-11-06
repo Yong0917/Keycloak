@@ -31,10 +31,9 @@ public class userManageController {
 
     //사용자 리스트(admin)
     @GetMapping(value = "/getUserList")
-    public Object getUserList(Model model, UserVO param, KeycloakAuthenticationToken authentication){
+    public Object getUserList(){
 
-        String uuid =  authentication.getPrincipal().toString();
-        Object result = keycloakApi.userList(param, uuid);
+        Object result = keycloakApi.userList();
 
         return result;
     }
@@ -43,11 +42,10 @@ public class userManageController {
 
     //사용자생성(admin)
     @PostMapping(value = "/registerUser")
-    public String getRegisterUser(Model model, UserVO param, KeycloakAuthenticationToken authentication){
+    public String getRegisterUser(UserVO param){
 
-        String uuid =  authentication.getPrincipal().toString();    //로그인 id 값
 
-        String result = keycloakApi.createUser(param, uuid);
+        String result = keycloakApi.createUser(param);
 
         return result;
     }
@@ -55,16 +53,9 @@ public class userManageController {
 
     //사용자 수정(admin)
     @PutMapping(value = "/modifyUser")
-    public String getModifyUser(Model model, UserVO param){
+    public String getModifyUser(UserVO param){
 
         String result = keycloakApi.modifyUser(param);
-
-//        log.info(String.valueOf(token));        //token 아이디
-//        log.info(authentication.getPrincipal().toString()); //userid  ex)74799a65-f455-4cbb-910a-c17a500e36e2
-//        log.info(token.getPreferredUsername());     //로그인Id   ex)user3
-//        log.info(token.getGivenName());     //lastName
-//        log.info(token.getFamilyName());    //firstName
-//        log.info(token.getEmail());         //이메일
 
         return result;
     }
@@ -103,7 +94,7 @@ public class userManageController {
 
     //내정보 리스트
     @GetMapping(value = "/getUserInfo")
-    public Object getUserInfo(Model model, UserVO param, KeycloakAuthenticationToken authentication){
+    public Object getUserInfo(KeycloakAuthenticationToken authentication){
 
         SimpleKeycloakAccount account = (SimpleKeycloakAccount) authentication.getDetails();
         AccessToken token = account.getKeycloakSecurityContext().getToken();
@@ -111,14 +102,14 @@ public class userManageController {
         String uuid =  authentication.getPrincipal().toString();        //로그인 id 값
         String userName = token.getPreferredUsername();         //로그인 id
 
-        Object result = keycloakApi.userInfoList(param, uuid, userName);
+        Object result = keycloakApi.userInfoList(uuid,userName);
 
         return result;
     }
 
     //내정보수정
     @PutMapping(value = "/modifyInfo")
-    public String getModifyInfo(Model model, UserVO param, KeycloakAuthenticationToken authentication){
+    public String getModifyInfo(UserVO param, KeycloakAuthenticationToken authentication){
 
         String uuid =  authentication.getPrincipal().toString();       ////로그인 id 값
 
@@ -130,7 +121,7 @@ public class userManageController {
 
     //내 비밀번호 변경
     @PutMapping(value = "/modifyPassword")
-    public String getModifyPassword(Model model, UserVO param,KeycloakAuthenticationToken authentication){
+    public String getModifyPassword(UserVO param,KeycloakAuthenticationToken authentication){
 
         String uuid =  authentication.getPrincipal().toString();        //로그인 id 값
 
