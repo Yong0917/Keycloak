@@ -213,12 +213,11 @@ public class KeycloakApi {
 
         HttpHeaders headers = getHeaders(token);
 
-        RestTemplate restTemplate = getRestTemplate(); //API를 주고받기위한 restTemplate
+        RestTemplate restTemplate = getRestTemplate();
 
         Map<String, Object> duplicateUser = new HashMap<>(); //????
         Gson var = new Gson(); //Gson객체 생성.
-        String json = var.toJson(duplicateUser); //HashMap형의 duplicateUser 객체를 Json으로 바꿔주는 Gson함수(?). 이것을 String json형으로 저장.
-        //그러니까.. duplicateUser객체를 생성함으로써 중복검사가 되고(?) 그걸 Json형으로 바꿔주기위해 Gson객체 사용한건듯.
+        String json = var.toJson(duplicateUser);
 
         HttpEntity<String> entity = new HttpEntity<>(json,headers);
         JSONParser jsonparser2 = new JSONParser();
@@ -228,7 +227,6 @@ public class KeycloakApi {
             String result = "SUCCESS";
 
             String userList = restTemplate.exchange(authServerUrl2, HttpMethod.GET,entity,String.class).getBody();
-            //test = server url에 접속, get방식, http개체 정보(json,hedaer) 등 매개변수를 통해 정보를 전달하고 getBody()를 리턴받음.
             JSONArray arr = (JSONArray) jsonparser2.parse(userList);
             for(int i = 0; i < arr.toArray().length; i++){
                 JSONObject obj = (JSONObject) arr.get(i);
@@ -268,8 +266,7 @@ public class KeycloakApi {
         HttpEntity<String> entity = new HttpEntity<>(json,headers);
         JSONParser jsonparser2 = new JSONParser();
         UserVO userVO = new UserVO();
-//        List<UserVO> list = new ArrayList<UserVO>();
-//        UserVO userVO = new UserVO();
+
         try {
             String result = restTemplate.exchange(authServerUrl2, HttpMethod.GET, entity, String.class).getBody();
 
