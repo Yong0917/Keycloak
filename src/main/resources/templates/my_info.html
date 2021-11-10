@@ -90,7 +90,7 @@
         <div th:replace="top_nav.html :: top_nav"></div>
         <!-- Page content-->
         <div class="container-fluid">
-            <h3 class="mt-4 m-0 font-weight-bold text-primary">내정보 수정</h3>
+            <h3 class="mt-4 m-0 font-weight-bold text-primary" th:text="#{myInfo.title}">내정보 수정</h3>
             <div class="row mb-2 ml-2" style="margin-top: 30px">
                 <!-- Area Chart -->
                 <div class="col-xl-7 col-lg-5">
@@ -103,25 +103,25 @@
                                         <table class="table col-xl-12 col-lg-10" id="userInfoTable">
                                             <thead style="text-align: center; position: sticky; top: 0px; background-color: white;">
                                             <tr>
-                                                <th style="width:30%">아이디 : </th>
+                                                <th style="width:30%" th:text="#{myInfo.id}">아이디 : </th>
                                                 <td>
                                                     <input type="text" size="20" style="width:100%; " id="idInput" th:value="${userInfo.id}" disabled>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th style="width:30%">이름 : </th>
+                                                <th style="width:30%" th:text="#{myInfo.firstName}">이름 : </th>
                                                 <td>
                                                     <input type="text" size="20" style="width:100%; " id="firstName" th:value="${userInfo.firstName}">
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th style="width:30%">성 : </th>
+                                                <th style="width:30%" th:text="#{myInfo.lastName}">성 : </th>
                                                 <td>
                                                     <input type="text" size="20" style="width:100%;" id="lastName" th:value="${userInfo.lastName}">
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th style="width:30%">이메일 : </th>
+                                                <th style="width:30%" th:text="#{myInfo.email}">이메일 : </th>
                                                 <td>
                                                     <input type="text" size="20" style="width:100%;" id="emailInput" th:value="${userInfo.email}">
                                                 </td>
@@ -132,8 +132,8 @@
                                 </div>
                             </div>
                             <div style="margin-top: 10px; float: right">
-                                <button class="btn btn-primary" id="userInfoSaveBtn">저장</button>
-                                <button class="btn btn-secondary" id ="userInfoCancelBtn">초기화</button>
+                                <button class="btn btn-primary" id="userInfoSaveBtn" th:text="#{myInfo.save}">저장</button>
+                                <button class="btn btn-secondary" id ="userInfoCancelBtn" th:text="#{myInfo.cancel}">초기화</button>
                             </div>
                         </div>
                     </div>

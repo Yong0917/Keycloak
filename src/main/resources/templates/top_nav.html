@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 <div th:fragment="top_nav">
     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
@@ -11,7 +11,11 @@
                     <span th:text="${session['id']}" class="nav-item active nav-link"></span>
                     <li th:if="${session['id']} ==''" class="nav-item active"><a class="nav-link" style="cursor: pointer;'" href="/main">로그인</a></li>
                     <li th:if="${session['id']} !=''" class="nav-item active"><a class="nav-link" data-toggle="modal"  data-target="#logoutModal" style="cursor: pointer;'">로그아웃</a></li>
-
+                    <select onchange="location.href=this.value">
+                        <option>Language</option>
+                        <option th:text="#{label.lang.ko} " value="/main?lang=ko"></option>
+                        <option th:text="#{label.lang.en} " value="/main?lang=en"></option>
+                    </select>
                 </ul>
             </div>
         </div>

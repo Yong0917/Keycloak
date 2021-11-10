@@ -115,7 +115,7 @@
         <div th:replace="top_nav.html :: top_nav"></div>
         <!-- Page content-->
         <div class="container-fluid">
-            <h3 class="mt-4 m-0 font-weight-bold text-primary">내 비밀번호 변경</h3>
+            <h3 class="mt-4 m-0 font-weight-bold text-primary" th:text="#{pwManage.title}">내 비밀번호 변경</h3>
 
             <div class="row mb-2 ml-2" style="margin-top: 30px">
                 <!-- Area Chart -->
@@ -130,19 +130,19 @@
                                         <table class="table table-bordered col-xl-12 col-lg-10"  id="userInfoTable">
                                             <thead style="text-align: center; position: sticky; top: 0px; background-color: white;">
                                             <tr>
-                                                <th style="width:30%">아이디 : </th>
+                                                <th style="width:30%" th:text="#{pwManage.id}">아이디 : </th>
                                                 <td>
                                                     <input type="text" size="20" style="width:100%;" id="idInput" th:value="${userInfo.id}" disabled>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th style="width:30%">새 비밀번호 : </th>
+                                                <th style="width:30%" th:text="#{pwManage.pw}">새 비밀번호 : </th>
                                                 <td>
                                                     <input type="password" size="20" style="width:100%;" id="newPassword" onchange="check_pw()">
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <th style="width:30%">비밀번호 확인 : </th>
+                                                <th style="width:30%" th:text="#{pwManage.newPw}">비밀번호 확인 : </th>
                                                 <td>
                                                     <input type="password" size="20" style="width:100%;" id="confirmPassword" onchange="check_pw()">
                                                 </td>
@@ -157,8 +157,8 @@
                                 </div>
                             </div>
                             <div style="margin-top: 10px; float: right">
-                                <button class="btn btn-primary"  id ="passwordSaveBtn">저장</button>
-                                <button class="btn btn-secondary"  id ="passwordCancelBtn">초기화</button>
+                                <button class="btn btn-primary"  id ="passwordSaveBtn" th:text="#{pwManage.save}">저장</button>
+                                <button class="btn btn-secondary"  id ="passwordCancelBtn" th:text="#{pwManage.cancel}">초기화</button>
                             </div>
                         </div>
                     </div>

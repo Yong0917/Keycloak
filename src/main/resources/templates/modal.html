@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 <div th:fragment="modal">
 
@@ -9,14 +9,14 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="logoutModalLabel">로그아웃 하시겠습니까?</h5>
+                    <h5 class="modal-title" id="logoutModalLabel" th:text="#{modal.logout}">로그아웃 하시겠습니까?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="false">X</span>
                     </button>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">취소</button>
-                    <a class="btn btn-primary" href="/logout">로그아웃</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="/logout">Logout</a>
                 </div>
             </div>
         </div>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="modal-body" style="text-align: center">
 
-                    <p style="font-size: 23px">저장하시겠습니까?</p>
+                    <p style="font-size: 23px" th:text="#{modal.save}">저장하시겠습니까?</p>
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                     <a class="btn btn-primary" onclick="modifyInfo();">OK</a>
                 </div>
@@ -54,7 +54,7 @@
                     </button>
                 </div>
                 <div class="modal-body" style="text-align: center">
-                    <p style="font-size: 23px">정상적으로 처리되었습니다.</p>
+                    <p style="font-size: 23px" th:text="#{modal.success}">정상적으로 처리되었습니다.</p>
                     <button class="btn btn-secondary" type="button" id="okButton">OK</button>
                 </div>
             </div>
@@ -73,7 +73,7 @@
                 </div>
                 <div class="modal-body" style="text-align: center">
 
-                    <p style="font-size: 23px">처리 중 오류가 발생하였습니다.</p>
+                    <p style="font-size: 23px" th:text="#{modal.fail}">처리 중 오류가 발생하였습니다.</p>
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">OK</button>
                 </div>
             </div>
@@ -92,7 +92,7 @@
                 </div>
                 <div class="modal-body" style="text-align: center">
 
-                    <p style="font-size: 23px">접속 권한이 없습니다.</p>
+                    <p style="font-size: 23px" th:text="#{modal.deny}">접속 권한이 없습니다.</p>
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">OK</button>
                 </div>
             </div>
@@ -104,14 +104,14 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="deleteModalLabel">정말 삭제하시겠습니까?</h5>
+                    <h5 class="modal-title" id="deleteModalLabel" th:text="#{modal.delete}">정말 삭제하시겠습니까?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="false">X</span>
                     </button>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">취소</button>
-                    <a class="btn btn-primary" id="deleteUserBtn" data-dismiss="modal">삭제</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal" th:text="#{modal.delete.delete}">취소</button>
+                    <a class="btn btn-primary" id="deleteUserBtn" data-dismiss="modal" th:text="#{modal.cancel}">삭제</a>
                 </div>
             </div>
         </div>

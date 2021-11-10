@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 <div th:fragment="footer">
     <footer class="bg-dark py-4 mt-auto">
         <div class="container px-5">
             <div class="row" style="justify-content: center;">
                 <div class="col-auto">
-                    <div class="small m-0 text-white">COPYRIGHT. IGLOO SECURITY, INC.ALL RIGHTS RESERVED</div>
+                    <div class="small m-0 text-white" th:text="#{footer.title}">안녕하십니까. KeyCloak Test Page입니다. </div>
                 </div>
             </div>
         </div>

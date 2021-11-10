@@ -389,11 +389,11 @@
                         <div
                                 class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
                                 style="color:white;">
-                            <h3 class="m-0 font-weight-bold text-primary">사용자 관리</h3>
+                            <h3 class="m-0 font-weight-bold text-primary" th:text="#{userManage.title}">사용자 관리</h3>
 
                             <div style="float: right">
-                                <button class="btn btn-primary" data-toggle="modal" data-target="#userCreateModal">생성</button>
-                                <button class="btn btn-primary" id="userDeleteBtn">삭제</button>
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#userCreateModal" th:text="#{userManage.create}">생성</button>
+                                <button class="btn btn-primary" id="userDeleteBtn" th:text="#{userManage.delete}">삭제</button>
                             </div>
 
                         </div>
@@ -404,13 +404,13 @@
                                     <table class="table table-bordered" id="userTable">
                                         <thead style="text-align: center; position: sticky; top: 0px; ">
                                         <tr>
-                                            <th>선택</th>
-                                            <th>아이디</th>
-                                            <th>성</th>
-                                            <th>이름</th>
-                                            <th>이메일</th>
-                                            <th>사용여부</th>
-                                            <th>생성일</th>
+                                            <th th:text="#{userManage.choice}">선택</th>
+                                            <th th:text="#{userManage.id}">아이디</th>
+                                            <th th:text="#{userManage.lastName}">성</th>
+                                            <th th:text="#{userManage.firstName}">이름</th>
+                                            <th th:text="#{userManage.eamil}">이메일</th>
+                                            <th th:text="#{userManage.enable}">사용여부</th>
+                                            <th th:text="#{userManage.createDate}">생성일</th>
                                         </tr>
                                         </thead>
                                         <tbody style="text-align: center">
@@ -435,7 +435,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="userCreateModalLabel">사용자 생성</h3>
+                <h3 class="modal-title" id="userCreateModalLabel" th:text="#{userManage.modal.createTitle}">사용자 생성</h3>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
@@ -444,9 +444,9 @@
             <div class="modal-body">
                 <div class="row mt-1 mb-1">
                     <div class="col-xl-12 col-lg-6">
-                        <span class="text-dark"> 아이디 : </span>
-                        <input type="text" style="width: 300px;" id="id" placeholder="ex) igloo">
-                        <button id="idCheck">중복확인</button>
+                        <span class="text-dark" th:text="#{userManage.modal.id}"> 아이디 : </span>
+                        <input type="text" style="width: 300px;" id="id" placeholder="ex) test">
+                        <button id="idCheck" th:text="#{userManage.modal.duplicate}">중복확인</button>
                     </div>
                 </div>
                 <div class="row mb-1">
@@ -456,25 +456,25 @@
                 </div>
                 <div class="row mb-3">
                     <div class="col-xl-12 col-lg-6">
-                        <span class="text-dark"> 이름 : </span>
+                        <span class="text-dark" th:text="#{userManage.modal.firstName}"> 이름 : </span>
                         <input type="text" style="width: 300px;margin-left: 16px;" id="firstName" placeholder="ex) 길동">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-xl-12 col-lg-6">
-                        <span class="text-dark"> 성 : </span>
+                        <span class="text-dark" th:text="#{userManage.modal.lastName}"> 성 : </span>
                         <input type="text" style="width: 300px;margin-left: 32px;" id="lastName"  placeholder="ex) 홍">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-xl-12 col-lg-6">
-                        <span class="text-dark"> 초기 비밀번호 : </span>
+                        <span class="text-dark" th:text="#{userManage.modal.pw}"> 초기 비밀번호 : </span>
                         <input type="password" size="20" style="width:65%;" id="newPassword">
                     </div>
                 </div>
                 <div class="row mb-1">
                     <div class="col-xl-12 col-lg-6">
-                        <span class="text-dark"> 비밀번호 확인 : </span>
+                        <span class="text-dark" th:text="#{userManage.modal.newPw}"> 비밀번호 확인 : </span>
                         <input type="password" size="20" style="width:65%;" id="confirmPassword" >
                     </div>
                 </div>
@@ -485,13 +485,13 @@
                 </div>
                 <div class="row mb-3">
                     <div class="col-xl-12 col-lg-6">
-                        <span class="text-dark"> 이메일 : </span>
-                        <input type="text"style="width: 300px;" id="email" placeholder="ex) igloo@igloosec.com">
+                        <span class="text-dark" th:text="#{userManage.modal.email}"> 이메일 : </span>
+                        <input type="text"style="width: 300px;" id="email" placeholder="ex) test@test.com">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-xl-12 col-lg-6">
-                        <span class="text-dark"> 사용여부 : </span>
+                        <span class="text-dark" th:text="#{userManage.modal.enable}"> 사용여부 : </span>
                         <select id="modalSelect">
                             <option value="enable">enable</option>
                             <option value="disable">disable</option>
@@ -500,8 +500,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" type="submit" id="createUser">등록</button>
-                <button class="btn btn-secondary" type="button" id="resetInfo">초기화</button>
+                <button class="btn btn-primary" type="submit" id="createUser" th:text="#{userManage.modal.register}">등록</button>
+                <button class="btn btn-secondary" type="button" id="resetInfo" th:text="#{userManage.modal.cancel}">초기화</button>
             </div>
         </div>
     </div>
@@ -514,7 +514,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="userModifyModalLabel">사용자 수정</h3>
+                <h3 class="modal-title" id="userModifyModalLabel" th:text="#{userManage.modal.updateTitle}">사용자 수정</h3>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
@@ -523,32 +523,32 @@
             <div class="modal-body">
                 <div class="row mt-1 mb-3">
                     <div class="col-xl-12 col-lg-6">
-                        <span class="text-dark"> 아이디 : </span>
-                        <input type="text" style="width: 300px;" id="id2" placeholder="ex) igloo" disabled>
+                        <span class="text-dark" th:text="#{userManage.modal.id}"> 아이디 : </span>
+                        <input type="text" style="width: 300px;" id="id2" placeholder="ex) test" disabled>
                         <button id="idCheck2" hidden="true" >중복확인</button>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-xl-12 col-lg-6">
-                        <span class="text-dark"> 이름 : </span>
+                        <span class="text-dark" th:text="#{userManage.modal.firstName}"> 이름 : </span>
                         <input type="text" style="width: 300px;margin-left: 16px;" id="firstName2" placeholder="ex) 길동">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-xl-12 col-lg-6">
-                        <span class="text-dark"> 성 : </span>
+                        <span class="text-dark" th:text="#{userManage.modal.lastName}"> 성 : </span>
                         <input type="text" style="width: 300px;margin-left: 32px;" id="lastName2"  placeholder="ex) 홍">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-xl-12 col-lg-6">
-                        <span class="text-dark"> 이메일 : </span>
-                        <input type="text"style="width: 300px;" id="email2" placeholder="ex) igloo@igloosec.com">
+                        <span class="text-dark" th:text="#{userManage.modal.email}"> 이메일 : </span>
+                        <input type="text"style="width: 300px;" id="email2" placeholder="ex) test@test.com">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-xl-12 col-lg-6">
-                        <span class="text-dark"> 사용여부 : </span>
+                        <span class="text-dark" th:text="#{userManage.modal.enable}"> 사용여부 : </span>
                         <select id="modalSelect2">
                             <option value="enable">enable</option>
                             <option value="disable">disable</option>
@@ -558,8 +558,8 @@
                 <span id="uuid2" hidden="true"></span>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-primary" type="submit" id="modifyUser">저장</button>
-                <button class="btn btn-secondary" type="button" id="resetInfo2">초기화</button>
+                <button class="btn btn-primary" type="submit" id="modifyUser" th:text="#{userManage.modal.update}">저장</button>
+                <button class="btn btn-secondary" type="button" id="resetInfo2" th:text="#{userManage.modal.cancel}">초기화</button>
             </div>
         </div>
     </div>
