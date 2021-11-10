@@ -1,5 +1,6 @@
-package com.test.keycloak;
+package com.test.keycloak.config;
 
+import com.test.keycloak.WebAccessDeniedHandler;
 import org.keycloak.adapters.KeycloakConfigResolver;
 import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver;
 
