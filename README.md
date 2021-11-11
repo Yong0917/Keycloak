@@ -13,6 +13,7 @@
 * 아이디 중복체크 (Admin)
 * 내정보 수정
 * 내정보 변경
+* 다국어 기능(추가)
 ----------- 
 **주요 기술**
 * KeyCloak admin API 기능 사용(CRUD)
@@ -57,8 +58,10 @@ https://www.keycloak.org/downloads.html
  ----------- 
 **3. 사용자 관리 메뉴(ADMIN)** 
   * 유저 정보 가져오는 API 호출
+  * 다국어 기능 추가(기본값 : 한국어)
 
 ![keycloak 사용자관리(admin)](https://user-images.githubusercontent.com/65889807/136679810-8611b0ec-a223-4e93-81bd-4cc68712274c.png)
+![KeyCloak 다국어](https://user-images.githubusercontent.com/65889807/141287595-596d1845-87db-4d92-8400-5e6dd7959ac0.png)
 
 ----------- 
 **4. 사용자 생성**
