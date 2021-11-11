@@ -16,6 +16,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 
 import org.springframework.security.core.authority.mapping.SimpleAuthorityMapper;
@@ -63,6 +64,18 @@ public class KeySecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
         keycloakAuthenticationProvider.setGrantedAuthoritiesMapper(new SimpleAuthorityMapper());
 
         auth.authenticationProvider(keycloakAuthenticationProvider);
+    }
+
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        web.ignoring()
+                .antMatchers("/resources/**")
+                .antMatchers("/css/**")
+                .antMatchers("/vendor/**")
+                .antMatchers("/js/**")
+                .antMatchers("/favicon*/**")
+                .antMatchers("/img/**")
+                .antMatchers("/image/**");
     }
 
     @Override
