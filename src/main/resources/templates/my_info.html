@@ -96,7 +96,13 @@
                 <div class="col-xl-7 col-lg-5">
                     <div class="card shadow">
                         <!-- Card Body -->
-                        <div class="card-body">
+                        <div class="card-body" th:object="${userInfo}">
+
+                            <div class="field-error" th:errors="*{id}">아이디 오류</div>
+                            <div class="field-error" th:errors="*{firstName}">이름 오류</div>
+                            <div class="field-error" th:errors="*{lastName}">성 오류</div>
+                            <div class="field-error" th:errors="*{email}">상품명 오류</div>
+
                             <div class="card shadow h-100">
                                 <div class="modal-body">
                                     <div class="row">
@@ -105,25 +111,25 @@
                                             <tr>
                                                 <th style="width:30%" th:text="#{myInfo.id}">아이디 : </th>
                                                 <td>
-                                                    <input type="text" size="20" style="width:100%; " id="idInput" th:value="${userInfo.id}" disabled>
+                                                    <input type="text" size="20" style="width:100%; " id="idInput" th:value="*{id}" disabled>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <th style="width:30%" th:text="#{myInfo.firstName}">이름 : </th>
                                                 <td>
-                                                    <input type="text" size="20" style="width:100%; " id="firstName" th:value="${userInfo.firstName}">
+                                                    <input type="text" size="20" style="width:100%; " id="firstName" th:value="*{firstName}">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <th style="width:30%" th:text="#{myInfo.lastName}">성 : </th>
                                                 <td>
-                                                    <input type="text" size="20" style="width:100%;" id="lastName" th:value="${userInfo.lastName}">
+                                                    <input type="text" size="20" style="width:100%;" id="lastName" th:value="*{lastName}">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <th style="width:30%" th:text="#{myInfo.email}">이메일 : </th>
                                                 <td>
-                                                    <input type="text" size="20" style="width:100%;" id="emailInput" th:value="${userInfo.email}">
+                                                    <input type="text" size="20" style="width:100%;" id="emailInput" th:value="*{email}">
                                                 </td>
                                             </tr>
                                             </thead>

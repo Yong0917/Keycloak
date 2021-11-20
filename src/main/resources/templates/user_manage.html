@@ -122,7 +122,7 @@
         var lName = $('#lastName').val();
         var email = $('#email').val();
         var enable = $('#modalSelect option:selected').val();
-
+        var password = $('#confirmPassword').val();
         console.log(chId);
         $.ajax({
             url: "/registerUser",
@@ -132,7 +132,8 @@
                 firstName: fName,
                 lastName: lName,
                 email: email,
-                useEnable: enable
+                useEnable: enable,
+                password: password
             },
             success: function (data) {
                 if(data == "SUCCESS")
