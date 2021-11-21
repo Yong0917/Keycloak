@@ -3,7 +3,7 @@ package com.test.keycloak.controller;
 
 
 import com.test.keycloak.api.KeycloakApi;
-import com.test.keycloak.vo.UserVO;
+import com.test.keycloak.vo.*;
 import org.json.simple.parser.ParseException;
 import org.keycloak.adapters.springsecurity.account.SimpleKeycloakAccount;
 import org.keycloak.adapters.springsecurity.token.KeycloakAuthenticationToken;
@@ -12,6 +12,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -42,8 +44,13 @@ public class userManageController {
 
     //사용자생성(admin)
     @PostMapping(value = "/registerUser")
-    public String getRegisterUser(UserVO param){
+    public String getRegisterUser(@Validated userCreateForm param, BindingResult bindingResult){
 
+        //데이터 검증
+        if (bindingResult.hasErrors()) {
+            log.info("errors={}", bindingResult);
+            return "error";
+        }
 
         String result = keycloakApi.createUser(param);
 
@@ -53,7 +60,13 @@ public class userManageController {
 
     //사용자 수정(admin)
     @PutMapping(value = "/modifyUser")
-    public String getModifyUser(UserVO param){
+    public String getModifyUser(@Validated userUpdateForm param, BindingResult bindingResult){
+
+        //데이터 검증
+        if (bindingResult.hasErrors()) {
+            log.info("errors={}", bindingResult);
+            return "error";
+        }
 
         String result = keycloakApi.modifyUser(param);
 
@@ -109,10 +122,15 @@ public class userManageController {
 
     //내정보수정
     @PutMapping(value = "/modifyInfo")
-    public String getModifyInfo(UserVO param, KeycloakAuthenticationToken authentication){
+    public String getModifyInfo(@Validated @ModelAttribute("userInfo") myInfoForm param, BindingResult bindingResult, KeycloakAuthenticationToken authentication){
+
+        //데이터 검증
+        if (bindingResult.hasErrors()) {
+            log.info("errors={}", bindingResult);
+            return "error";
+        }
 
         String uuid =  authentication.getPrincipal().toString();       ////로그인 id 값
-
         String result = keycloakApi.ModifyInfo(param, uuid);     //SUCCESS or ERROR or alreadyEmail
 
         return result;
@@ -121,10 +139,14 @@ public class userManageController {
 
     //내 비밀번호 변경
     @PutMapping(value = "/modifyPassword")
-    public String getModifyPassword(UserVO param,KeycloakAuthenticationToken authentication){
+    public String getModifyPassword(@Validated @ModelAttribute("userInfo") pwInfoForm param, BindingResult bindingResult, KeycloakAuthenticationToken authentication){
+
+        if (bindingResult.hasErrors()) {
+            log.info("errors={}", bindingResult);
+            return "error";
+        }
 
         String uuid =  authentication.getPrincipal().toString();        //로그인 id 값
-
         String result = keycloakApi.ModifyPassword(param, uuid);
 
         return result;
