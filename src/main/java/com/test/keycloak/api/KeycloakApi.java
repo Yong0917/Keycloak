@@ -6,7 +6,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-import com.test.keycloak.vo.UserVO;
+import com.test.keycloak.vo.*;
 import lombok.SneakyThrows;
 import org.apache.http.conn.ssl.NoopHostnameVerifier;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
@@ -90,7 +90,7 @@ public class KeycloakApi {
 
 
     //사용자 등록(admin)
-    public String createUser(UserVO param) {
+    public String createUser(userCreateForm param) {
 
         String token = getAccessToken();
 
@@ -138,7 +138,7 @@ public class KeycloakApi {
     }
 
     //사용자 수정(admin)
-    public String modifyUser(UserVO param) {
+    public String modifyUser(userUpdateForm param) {
 
         String token = getAccessToken();
 
@@ -294,7 +294,7 @@ public class KeycloakApi {
 
 
     //내정보 수정
-    public String ModifyInfo(UserVO param, String uuid){
+    public String ModifyInfo(myInfoForm param, String uuid){
 
         String token = getAccessToken();
 
@@ -329,7 +329,7 @@ public class KeycloakApi {
     }
 
     //내 비밀번호 변경
-    public String ModifyPassword(UserVO param, String uuid) {
+    public String ModifyPassword(pwInfoForm param, String uuid) {
 
         String token = getAccessToken();
 
