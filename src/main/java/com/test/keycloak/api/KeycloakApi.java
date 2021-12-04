@@ -59,18 +59,18 @@ public class KeycloakApi {
     private String authClientId;
 
 //    private static final Logger log = LoggerFactory.getLogger(KeycloakApi.class);
-    private static final Logger log = LoggerFactory.getLogger(KeycloakApi.class);
+    private static final Logger log = LoggerFactory.getLogger(KeycloakApi.class);   //로그파일설정
 
     //사용자 리스트(admin)
     public Object userList() {
 
-        String token = getAccessToken();
+        String token = getAccessToken();        //master AccessToken이 필요
 
         String authServerUrl2 = server;
 
-        HttpHeaders headers = getHeaders(token);
+        HttpHeaders headers = getHeaders(token);        //header에 토큰 실어줌
 
-        RestTemplate restTemplate = getRestTemplate();
+        RestTemplate restTemplate = getRestTemplate();      //ssl 무시할수 있음 RestTemplate 얻기
 
         Map<String, Object> getUserList = new HashMap<>();
 
@@ -80,7 +80,7 @@ public class KeycloakApi {
         HttpEntity<String> entity = new HttpEntity<>(json,headers);
 
         try {
-            ResponseEntity<String> result = restTemplate.exchange(authServerUrl2, HttpMethod.GET,entity,String.class);
+            ResponseEntity<String> result = restTemplate.exchange(authServerUrl2, HttpMethod.GET,entity,String.class);      //GET형식으로 반환
             return result;
         } catch (RestClientException e) {
             log.error("keycloakError -> " + e);
@@ -92,16 +92,16 @@ public class KeycloakApi {
     //사용자 등록(admin)
     public String createUser(userCreateForm param) {
 
-        String token = getAccessToken();
+        String token = getAccessToken();  //master AccessToken이 필요
 
         String authServerUrl2 = server;
 
-        HttpHeaders headers = getHeaders(token);
+        HttpHeaders headers = getHeaders(token);  //Header에 토큰 실어줌
 
-        RestTemplate restTemplate = getRestTemplate();
+        RestTemplate restTemplate = getRestTemplate();  //ssl 무시할수 있음 RestTemplate 얻기
 
         JsonObject password = new JsonObject();
-        password.addProperty("temporary","false");
+        password.addProperty("temporary","false");      //최초 로그인시 패스붜드 변경 안해도됨
         password.addProperty("type","password");
         password.addProperty("value",param.getPassword());
 
@@ -117,7 +117,7 @@ public class KeycloakApi {
             registerUser.put("enabled", "true");
         else
             registerUser.put("enabled", "false");
-        registerUser.put("credentials",passwordArray);
+        registerUser.put("credentials",passwordArray);      //위에 password 설정 추가
 
         Gson var = new Gson();
         String json = var.toJson(registerUser);
@@ -125,7 +125,7 @@ public class KeycloakApi {
         HttpEntity<String> entity = new HttpEntity<>(json,headers);
 
         try {
-            restTemplate.exchange(authServerUrl2, HttpMethod.POST,entity,String.class);
+            restTemplate.exchange(authServerUrl2, HttpMethod.POST,entity,String.class);     //POST형식으로 API 호출
             return "SUCCESS";
         } catch (RestClientException e) {
             log.error("keycloakError -> " + e.getMessage());
@@ -140,13 +140,13 @@ public class KeycloakApi {
     //사용자 수정(admin)
     public String modifyUser(userUpdateForm param) {
 
-        String token = getAccessToken();
+        String token = getAccessToken();        ////master AccessToken이 필요
 
         String authServerUrl2 = server +  "/" + param.getId();
 
-        HttpHeaders headers = getHeaders(token);
+        HttpHeaders headers = getHeaders(token);        //Header에 토큰 실어줌
 
-        RestTemplate restTemplate = getRestTemplate();
+        RestTemplate restTemplate = getRestTemplate();      //ssl 무시할수 있음 RestTemplate 얻기
 
         Map<String, Object> modifyUser = new HashMap<>();
         modifyUser.put("firstName", param.getFirstName());
@@ -163,7 +163,7 @@ public class KeycloakApi {
         HttpEntity<String> entity = new HttpEntity<>(json,headers);
 
         try {
-            restTemplate.exchange(authServerUrl2, HttpMethod.PUT,entity,String.class);
+            restTemplate.exchange(authServerUrl2, HttpMethod.PUT,entity,String.class);      //PUT형식으로 반환
             return "SUCCESS";
         } catch (RestClientException e) {
             log.error("keycloakError -> " + e.getMessage());
@@ -177,13 +177,13 @@ public class KeycloakApi {
     //사용자 삭제(admin)
     public String deleteUser(String id) {
 
-        String token = getAccessToken();
+        String token = getAccessToken();        //master AccessToken이 필요
 
         String authServerUrl2 = server + "/" + id;
 
-        HttpHeaders headers = getHeaders(token);
+        HttpHeaders headers = getHeaders(token);        //Header에 토큰 실어줌
 
-        RestTemplate restTemplate = getRestTemplate();
+        RestTemplate restTemplate = getRestTemplate();      //ssl 무시할수 있음 RestTemplate 얻기
 
         Map<String, Object> deleteUser = new HashMap<>();
         deleteUser.put("enabled", "false");
@@ -194,7 +194,7 @@ public class KeycloakApi {
         HttpEntity<String> entity = new HttpEntity<>(json,headers);
 
         try {
-            restTemplate.exchange(authServerUrl2, HttpMethod.PUT,entity,String.class);
+            restTemplate.exchange(authServerUrl2, HttpMethod.PUT,entity,String.class);      //PUT형식으로 반환
             return "SUCCESS";
         } catch (RestClientException e) {
             log.error("keycloakError -> " + e.getMessage());
@@ -207,16 +207,16 @@ public class KeycloakApi {
     //keycloak서버에 api를 보내서 전체 사용자 리스트를 가져와서 입력값과 비교하는 함수
     public String duplicateCheck(UserVO param) throws ParseException {
 
-        String token = getAccessToken();
+        String token = getAccessToken();        //master AccessToken이 필요
 
         String authServerUrl2 = server;
 
-        HttpHeaders headers = getHeaders(token);
+        HttpHeaders headers = getHeaders(token);        //Header에 토큰 실어줌
 
-        RestTemplate restTemplate = getRestTemplate();
+        RestTemplate restTemplate = getRestTemplate();      //ssl 무시할수 있음 RestTemplate 얻기
 
-        Map<String, Object> duplicateUser = new HashMap<>(); //????
-        Gson var = new Gson(); //Gson객체 생성.
+        Map<String, Object> duplicateUser = new HashMap<>();
+        Gson var = new Gson();
         String json = var.toJson(duplicateUser);
 
         HttpEntity<String> entity = new HttpEntity<>(json,headers);
@@ -226,9 +226,9 @@ public class KeycloakApi {
 
             String result = "SUCCESS";
 
-            String userList = restTemplate.exchange(authServerUrl2, HttpMethod.GET,entity,String.class).getBody();
+            String userList = restTemplate.exchange(authServerUrl2, HttpMethod.GET,entity,String.class).getBody();      //userlist 반환
             JSONArray arr = (JSONArray) jsonparser2.parse(userList);
-            for(int i = 0; i < arr.toArray().length; i++){
+            for(int i = 0; i < arr.toArray().length; i++){      //username을 읽어서 입력값 아이디랑 비교 있으면 DUPLICATE 반환
                 JSONObject obj = (JSONObject) arr.get(i);
                 if(param.getId().equals(obj.get("username"))){
                     result = "Duplicate";
@@ -249,13 +249,13 @@ public class KeycloakApi {
     //내 정보 리스트
     public UserVO userInfoList(String uuid, String userName) {
 
-        String token = getAccessToken();
+        String token = getAccessToken();        //master AccessToken이 필요
 
         String authServerUrl2 = server + "/" + uuid;
 
-        HttpHeaders headers = getHeaders(token);
+        HttpHeaders headers = getHeaders(token);        //Header에 토큰 실어줌
 
-        RestTemplate restTemplate = getRestTemplate();
+        RestTemplate restTemplate = getRestTemplate();      //ssl 무시할수 있음 RestTemplate 얻기
 
         Map<String, Object> modifyInfo = new HashMap<>();
         modifyInfo.put("search", userName);
@@ -268,10 +268,11 @@ public class KeycloakApi {
         UserVO userVO = new UserVO();
 
         try {
-            String result = restTemplate.exchange(authServerUrl2, HttpMethod.GET, entity, String.class).getBody();
+            String result = restTemplate.exchange(authServerUrl2, HttpMethod.GET, entity, String.class).getBody();      //GET형식으로 반환
 
             JSONObject obj = (JSONObject) jsonparser2.parse(result);
 
+            //userVO 맵핑
             userVO.setId(String.valueOf(obj.get("username")));
             userVO.setFirstName(String.valueOf(obj.get("firstName")));
             userVO.setLastName(String.valueOf(obj.get("lastName")));
@@ -296,13 +297,13 @@ public class KeycloakApi {
     //내정보 수정
     public String ModifyInfo(myInfoForm param, String uuid){
 
-        String token = getAccessToken();
+        String token = getAccessToken();        //master AccessToken이 필요
 
         String authServerUrl2 = server + "/" + uuid;
 
-        HttpHeaders headers = getHeaders(token);
+        HttpHeaders headers = getHeaders(token);        //Header에 토큰 실어줌
 
-        RestTemplate restTemplate = getRestTemplate();
+        RestTemplate restTemplate = getRestTemplate();      //ssl 무시할수 있음 RestTemplate 얻기
 
         Map<String, Object> modifyInfo = new HashMap<>();
 
@@ -316,7 +317,7 @@ public class KeycloakApi {
         HttpEntity<String> entity = new HttpEntity<>(json,headers);
 
         try {
-            restTemplate.exchange(authServerUrl2, HttpMethod.PUT,entity,String.class);
+            restTemplate.exchange(authServerUrl2, HttpMethod.PUT,entity,String.class);      //PUT형식으로 반환
             return "SUCCESS";
         } catch (RestClientException e) {
             log.error("keycloakError -> " + e.getMessage());
@@ -331,13 +332,13 @@ public class KeycloakApi {
     //내 비밀번호 변경
     public String ModifyPassword(pwInfoForm param, String uuid) {
 
-        String token = getAccessToken();
+        String token = getAccessToken();        //master AccessToken이 필요
 
         String authServerUrl2 = server + "/" + uuid + "/reset-password";
 
-        HttpHeaders headers = getHeaders(token);
+        HttpHeaders headers = getHeaders(token);        //Header에 토큰 실어줌
 
-        RestTemplate restTemplate = getRestTemplate();
+        RestTemplate restTemplate = getRestTemplate();      //ssl 무시할수 있음 RestTemplate 얻기
 
         Map<String, Object> modifyPassword = new HashMap<>();
         modifyPassword.put("temporary", "false");       //다음에 로그인할때 비밀번호 변경안해도됨
@@ -350,7 +351,7 @@ public class KeycloakApi {
         HttpEntity<String> entity = new HttpEntity<>(json,headers);
 
         try {
-            restTemplate.exchange(authServerUrl2, HttpMethod.PUT,entity,String.class);
+            restTemplate.exchange(authServerUrl2, HttpMethod.PUT,entity,String.class);      //PUT형식으로 반환
 
             return "SUCCESS";
         } catch (RestClientException e) {
@@ -368,15 +369,15 @@ public class KeycloakApi {
                 .username(authId).password(authPassword)
                 .resteasyClient(new ResteasyClientBuilder().connectionPoolSize(10).disableTrustManager().build()).build();
 
-        String token = keycloak.tokenManager().getAccessTokenString();
+        String token = keycloak.tokenManager().getAccessTokenString();      // 이렇게하면 master 계정의 Access token을 얻을 수 있다.
         return token;
     }
 
     private HttpHeaders getHeaders(String token) {
 
         HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_JSON);
-        headers.set("Authorization", "Bearer " + token);
+        headers.setContentType(MediaType.APPLICATION_JSON);         // HEADER에 JSON형식으로
+        headers.set("Authorization", "Bearer " + token);        //header에 마스터계정 토큰실어줌
 
         return headers;
     }
