@@ -26,7 +26,7 @@ public class HomeController {
 
         String id = (String) session.getAttribute("id");
 
-        if(id==null || "".equals(id)){
+        if(id==null || "".equals(id)){          //Session이 없으면 id에 빈값 설정
             session.setAttribute("id","");
         }
 
@@ -36,7 +36,7 @@ public class HomeController {
     @GetMapping("/main")
     public String Main(Model model, HttpSession session, KeycloakAuthenticationToken authentication){
 
-        UserVO result = userSet(authentication, session);
+        UserVO result = userSet(authentication, session);       //로그인한 session 설정
 
         model.addAttribute("userInfo",result);
 
@@ -47,7 +47,7 @@ public class HomeController {
     @GetMapping("/user_manage")
     public String userManage(Model model, KeycloakAuthenticationToken authentication,HttpSession session){
 
-        UserVO result = userSet(authentication, session);
+        UserVO result = userSet(authentication, session); //로그인한 session 설정
 
         model.addAttribute("userInfo",result);
 
@@ -62,7 +62,7 @@ public class HomeController {
     @GetMapping("/my_info")
     public String myInfo(Model model, KeycloakAuthenticationToken authentication,HttpSession session){
 
-        UserVO result = userSet(authentication, session);
+        UserVO result = userSet(authentication, session); //로그인한 session 설정
 
         model.addAttribute("userInfo",result);
 
@@ -73,7 +73,7 @@ public class HomeController {
     @GetMapping("/pw_manage")
     public String pwManage(Model model, KeycloakAuthenticationToken authentication, HttpSession session){
 
-        UserVO result = userSet(authentication, session);
+        UserVO result = userSet(authentication, session); //로그인한 session 설정
 
         model.addAttribute("userInfo",result);
 

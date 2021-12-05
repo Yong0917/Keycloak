@@ -54,13 +54,13 @@ public class KeySecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
     @Override
     protected SessionAuthenticationStrategy sessionAuthenticationStrategy() {
 //        return new NullAuthenticatedSessionStrategy();
-        return new RegisterSessionAuthenticationStrategy(sessionRegistry());
+        return new RegisterSessionAuthenticationStrategy(sessionRegistry());        //AuthSession
     }
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception{
         KeycloakAuthenticationProvider keycloakAuthenticationProvider = keycloakAuthenticationProvider();
-
+        //Keycloak에서 제공해주는 Provider 적용가능
         keycloakAuthenticationProvider.setGrantedAuthoritiesMapper(new SimpleAuthorityMapper());
 
         auth.authenticationProvider(keycloakAuthenticationProvider);
@@ -69,7 +69,7 @@ public class KeySecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring()
-                .antMatchers("/resources/**")
+                .antMatchers("/resources/**")       //이 경로는 검증 무시
                 .antMatchers("/css/**")
                 .antMatchers("/vendor/**")
                 .antMatchers("/js/**")
@@ -84,14 +84,14 @@ public class KeySecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
 
         http
                 .authorizeRequests()
-                .antMatchers("/user_manage").access("hasRole('ADMIN')")
+                .antMatchers("/user_manage").access("hasRole('ADMIN')")     //user_manage 경로는 ADMIN 권한만 접근가능
                 .anyRequest().authenticated()
                 .and()
 
                 // "/" 주소를 permitAll(false) ==>  authenticated() 로 변경해야함.
                 .logout()
-                .logoutUrl("/logout")
-                .logoutSuccessUrl("/")
+                .logoutUrl("/logout")       //logout url설정
+                .logoutSuccessUrl("/")      //logout 시 루트로 이동
                 .and()
                 .csrf().disable()
         ;
