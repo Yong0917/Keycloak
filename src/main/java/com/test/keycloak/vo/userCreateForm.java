@@ -11,24 +11,24 @@ import javax.validation.constraints.Pattern;
 @Setter
 public class userCreateForm {
 
-    @NotBlank
+    @NotBlank           //빈 값 허용 X
     private String id;
 
-    @NotBlank
+    @NotBlank           //빈 값 허용 X
     private String firstName;
 
-    @NotBlank
+    @NotBlank           //빈 값 허용 X
     private String lastName;
 
-    @NotBlank
-    @Email
+    @NotBlank           //빈 값 허용 X
+    @Email              //Email형식
     private String email;
 
-    @NotBlank
+    @NotBlank           //빈 값 허용 X
     private String useEnable;
 
-    @Pattern(regexp="^(?=.*[A-Za-z])(?=.*\\d)(?=.*[~!@#$%^&*()+|=])[A-Za-z\\d~!@#$%^&*()+|=]{8,16}",
-            message = "8글자 이상, 16글자 이하, 특수문자 포함해야 됩니다")
+    @Pattern(regexp="^(?=.*[A-Za-z])(?=.*\\d)(?=.*[~!@#$%^&*()+|=])[A-Za-z\\d~!@#$%^&*()+|=]{8,16}",        //비밀번호 정규식
+            message = "8글자 이상, 16글자 이하, 특수문자 포함해야 됩니다")     //기본메시지 설정
     private String password;
 
 }

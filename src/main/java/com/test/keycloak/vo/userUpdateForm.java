@@ -10,20 +10,20 @@ import javax.validation.constraints.NotBlank;
 @Setter
 public class userUpdateForm {
 
-    @NotBlank
+    @NotBlank           //빈 값 허용 X
     private String id;
 
-    @NotBlank
+    @NotBlank           //빈 값 허용 X
     private String firstName;
 
-    @NotBlank
+    @NotBlank           //빈 값 허용 X
     private String lastName;
 
-    @NotBlank
-    @Email
+    @NotBlank           //빈 값 허용 X
+    @Email              //Email형식
     private String email;
 
-    @NotBlank
+    @NotBlank           //빈 값 허용 X
     private String useEnable;
 
 

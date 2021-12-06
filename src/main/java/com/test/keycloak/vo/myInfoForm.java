@@ -10,17 +10,17 @@ import javax.validation.constraints.NotBlank;
 @Setter
 public class myInfoForm {
 
-    @NotBlank
+    @NotBlank           //빈값 허용 X
     private String id;
 
-    @NotBlank
+    @NotBlank           //빈값 허용 X
     private String firstName;
 
-    @NotBlank
+    @NotBlank           //빈값 허용 X
     private String lastName;
 
-    @NotBlank
-    @Email
+    @NotBlank           //빈값 허용 X
+    @Email              //Email형식으로
     private String email;
 
 }

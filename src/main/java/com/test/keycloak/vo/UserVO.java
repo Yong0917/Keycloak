@@ -12,7 +12,7 @@ public class UserVO {
 
     private String choice;
 
-    @NotBlank
+    @NotBlank       //빈 값 허용 X
     private String id;
 
     private String password;
@@ -23,7 +23,7 @@ public class UserVO {
     private String firstName;
     private String lastName;
 
-    @NotBlank
+    @NotBlank       //빈 값 허용 X
     private List<UserVO> deleteList;
 
     private int StatusCode;
